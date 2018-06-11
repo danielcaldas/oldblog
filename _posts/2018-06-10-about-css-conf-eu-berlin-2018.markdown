@@ -4,6 +4,7 @@ title:  "CSS Conf 2018 ... TODO"
 date:   2018-06-10 21:13:42 +0100
 categories: jekyll update
 ---
+![css conf eu 2018 berlin logo](/img/2018-06-10-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 If you there as I was, you were probably wandering whether you were at the right conference, since I was thinking the same thing myself (IMPROVE THIS).
 But don't give up already! It started poorly on the CSS field, but still it evolved throughout the day with some top notch talks, some of them include [Chen Hui Jing on *The Web Is Not Just Left-to-Right*], [Razvan Caliman on *We have DevTools. What about DesignTools?*]
 
@@ -12,8 +13,6 @@ But don't give up already! It started poorly on the CSS field, but still it evol
 
 ## The venue
 [SAME AS JS CONF]
-
-
 
 
 ## The talks
