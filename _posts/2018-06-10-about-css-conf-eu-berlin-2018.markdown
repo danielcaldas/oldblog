@@ -5,7 +5,13 @@ date:   2018-06-10 21:13:42 +0100
 categories: jekyll update
 ---
 ![css conf eu 2018 berlin logo](/img/2018-06-10-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
+<br>
+<br>
+<br>
 If you there as I was, you were probably wandering whether you were at the right conference, since I was thinking the same thing myself (IMPROVE THIS).
+
+![john travolta lost gif](/img/2018-06-10-about-css-conf-eu-berlin-2018/2.gif "john travolta lost gif")
+
 But don't give up already! It started poorly on the CSS field, but still it evolved throughout the day with some top notch talks, some of them include [Chen Hui Jing on *The Web Is Not Just Left-to-Right*], [Razvan Caliman on *We have DevTools. What about DesignTools?*]
 
 ## The city
@@ -14,20 +20,12 @@ But don't give up already! It started poorly on the CSS field, but still it evol
 ## The venue
 [SAME AS JS CONF]
 
-
 ## The talks
-As I mentioned earlier the 1st talk wasn't so much into CSS, what Trent gave to us was more of a carrier advice on how we should behave
-as individuals so that we are seen as part (...), for Trent going solo in some project should never be even considered, we should always ask for feedback in order to achieve accurate and quality results. Trent mentioned an app (APP HERE) and techniques to achieve mindfulness, and how it can we improve
-our quality at the workspace.
+As I mentioned earlier the 1st talk wasn't so much into CSS, what Trent gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never be even considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as *burnout*. The term *mindfulness* came along somewhere in the talk, Trent uses **APP NAME** so that he keeps a balanced mental health. Next we had Jackie Balzer who told us a bit of the history behind [Behance’s](https://www.behance.net/) codebase, how major redesigns left *jurassic* footprints in the codebase, some of then in the form of very descriptive "*TODOs*", that today would probably require a herculean effort to remove. At the end Jackie just commend on how she was able to achieve peace with the reality of a fragmented codebase.
 
-Next we had Jackie Balzer who basically told was the history behind Behance’s (link to site) codebase, how major rediseigns left
-jurassic footprints in the codebase that are today pretty much non "deletable" since well, no one knows why it's actually that way or how come nobody deleted that piece of code, TODO comments spread throughout the project, in the end the description at css conf official web site says it all ("how to be at peace with the reality of a fragmented codebase.").
+The next talk was truly eye-opening. Chen Hui Jing made a very cool historical overview on typography and writing systems, how some asian language (such as chinese, japanese and korean) are written vertically, and how that was transported into the web. Designing various labeled pencils in CSS, Chen explained how we could take advantage of [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) to manipulate the way we display elements in our web pages. In the end Chen showed some cool examples of how some small tweaks to our webpages could be more interesting displaying some text vertically. Following we had Ollie Williams who shared the experience of using [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) in production. For the first time I had the opportunity to see some real life examples on [graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) and  [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), if you're wondering what's the difference between this two terms as I was, think of it the following way, [graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) it's where you worry about providing the best experience possible, you use the latest bleeding edge web technologies to achieve that, for older browsers you will *degrade* user experience but always assuring some base line level of functionality. On the other hand [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) philosophy aims to provide the best possible experience in all browsers keeping the same levels of user experience, one will where possible use newest features to *progressively* improve user experience.
 
-The next talk was just mind opening. Chen Hui Jing made a very cool historical overview on typography, how some asian cultures write vertically, and how
-that was transported into the web. Designing various labeled pencils in different formats along the way Chen explained how we could take advantage of flex-box
-to approach vertical text, and also how can occidental cultures use these approaches to make use of vertical text in specific situations that would bring a much nicer look and fell to our website.
-
-Ollie Williams - don't remember this guy mention of css grid. Graceful degradation and how can we provide cutting edge experiences users on modern browsers while still being available to those old versions of the browser...
+![progressive enhancement vs graceful degradation](/img/2018-06-10-about-css-conf-eu-berlin-2018/3.jpg "visualization of progressive enhancement vs graceful degradation")
 
 Razvan Caliman DevTools - This was the morning session closing talk, and man what a finish! The point of this talk was all about how advanced tooling we have nowadays in browsers for developers to debug and analyze applications, but what about designers? And also, what about tools to support the design part of the web
 development process? Well Raz made a pretty good point by exposing the problem this way, in fact he presented a few pains of the design part of the web from a developer prespective this include editing styles on the fly using the element inspector, managing css shapes (IS THIS A THING? css shapes), ...
@@ -65,9 +63,6 @@ Philip Walton - Container Queries: The Past, Future, and How You Can Actually Ev
 Claudina Sarahe - Design Systems as Facilitators
 In this talk I just remember hearing the term "Facilitator" a lot... Really, a lot! I didn't remember this talk at all (you know how it is, 8 hours straight of hearing talks, you just wanna go and grab that fresh bear)...
 
-
-
-
 ## tl;dr
 Seems like the new hottest css things are css variables. If you are not used to the accessebility variable whne building websites you should... Norway...
 Grid VS Flex VS other alternatives... Progressive enhancement VS Graceful degradation (does your website really needs to work properly (MELHORAR ISTO.. MAS A IDEIA É ESTA) everywhere?)...
@@ -84,7 +79,7 @@ to be a must see, people always ask for that.
 
 - __Trent Willis__ <sub><sup>twitter:[@trentmwillis](https://twitter.com/trentmwillis) github:[trentmwillis](https://github.com/trentmwillis)</sup></sub> - *It's Dangerous To Go Alone! Take This Team*
 - __Jackie Balzer__ <sub><sup>twitter:[@jackiebackwards](https://twitter.com/jackiebackwards) github:[jackie](https://github.com/jackie)</sup></sub> - *Preprocessors, Components, and CSS in JS or: How I Learned to Stop Worrying and Love the Website*
-- __Chen Hui Jing__ <sub><sup>twitter:[@hj_chen](https://twitter.com/hj_chen) github:[huijing](https://github.com/huijing)</sup></sub> - *The Web Is Not Just Left-to-Right*
+- __Chen Hui Jing__ <sub><sup>twitter:[@hj_chen](https://twitter.com/hj_chen) github:[huijing](https://github.com/huijing)</sup></sub> - *The Web Is Not Just Left-to-Right* [[slides]](https://www.chenhuijing.com/slides/32-cssconf-2018/#/)
 - __Oliver Williams__ <sub><sup>github:[Ollie-w](https://github.com/Ollie-w)</sup></sub> - *Refactoring with CSS Grid*
 - __Razvan Caliman__ <sub><sup>twitter:[@razvancaliman](https://twitter.com/razvancaliman) github:[oslego](https://github.com/oslego)</sup></sub> - *We have DevTools. What about DesignTools?* [[slides]](http://razvan.is/speaking/cssconfeu-2018/#/)
 - __Shwetank Dixit__ <sub><sup>twitter:[@shwetank](https://twitter.com/shwetank) github:[shwetank](https://github.com/shwetank)</sup></sub> - *Augmenting Empathy: Simulating Low-Vision Conditions with CSS, SVG and WebRTC*
@@ -97,13 +92,11 @@ to be a must see, people always ask for that.
 -----------------------------------------------------------------------------------------------------
 
 ## TODOs
-- Add pictures at the beginning (from the web or something)
-- Add Travolta meme lost where is CSS? eheh nice one in "For starters..." section GIF
-- Add meme "so hot right now" in section "Hot topics" GIF
-- Collect all links and stuff
 - Improve SEO, see how to do it in jekyl or something;
 - How to add analytics to the blog
 - Grammarlly check;
+
+![so hot right now css custom properties](/img/2018-06-10-about-css-conf-eu-berlin-2018/44.jpeg "css custom properties hot topic")
 
 
 ## JS CONF
