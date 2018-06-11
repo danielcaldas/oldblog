@@ -21,20 +21,32 @@ But don't give up already! It started poorly on the CSS field, but still it evol
 [SAME AS JS CONF]
 
 ## The talks
-As I mentioned earlier the 1st talk wasn't so much into CSS, what Trent gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never be even considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as *burnout*. The term *mindfulness* came along somewhere in the talk, Trent uses **APP NAME** so that he keeps a balanced mental health. Next we had Jackie Balzer who told us a bit of the history behind [Behance’s](https://www.behance.net/) codebase, how major redesigns left *jurassic* footprints in the codebase, some of then in the form of very descriptive "*TODOs*", that today would probably require a herculean effort to remove. At the end Jackie just commend on how she was able to achieve peace with the reality of a fragmented codebase.
+As I mentioned earlier the 1st talk wasn't so much into CSS, what Trent gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never be even considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as *burnout*. The term *mindfulness* came along somewhere in the talk, Trent uses **APP NAME** so that he keeps a balanced mental health. Next we had Jackie Balzer who told us a bit of the history behind <a title="Behance is a network of sites and services specializing in self-promotion" href="https://www.behance.net/" target="_blank">Behance’s</a> codebase, how major redesigns left *jurassic* footprints in the codebase, some of then in the form of very descriptive "*TODOs*", that today would probably require a herculean effort to remove. At the end Jackie just commend on how she was able to achieve peace with the reality of a fragmented codebase.
 
 The next talk was truly eye-opening. Chen Hui Jing made a very cool historical overview on typography and writing systems, how some asian language (such as chinese, japanese and korean) are written vertically, and how that was transported into the web. Designing various labeled pencils in CSS, Chen explained how we could take advantage of [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) to manipulate the way we display elements in our web pages. In the end Chen showed some cool examples of how some small tweaks to our webpages could be more interesting displaying some text vertically. Following we had Ollie Williams who shared the experience of using [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) in production. For the first time I had the opportunity to see some real life examples on [graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) and  [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), if you're wondering what's the difference between this two terms as I was, think of it the following way, [graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) it's where you worry about providing the best experience possible, you use the latest bleeding edge web technologies to achieve that, for older browsers you will *degrade* user experience but always assuring some base line level of functionality. On the other hand [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) philosophy aims to provide the best possible experience in all browsers keeping the same levels of user experience, one will where possible use newest features to *progressively* improve user experience.
 
 ![progressive enhancement vs graceful degradation](/img/2018-06-10-about-css-conf-eu-berlin-2018/3.jpg "visualization of progressive enhancement vs graceful degradation")
 
-Razvan Caliman DevTools - This was the morning session closing talk, and man what a finish! The point of this talk was all about how advanced tooling we have nowadays in browsers for developers to debug and analyze applications, but what about designers? And also, what about tools to support the design part of the web
-development process? Well Raz made a pretty good point by exposing the problem this way, in fact he presented a few pains of the design part of the web from a developer prespective this include editing styles on the fly using the element inspector, managing css shapes (IS THIS A THING? css shapes), ...
+Razvan Caliman's was one of the top talks. The point of this talk was all about how advanced tooling we have nowadays in browsers for developers to debug and analyze applications, but on the other hand how designer tools were *left behind*? Razvan made a pretty good point by exposing the problem this way, in fact he presented a few pains of the design part of the web from a developer perspective, these include editing styles on the fly using the element inspector, modifying [css shapes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes)
 
 Here you have the list of tools that Razvan mentioned in his talk:
-- Flinch..
-- shape editor...
+- [Webflow](https://webflow.com/) - build responsive sites visually.
+- [Chrome local overrides](https://developers.google.com/web/updates/2018/01/devtools#overrides) - make changes in DevTools, and keep those changes across page loads.
+- [Finch developer tools](https://chrome.google.com/webstore/detail/finch-developer-tools/phgdjnidddpccdkbedmfifceiljljgdo?hl=en) 🌟 - changes you make in the css code styles will be saved locally on your computer.
+- [Chrome color picker](https://youtu.be/2gAW0pUOBRI) - double click on some color in DevTools to open it.
+- [Chrome text shadow editor](https://youtu.be/9z7P4Xqr2dU) - place you mouse on the bottom right corner of some css block style on the DevTools.
+- [Firefox CSS grid inspector](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts)
+- [Firefox CSS filter editor](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_filters)
+- [Safari CSS gradient editor](http://razvan.is/speaking/cssconfeu-2018/#/26)
+- [Firefox font editor](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/View_fonts)
+- [Firefox shape path editor](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes)
 
-The talk ended with a kind of "*cry for help*" request, Razvan mentioned that not so many developers were focused on building design dev tools to improve development experience, he encouraged the community to make more dev tools to improve our work flow making other developers life easier.
+The talk ended with a kind of "*cry for help*" request, Razvan mentioned that not so many developers were focused on building design dev tools to improve development experience, he encouraged the community to make more designer tools to make us more effective and productive on designing beautiful web apps.
+
+
+
+
+
 
 Shwetank Dixit - Simulating Low-Vision Conditions with CSS, SVG and WebRTC
 
@@ -93,6 +105,7 @@ to be a must see, people always ask for that.
 
 ## TODOs
 - Improve SEO, see how to do it in jekyl or something;
+- Make all links with <a> anchor and add attribute **title**;
 - How to add analytics to the blog
 - Grammarlly check;
 
