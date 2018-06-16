@@ -23,7 +23,6 @@ As I mentioned earlier the first talk wasn't so much into CSS, what Trent gave t
 <img width="60%" height="20%" style="margin-left: 20%;" src="/img/2018-06-10-about-css-conf-eu-berlin-2018/5.png" alt="this is fine dog on fire"/>
 
 <br>
-<br>
 <!--The Web Is Not Just Left-to-Right -->
 The next talk was truly eye-opening. Chen Hui Jing made a very cool historical overview on typography and writing systems, how some asian language (such as chinese, japanese and korean) are written vertically, and how that was transported into the web. Designing various labeled pencils in CSS, Chen explained how we could take advantage of [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) to manipulate the way we display elements in our web pages. In the end Chen showed some cool examples of how some small tweaks to our webpages could be more interesting displaying some text vertically.
 <br>
@@ -57,8 +56,8 @@ From this talk onwards things start focusing a lot around the **accessibility** 
 When we hear “low vision” what do we think about? Well Shwetank explained that these days low-vision it's just a umbrella term that aggregates a bunch of eyesight conditions that affect people in many different ways. Shwetank made very clear that not conditioned people don't know the real extent of these problems unless we talk with someone who experiences them everyday. Following, Shwetank just drop this one "*What if we could make tools to make people see what people with low vision actually see?*" And that was exactly what he did, with CSS, SVG and [WebRTC](https://webrtc.org/faq/#what-is-webrtc) he was able to emulate different low vision conditions that were perceptible trough a camera (with AR), this is a really noble thing to do, it certainly will make non conditional people more aware and comprehensive of this problems, at the same time I guess it makes conditioned people less frustrated because I imagine it can be pretty hard to explain ones condition to another, so why not showing it instead? You can consult a list of low vision tools in [lowvisiontools.barrierbreak.com](https://lowvisiontools.barrierbreak.com/).
 
 <figure style="margin-left: 20%;">
-  <img width="60%" height="20%" src="/img/2018-06-10-about-css-conf-eu-berlin-2018/6.png" alt="this is fine dog on fire"/>
-  <figcaption>Macular Degeneration Simulation - Park</figcaption>
+  <img width="60%" height="20%" src="/img/2018-06-10-about-css-conf-eu-berlin-2018/6.png" alt="lowvisiontool color blindness"/>
+  <figcaption>Some guy with a black shirt and a red stripes</figcaption>
 </figure>
 
 <br>
