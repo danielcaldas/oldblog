@@ -18,8 +18,8 @@ email: caldasjdaniel@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   What you'll find here will mostly be related with web technologies
   and maybe other computer science topics.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://goodguydaniel.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  danielcaldas
 linkedin_username: daniel-caldas-81281b101
 
