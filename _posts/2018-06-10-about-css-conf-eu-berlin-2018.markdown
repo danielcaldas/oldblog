@@ -7,7 +7,7 @@ categories: jekyll update
 ![css conf eu 2018 berlin logo](/img/2018-06-10-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 <br>
 <br>
-Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin. In this post I will focus more on the talks, I will cover other venue details in another blog post on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
+Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in another blog post on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
 
 ## For starters
 
