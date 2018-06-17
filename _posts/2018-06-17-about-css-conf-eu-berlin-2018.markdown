@@ -4,7 +4,7 @@ title:  "CSSconf EU 2018"
 date:   2018-06-17 16:33:00 +0100
 categories: jekyll update
 ---
-![css conf eu 2018 berlin logo](/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
+![css conf eu 2018 berlin logo](/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 <br>
 <br>
 Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in another blog post on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
@@ -13,7 +13,7 @@ Hello all!! I decided to write this blog post to share with you the new things I
 
 If you were there as I was, you were probably wondering whether you were at the right conference, since at the beginning you would ask yourself **where is the CSS**?
 
-<img style="margin-left: 20%;" src="/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/2.gif" alt="john travolta lost gif"/>
+<img style="margin-left: 20%;" src="/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/2.gif" alt="john travolta lost gif"/>
 
 But don't give up already! It started poorly on the CSS field, but it evolved throughout the day with some top-notch talks, some of them include Razvan Caliman on *We have DevTools. What about DesignTools?* and Mike Riethmuller with *Strategy Guide for CSS Custom Properties*.
 
@@ -22,7 +22,7 @@ But don't give up already! It started poorly on the CSS field, but it evolved th
 <!--It’s Dangerous To Go Alone! Take This Team-->
 As I mentioned earlier the first talk wasn't so much into CSS, what Trent [(1)](#list-of-talks-speakers-and-other-resources) gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never even be considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as *burnout*. The term *mindfulness* came along somewhere in the talk as Trent was trying to explain the audience how he's able to keep a balanced mental health. Next we had Jackie Balzer [(2)](#list-of-talks-speakers-and-other-resources) who told us a bit of the history behind <a title="Behance is a network of sites and services specializing in self-promotion" href="https://www.behance.net/" target="_blank">Behance’s</a> codebase, how major redesigns left *Jurassic* footprints in the codebase, some of them in the form of very descriptive "*TODOs*", that today would probably require a herculean effort to remove. At the end Jackie just commented on how she was able to achieve peace with the reality of a fragmented codebase.
 
-<img width="60%" height="20%" style="margin-left: 20%;" src="/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/5.png" alt="this is fine dog on fire"/>
+<img width="60%" height="20%" style="margin-left: 20%;" src="/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/5.png" alt="this is fine dog on fire"/>
 
 <br>
 <!--The Web Is Not Just Left-to-Right -->
@@ -32,7 +32,7 @@ The next talk was truly eye-opening. Chen Hui Jing [(3)](#list-of-talks-speakers
 <!--Refactoring with CSS Grid-->
 Following we had Ollie Williams [(4)](#list-of-talks-speakers-and-other-resources) who shared the experience of using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid" target="_blank" title="mdn css grid">grid</a> in production. For the first time I had the opportunity to see some real life examples on <a href="https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation" target="_blank" title="graceful degradation mdn description">graceful degradation</a> and <a href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement" target="_blank" title="progressive enhancement description">progressive enhancement</a>, if you're wondering what's the difference between this two terms as I was, think of it the following way, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation" target="_blank" title="graceful degradation mdn description">graceful degradation</a> it's where you worry about providing the best experience possible, you use the latest bleeding edge web technologies to achieve that, for older browsers you will *degrade* user experience but always assuring some base line level of functionality. On the other hand, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement" target="_blank" title="progressive enhancement description">progressive enhancement</a> philosophy aims to provide the best possible experience in all browsers keeping the same levels of user experience, one will where possible use newest features to *progressively* improve the user experience.
 
-![progressive enhancement vs graceful degradation](/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/3.jpg "visualization of progressive enhancement vs graceful degradation")
+![progressive enhancement vs graceful degradation](/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/3.jpg "visualization of progressive enhancement vs graceful degradation")
 <br>
 <br>
 <!--We have DevTools. What about DesignTools?-->
@@ -58,7 +58,7 @@ From this talk onwards things start focusing a lot around the **accessibility** 
 When we hear “low vision” what do we think about? Well, Shwetank explained that these days low-vision it's just an umbrella term that aggregates a bunch of eyesight conditions that affect people in many different ways. Shwetank made very clear that not conditioned people don't know the real extent of these problems unless we talk with someone who experiences them every day. Following, Shwetank just drop this one "*What if we could make tools to make people see what people with low vision actually see?*" And that was exactly what he did, with CSS, SVG and <a href="https://webrtc.org/faq/#what-is-webrtc" target="_blank" title="what is webrtc">WebRTC</a> he was able to emulate different low vision conditions that were perceptible through a camera (with AR), this is a really noble thing to do, it certainly will make people more aware and comprehensive of this problems, specially those not affected by these problems, at the same time I guess it makes conditioned people less frustrated because I imagine it can be pretty hard to explain one's condition to another, so why not showing it instead? You can consult a list of low vision tools in <a href="https://lowvisiontools.barrierbreak.com/" target="_blank" title="barrierbreak low vision tools">lowvisiontools.barrierbreak.com</a>.
 
 <figure style="margin-left: 20%;">
-  <img width="60%" height="20%" src="/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/6.png" alt="lowvisiontool color blindness"/>
+  <img width="60%" height="20%" src="/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/6.png" alt="lowvisiontool color blindness"/>
   <figcaption>Some guy with a black shirt and a red stripes</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ Check out <a href="https://www.youtube.com/watch?v=U9UU_fgpmO8" target="_blank" 
 
 Is also relevant to mention that CSS variables are today implemented in all the major browsers (excluding IE of course).
 
-![can i use this CSS variables](/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/4.png "can i use this CSS variables")
+![can i use this CSS variables](/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/4.png "can i use this CSS variables")
 <br>
 <br>
 <!--Accessible by Law! Generating Colors with JS and CSS Custom Properties-->
@@ -111,7 +111,7 @@ The last talk [(11)](#list-of-talks-speakers-and-other-resources) was about desi
 - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports" target="_blank" title="feature queries mdn">Feature queries (@supports)</a>
 - <a href="https://wicg.github.io/container-queries/" target="_blank" title="container queries specification">Container queries</a>
 
-<img width="60%" height="20%" style="margin-left: 20%;" src="/blog/img/2018-06-10-about-css-conf-eu-berlin-2018/44.jpeg" alt="so hot right now CSS custom properties"/>
+<img width="60%" height="20%" style="margin-left: 20%;" src="/blog/img/2018-06-17-about-css-conf-eu-berlin-2018/44.jpeg" alt="so hot right now CSS custom properties"/>
 
 <br>
 
