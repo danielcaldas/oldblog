@@ -4,7 +4,7 @@ title:  "JSconf EU 2018"
 date:   2018-07-07 16:00 +0100
 categories: jekyll update
 ---
-![js conf eu 2018 berlin logo](/assets/img/about-js-conf-eu-berlin-2018/jsconf-logo-full.svg "JS Conf.EU 2018 logo")
+![js conf eu 2018 berlin logo](/assets/img/about-js-conf-eu-berlin-2018/jsconf-logo-full.svg "js conf eu 2018 logo")
 <br>
 <br>
 ## For starters
@@ -16,6 +16,7 @@ As you're probably expecting the talks weren't exclusively technical (of course 
 Now I'll just highlight a few interesting talks that I had the change to see on each day and at end I'll just drop the list of the must see talks.
 
 ### Day 1
+<!--Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018-->
 The opening talk was about errors [<span id="d1t1">(1)</span>](#mentioned-talks), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modeling process and architecture of our applications? Well that's another story.
 Questioning type systems and discussing errors from a human prespective a pretty valid statement was pointed out
 on Javascript error handling mechanism, **it is practically the same since it came out in <a href="https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c" target="_blank" title="javascript wtf is es6 es8 es 2017 ecmascript">ES3</a>**. Of course the language evolved in ways that try
@@ -28,6 +29,7 @@ Some conclusions here were:
 
 Other ideas that the speaker brought to discussion envolved <a href="https://users.ece.cmu.edu/~koopman/des_s99/sw_fault_tolerance/" target="_blank" title="cmu recovery blocks">recovery blocks</a> and <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf" target="_blank" title="microsoft technical report algebraic effects for functional programming">algebraic effects</a>.
 
+<!--Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018-->
 Next <a href="https://twitter.com/littledan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" title="daniel ehrenberg twitter">Daniel Ehrenberg</a> talks to us about numbers [<span id="d1t2">(2)</span>](#mentioned-talks). So the problem is that number representation in Javascript are limited to 2^35, as in:
 
 ```javascript
@@ -76,30 +78,133 @@ You can check the progress of the proposal at the github repository
 
 In my opinion may solve huge corner cases as the one exposed previously, still I think it will make arithmetic operations less error prune since we can eventually now run into *TypeErrors* for mixing numbers with big ints. If big int is not explicit enough to developers we can start to fall into messy errors, but maybe I'm over reacting here.
 
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-- Empathy driven * (Accessebility strikes again)
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
+<!--Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018-->
+You most certainly have seen the Philip Roberts' talk on the event loop <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=4s" target="_blank" title="Philip Roberts: What the heck is the event loop anyway? | JSConf EU">*What the heck is the event loop anyway? | JSConf EU*</a>.  If not, please stop reading this and watch that, it's way more important and cool as well. In this next talk we dive into the event loop to learn that the event loop is a bit more complex that what you saw in Philip Roberts' talk. To start we can think of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank" title="javascript mdn event loop">event loop</a> as the main function of the browser, something like:
+
+```javascript
+while (queue.waitForMessage()) {
+  queue.processNextMessage();
+}
+```
+
+A quick look into how task queues work on web browsers [<span id="d1t3">(3)</span>](#mentioned-talks). So first *tasks* are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slowdown at this point.
+<br/>
+There are this things called micro tasks (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" title="guide using promises mdn">promises' callbacks are handled as micro tasks</a>). Micro tasks are handled differently than regular tasks, micro tasks are queued in a micro task queue, this queue runs after each tasks and while the queue is emptying other micro tasks might be added and executed in the same event loop tick.
+
+![buzz and woody](/assets/img/about-js-conf-eu-berlin-2018/task-queue-meme.jpg "buzz and woody meme")
+
+There's more. Animations have a dedicated queue as well the **animation frame callback queue**. When some animation tasks ends the event loop proceeds to the repaint, meaning that we don't wait up for new animation tasks that might appear, and it makes sense because if that happens it's because some animation was requested to be displayed in the next frame (thus in the next repaint).
+
+At the end of these series of explanations we got the following pseudo code:
+
+```javascript
+while(true) {
+  queue = getNextQueue();
+  task = queue.pop();
+
+  execute(task);
+
+  while(microtaskQueue.hasTasks()) {
+    doMicroTask();
+  }
+
+  if (isRepaintTime()) {
+    animationTasks = animationQueue.copyTasks();
+
+    for (task in animationTasks) {
+      doAnimationTask(task);
+    }
+
+    repaint();
+  }
+}
+```
+
+And that should be it. **Now a quick peak into Node.js**. Node should be more simpler since:
+- There are no scripting parsing events.
+- There are no user interactions.
+- There are no animation frame callbacks.
+- There is no rendering pipeline.
+
+A few interesting things:
+- `setImmediate(callback)` is the same as `setTimeout(callback, 0)` but it runs first!
+- `process.nextTick(callback)` all this callbacks will run before the promises callbacks.
+- `setImmediate(callback)` does something on the next tick.
+- `process.nextTick(callback)` does something immediately.
+
+Below the pseudo-code for the Node event loop:
+
+```javascript
+while(tasksAreWaiting()) {
+  queue = getNextQueue();
+
+  while(queue.hasTasks()) {
+    task = queue.pop();
+
+    execute(task);
+
+    while(nextTickQueue.hasTasks()) {
+      doNextTickTask();
+    }
+
+    while(promiseQueue.hasTasks()) {
+      doPromiseTask();
+    }
+  }
+}
+```
+
+<small>(<a href="https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9" target="_blank" title="medium walking inside the node.js event loop">this nice</a> article explains with more detail the event loop inside Node.js)</small>
+
+Regarding <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" title="mdn web api worker">web workers</a> the only relevant fact pointed out is that they are simple to understand since each web worker runs it's own event loop on a separate thread and they are not allowed to manipulate DOM so no need to worry about user interactions here.
+
+If you are interested in more of this you can check this very complete post <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" title="tasks, microtasks, queues and schedules">*Tasks, microtasks, queues and schedules*</a>, it contains interesting animated demonstrations.
 
 
-- Back to the future JS: next amazing proposals*
-  - :: bind operator
-  - |> pipe operator
-  - await (not understood this one..)
-  - partial application (spread operator is referenced here)
-(tc39 is referenced here)
-- Adventures event loop *
-Potential cross reference https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/ REALLY good EXPLANATION
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
 - Web assembly talk *
 
-- Webdev in china *, it's worth it for being different
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Webdev in china *, it's worth it for being different
 - 10 things regret Node.js
  - Not sticking with Promises
  - Security
@@ -113,6 +218,7 @@ Potential cross reference https://jakearchibald.com/2015/tasks-microtasks-queues
 #### Mentioned talks
 - [(1)](#d1t1) <a href="https://www.youtube.com/watch?v=tteIQBPPxqc" target="_blank" title="kablooie: a history of errors & a future of solutions - sarah groff hennigh palermo - jsconf eu 2018">Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018</a> [[go back](#d1t1)].
 - [(2)](#d1t2) <a href="https://www.youtube.com/watch?v=RiU5OzMZ7z8" target="_blank" title="native bigints in javascript: a case study in tc39 - daniel ehrenberg - jsconf eu 2018">Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018</a> [[go back](#d1t2)].
+- [(3)](#d1t3) <a href="https://www.youtube.com/watch?v=u1kqx6AenYw" target="_blank" title="further adventures of the event loop - erin zimmer - jsconf eu 2018">Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018</a> [[go back](#d1t3)].
 
 ### Day 2
 
@@ -146,6 +252,14 @@ At the end of the talks, we just grabbed a bear near the river and enjoy the rem
 - pipe |>
 - ... and more ...
 
+Mention this talk HERE!!!!!!!!!!!!! - Back to the future JS: next amazing proposals*
+  - :: bind operator
+  - |> pipe operator
+  - await (not understood this one..)
+  - partial application (spread operator is referenced here)
+(tc39 is referenced here)
+
+
 <h2>New things I learned (about JS but not only)<br/>⚠️ randomly presented</h2>
 - There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
 - If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar way
@@ -173,8 +287,19 @@ fetchSomeRainbows().catch((rainbowError) => console.log('cannot rainbows'));
 - Facebook has built an ultra fast javascript bundler for React Native, if you are into this stuff you have
 probably heard about <a href="https://facebook.github.io/metro" target="_blank" title="metro The JavaScript bundler for React Native">metro</a>
 
+- When using <a href="" target="_blank" title=""><main></a> you will want to set a `role="main"` attribute
+if you want to support IE11.
+
+- One should add `role="banner"` on your main header not to be confused with other headers that you might
+have.
+
+- Do you develop your features for accessibility? I mean can a disable person you only uses the keyboard use your web site/app? This question made me think.
+
+- An off-by-one error (OBOE), also commonly known as an OBOB (off-by-one bug), or OB1 error is a logic error involving the discrete equivalent of a boundary condition. It often occurs in computer programming when an iterative loop iterates one time too many or too few.
+
 ## Things that I kind of knew and got to confirm
 - You can practically do everything with Javascript today and people are serious about this.
--
+- I didn't know much about the browsers internals (e.g. event loop), but after this conference and this post
+at least I'm aware of that now :D.
 
 ## Our team (group photo)
