@@ -13,11 +13,11 @@ As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/up
 ## The talks (highlights)
 As you're probably expecting the talks weren't exclusively technical (of course we got to see a few *hands on* kind of presentation) topics ranged from ethics, productivity, history all the way to the more technical realm with performance, user experience, machine learning, IoT and of course the Javascript language itself (<a href="https://2018.jsconf.eu/schedule/" target="_blank" title="jsconf eu 2018 berlin schedule">check out the conference full schedule</a>). Also worth mentioning, there were a few electronic music live performances by <a href="https://twitter.com/nested_loops?lang=en" target="_blank" title="nested_loops twitter">nested_loops</a> and <a href="http://livejs.network/" target="_blank" title="live:js official website">live:js</a>, the sound and the visual effects played nicely producing <a href="https://www.youtube.com/watch?v=dPWRaN2PXZw" target="_blank" title="live:js opening performance youtube">a great show</a>.
 
-Now I'll just highlight a few interesting talks that I had the change to see on each day and at end I'll just drop the list of the must see talks.
+Now I'll just highlight a few interesting talks that I had the change to see on each day, I'll focus on the talks and content that were more meaningful in my opinion.
 
 ### Day 1
 <!--Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018-->
-The opening talk was about errors [<span id="d1t1">(1)</span>](#mentioned-talks), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modeling process and architecture of our applications? Well that's another story.
+The opening talk was about errors [<span id="d1t1">(1)</span>](#mentioned-talks-for-day-1), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modeling process and architecture of our applications? Well that's another story.
 Questioning type systems and discussing errors from a human prespective a pretty valid statement was pointed out
 on Javascript error handling mechanism, **it is practically the same since it came out in <a href="https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c" target="_blank" title="javascript wtf is es6 es8 es 2017 ecmascript">ES3</a>**. Of course the language evolved in ways that try
 to mitigate predictable runtime errors with static analysis, the ES5 brought along the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" title="mdn strict mode">strict mode</a>, strict mode is basically (talk quote) *"disallow bad code that otherwise would be allowed according to the language grammar"*. Next a list of how tipically errors are handled and here handled in the past was shown, from the classic *just crash* classic to exceptions, signals, options/maybes... .
@@ -30,7 +30,7 @@ Some conclusions here were:
 Other ideas that the speaker brought to discussion envolved <a href="https://users.ece.cmu.edu/~koopman/des_s99/sw_fault_tolerance/" target="_blank" title="cmu recovery blocks">recovery blocks</a> and <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf" target="_blank" title="microsoft technical report algebraic effects for functional programming">algebraic effects</a>.
 
 <!--Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018-->
-Next <a href="https://twitter.com/littledan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" title="daniel ehrenberg twitter">Daniel Ehrenberg</a> talks to us about numbers [<span id="d1t2">(2)</span>](#mentioned-talks). So the problem is that number representation in Javascript are limited to 2^35, as in:
+Next <a href="https://twitter.com/littledan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" title="daniel ehrenberg twitter">Daniel Ehrenberg</a> talks to us about numbers [<span id="d1t2">(2)</span>](#mentioned-talks-for-day-1). So the problem is that number representation in Javascript are limited to 2^35, as in:
 
 ```javascript
 const x = 2 ** 53;
@@ -87,7 +87,7 @@ while (queue.waitForMessage()) {
 }
 ```
 
-A quick look into how task queues work on web browsers [<span id="d1t3">(3)</span>](#mentioned-talks). So first *tasks* are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slowdown at this point.
+A quick look into how task queues work on web browsers [<span id="d1t3">(3)</span>](#mentioned-talks-for-day-1). So first *tasks* are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slowdown at this point.
 <br/>
 There are this things called micro tasks (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" title="guide using promises mdn">promises' callbacks are handled as micro tasks</a>). Micro tasks are handled differently than regular tasks, micro tasks are queued in a micro task queue, this queue runs after each tasks and while the queue is emptying other micro tasks might be added and executed in the same event loop tick.
 
@@ -158,53 +158,59 @@ while(tasksAreWaiting()) {
 
 Regarding <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" title="mdn web api worker">web workers</a> the only relevant fact pointed out is that they are simple to understand since each web worker runs it's own event loop on a separate thread and they are not allowed to manipulate DOM so no need to worry about user interactions here.
 
-If you are interested in more of this you can check this very complete post <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" title="tasks, microtasks, queues and schedules">*Tasks, microtasks, queues and schedules*</a>, it contains interesting animated demonstrations.
+If you are interested in more of this you can check this very complete post <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" title="tasks, microtasks, queues and schedules">*Tasks, micro tasks, queues and schedules*</a>, it contains interesting animated demonstrations.
+
+<!--Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018-->
+[<span id="d1t4">(4)</span>](#mentioned-talks-for-day-1) More than a year has passed since the release of <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts" target="_blank" title="">WebAssembly (WASM)</a>, it is still in its first steps towards what could be a game changer in web development (some say). In the next talk that I will mention WASM itself was introduced. So first of all WASM:
+- It's not very web, it's only pure computation.
+- It's not very assembly, it's not the code that actually runs on the machine, it's an abstraction.
+- In WASM we cannot perform system calls (unless with explicit access).
+- WASM cannot access additional hardware, you can check a simple example below.
+- <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format" target="_blank" title="mdn wasm understanding the text format">Web assembly text-format (WAT)</a> is the assembly language for WASM.
+
+```javascript
+// square.wasm
+(module
+  (func $square
+    (export "square")
+    (param $x i32)
+    (result i32)
+
+    (return
+      (i32.mul (get_local $x) (get_local $x))
+    )
+  )
+)
+```
+
+That's enough WAT for now, you're probably wondering how can we use WASM modules within javascript. It's actually simple, you just have a small amount of boilerplate to load the WASM module. Let's import and use `square.wasm` module.
+
+```javascript
+fetch('square.wasm').then(response =>
+  response.arrayBuffer()
+).then(bytes =>
+  WebAssembly.instantiate(bytes, importObject)
+).then(results => {
+  const square = results.instance.exports.square;
+
+  const x = square(2);
+
+  console.log(x); // 4
+});
+```
+
+Of course you probably won't be using many native WAT modules, you will compile your C, C++, Rust or whatever into WASM, using it the same way we did above.
+
+I think a very strong point was a little to much implicit during this talk, performance was mentioned still, with WASM we will be able to obtain a **more robust and coherent performance cross platform/browser** and **portability across operating systems and different CPU architectures**.
+
+<figure>
+  <img src="/assets/img/about-js-conf-eu-berlin-2018/wasm-diagram.png" alt="wasm diagram comparing to cpu architectures"/>
+  <figcaption>As you can see WASM sits between our source code and creates an abstraction layer on top of the various CPU architectures. This diagram is from the talk <i>Dan Callahan: Practical WebAssembly | JSConf Budapest 2017</i>.</figcaption>
+</figure>
+
+If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks <a href="https://www.youtube.com/watch?v=PpuAqLCraAQ" target="_blank" title="real world webassembly chrome dev summit 2017">Real World WebAssembly (Chrome Dev Summit 2017)</a> and <a href="https://www.youtube.com/watch?v=bac0dGQbUto" target="_blank" title="dan callahan: practical webassembly jsconf budapest 2017">Dan Callahan: Practical WebAssembly | JSConf Budapest 2017</a>.
 
 
-
-
-
-
-
-
-
-
-
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-
-- Web assembly talk *
-
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Webdev in china *, it's worth it for being different
 - 10 things regret Node.js
  - Not sticking with Promises
  - Security
@@ -215,10 +221,12 @@ If you are interested in more of this you can check this very complete post <a h
  - index.js
  - missing more 3?
 
-#### Mentioned talks
+#### Mentioned talks for day 1
 - [(1)](#d1t1) <a href="https://www.youtube.com/watch?v=tteIQBPPxqc" target="_blank" title="kablooie: a history of errors & a future of solutions - sarah groff hennigh palermo - jsconf eu 2018">Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018</a> [[go back](#d1t1)].
 - [(2)](#d1t2) <a href="https://www.youtube.com/watch?v=RiU5OzMZ7z8" target="_blank" title="native bigints in javascript: a case study in tc39 - daniel ehrenberg - jsconf eu 2018">Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018</a> [[go back](#d1t2)].
 - [(3)](#d1t3) <a href="https://www.youtube.com/watch?v=u1kqx6AenYw" target="_blank" title="further adventures of the event loop - erin zimmer - jsconf eu 2018">Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018</a> [[go back](#d1t3)].
+- [(4)](#d1t4) <a href="https://www.youtube.com/watch?v=CfdmzVos1Fs" target="_blank" title="hand-crafting webassembly - emil bay - jsconf eu 2018">Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018</a> [[go back](#d1t4)].
+- [(5)](#d1t5) <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" title="10 things i regret about node.js - ryan dahl - jsconf eu 2018">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018</a> [[go back](#d1t5)].
 
 ### Day 2
 
