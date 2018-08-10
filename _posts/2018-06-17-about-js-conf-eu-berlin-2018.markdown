@@ -246,14 +246,65 @@ And then a plot twist. At the end of complaining about Node.js Ryan presented a 
 
 ### Day 2
 
+
 - Deep learning
-
-
-
-
 - to push or not to push
 - tc39 panel
-- javascript the good parts
+
+
+<!--TC39 Panel - JSConf EU 2018-->
+Q: Date.parse who did it wrong v8 or chrome?
+Try out Date.parse("1octopos2018") in chrome dev console. Well when no date format is not matched it's up to the implementation to handle it
+that is why you would be getting different results in different browsers you will get `NaN` in Firefox and a numeric value in Chrome for instance.
+
+Q: How tc39 works?
+TC39 is a committee of delegates how are repsenting members in ECMA internation, they get togheter every 2 months for 3 days to discuss what proposals are up discuss what changes were in made. They operate on consensus wich means that we all have to agree for something to move forward wich is pretty unique in programming standards.
+
+Proposal process
+Stage 0 - pseudo stage, an idea, the proposal exists.
+Stage 1 - the committee has considered that the proposal is something worth to move forward and find a solution for it.
+Stage 2 - there is a draft, specification that identies what the behavior should be.
+Stage 3 - some browsers and other engines should already have implemented this feature
+Stage 4 - it's ready, and it should have already at least to shipping implementation in browsers.
+
+Q: Other languages use the `private` keyword for private members. How did we end up with the `#` for private methods and property access?
+https://github.com/tc39/proposal-private-methods
+
+private declaration vs private access
+
+#prop this.#prop
+
+Since javascript is not statically typed you cannot at runtime tell  I DON'T UNDERSTAND THIS !!!!!!!!!!!!
+
+
+Q: What is javascript identity? Are we moving towards other non strongly typed programming languages with object oriented programming (e.g. eith the introduction of es6 classes)? Or more functional? What are we aiming for?
+
+The idea it's to get the best of both worlds. Other languages such as Rust or Swift are largely influenced by both object oriented and functional paradigms.
+
+Q: What's the relationship between Javascript WASM as compile targets?
+Javascript and WASM are complementary as compile targets, so for some of the features that don't make sense in Javascript you can actually use WASM as the home for that feature where it could make more sense.
+
+
+Q: Can you show yours prespective on the flatten vs smoosh debate?
+There was a proposal to add `flatten` and `flatMap` to the Array prototype. Is was implemented and shipped by mozila, but soon they realize tha this was breaking certain web pages. Basically some web pages were relying on certain implementations not being there, this if of course the worst that can happen to a proposal, we don't want to break the web. So we rollback and we knew that we needed to change the proposal in some way. In this case because the name itself was a problem (`flatten`) we had to rename it somehow... The proposal author decided to send a <a href="https://github.com/tc39/proposal-flatMap/pull/56" target="_blank" title="tc39/proposal-flatMap rename flatten to smoosh">*joke pull request*</a> with a rename to `smoosh` and `smooshMap`, but it was not clear that this was a joke so... everybody freaked out.
+
+
+Q: What are some of the awesome features comming next?
+- optional chaining
+- pattern matching
+- class features (private and public class fields)
+- big ints
+
+Q: What about a native method for deep object cloning?
+Good idea, but very complex.
+
+Q: What's the medium turn around for a proposal to become reality?
+Some of them take years, but at least a year to 18 months it's a more realistic duration.
+
+<!--JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018-->
+
+
+
 
 - quick mentions:
 - look mum no hands
