@@ -55,7 +55,7 @@ Adding **1** we get:
 
 that is 900719925474099**4**. So... Ok we get it, with a 64 bit representation it's impossible to represent all the numbers since you have the limitation of a 64 bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.
 
-But wait, is this a real use case? Yes, <a href="https://developer.twitter.com/en/docs/basics/twitter-ids.html" target="_blank" title="twitter developers twitter ids (snowflake)">checkout Twitter IDs (snowflake) issue</a> that made them add an *id string* field so that when Javascript parses the id it keeps this unchanged id in the string format.
+But wait, is this a real use case? Yes, <a href="https://developer.twitter.com/en/docs/basics/twitter-ids.html" target="_blank" title="twitter developers twitter ids (snowflake)">checkout Twitter IDs (snowflake) issue</a> that made them add an `id_string` field so that when Javascript parses the id it keeps this unchanged id in the string format.
 The proposed solution are *BigInts*. Not some library such as <a href="https://github.com/indutny/bn.js/" target="_blank" title="BigNum in pure javascript">bn.js</a>, instead a native Javascript supported BigInt type.
 
 ```javascript
@@ -210,25 +210,55 @@ I think a very strong point was a little to much implicit during this talk, perf
 
 If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks <a href="https://www.youtube.com/watch?v=PpuAqLCraAQ" target="_blank" title="real world webassembly chrome dev summit 2017">Real World WebAssembly (Chrome Dev Summit 2017)</a> and <a href="https://www.youtube.com/watch?v=bac0dGQbUto" target="_blank" title="dan callahan: practical webassembly jsconf budapest 2017">Dan Callahan: Practical WebAssembly | JSConf Budapest 2017</a>.
 
+<!--10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018-->
+I couldn't have imagined a better talk to end day 1 [<span id="d1t5">(5)</span>](#mentioned-talks-for-day-1). On stage we had <a href="https://en.wikipedia.org/wiki/Ryan_Dahl" target="_blank" title="ryan dahl wiki page">Ryan Dahl</a> inventor of Node.js.
 
-- 10 things regret Node.js
- - Not sticking with Promises
- - Security
- - The build system (GYP)
- - package.json
- - node_modules
- - require("module") without the extension .js
- - index.js
- - missing more 3?
+First Ryan gives us a bit of context on the talk, like how we wanted to build better servers with event driven non blocking I/O, and why
+dynamic languages are great (for certain kind of tasks), being Javascript the best dynamic language.
+
+The talk had the following introduction:
+
+> *"(...) using Node now looks like nails on chalkboard to me, I see the bugs that I introduced, I mean at this point they are not really bugs it's just how it works, but they are bugs. They were design mistakes made that just cannot be corrected now because there's so much software that uses it (...) It offends my sensibilities (...)"*
+
+![ryan dahl thug life](/assets/img/about-js-conf-eu-berlin-2018/ryan-dahl-thug-life.png "ryan dahl thug life")
+
+So let's take look at the mentioned regrets:
+
+- **Not sticking with Promises** - promises were added very earlier, but Ryan decided to remove then because Node.js aim was to be minimalist;
+- **Security** - Javascript is a very secure sandbox, unfortunately in Node we just bound to everything, not safe. Networking access for instance is given by default.
+- **The build system (GYP)** - probably the biggest regret. Chrome used to use GYP, now it uses GN. There are several wrappers around this (e.g. node-gyp) which brings layers of unnecessary complexity and terrible experience for users.
+- **package.json** - allowing `require()` in Node semantics to look into `package.json` and look through files, this made `package.json` necessary to node applications, so we ended up with a centralized repository for modules. Ultimately NPM was included in the Node distribution.
+- **node_modules** - if you have multiple projects it tends to have multiple `node_modules` folders... It gets big.
+![node_modules heaviest object in the universe](/assets/img/about-js-conf-eu-berlin-2018/node-modules-meme.jpg "node_modules heaviest object in the universe")
+- **require("module") without the extension .js** - at some point someone thought that requiring files without the extension would be cleaner, so you just end up trying to lookup the extension in the filesystem, it is `.js`? `.jsx`? `.ts`? Well in this one I agree with Ryan just write down the f****** extension!
+- **index.js** - Ryan thought it was cute. There was `index.html` and in the same wave of thinking it should be cute to have an `index.js` why note? Well it ends up that this raised complexity of the module loading system unnecessarily.
+- **How user code is managed by the module system** - As Ryan was developing Node he focuses mainly on evented I/O leaving some things behind, one of them was the module system and how it manages user code.
+
+And then a plot twist. At the end of complaining about Node.js Ryan presented a possible alternative to Node.js and how it could be better.
+<a href="https://github.com/denoland/deno" target="_blank" title="A secure TypeScript runtime on V8">Deno</a> it's a a secure TypeScript runtime on V8. The main goals of deno are security, simplicity of the module system and support typescript out of the box.
 
 #### Mentioned talks for day 1
 - [(1)](#d1t1) <a href="https://www.youtube.com/watch?v=tteIQBPPxqc" target="_blank" title="kablooie: a history of errors & a future of solutions - sarah groff hennigh palermo - jsconf eu 2018">Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018</a> [[go back](#d1t1)].
 - [(2)](#d1t2) <a href="https://www.youtube.com/watch?v=RiU5OzMZ7z8" target="_blank" title="native bigints in javascript: a case study in tc39 - daniel ehrenberg - jsconf eu 2018">Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018</a> [[go back](#d1t2)].
 - [(3)](#d1t3) <a href="https://www.youtube.com/watch?v=u1kqx6AenYw" target="_blank" title="further adventures of the event loop - erin zimmer - jsconf eu 2018">Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018</a> [[go back](#d1t3)].
 - [(4)](#d1t4) <a href="https://www.youtube.com/watch?v=CfdmzVos1Fs" target="_blank" title="hand-crafting webassembly - emil bay - jsconf eu 2018">Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018</a> [[go back](#d1t4)].
-- [(5)](#d1t5) <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" title="10 things i regret about node.js - ryan dahl - jsconf eu 2018">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018</a> [[go back](#d1t5)].
+- [(5)](#d1t5) <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" title="10 things i regret about node.js - ryan dahl - jsconf eu 2018">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018</a> [[go back](#d1t5)] [<a href="http://tinyclouds.org/jsconf2018.pdf" target="_blank" title="design mistakes in node slides">slides</a>].
 
 ### Day 2
+
+- Deep learning
+
+
+
+
+- to push or not to push
+- tc39 panel
+- javascript the good parts
+
+- quick mentions:
+- look mum no hands
+- imagine a web without servers
+- ........
 
 <hr>
 
@@ -305,9 +335,10 @@ have.
 
 - An off-by-one error (OBOE), also commonly known as an OBOB (off-by-one bug), or OB1 error is a logic error involving the discrete equivalent of a boundary condition. It often occurs in computer programming when an iterative loop iterates one time too many or too few.
 
+- *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*)
+
 ## Things that I kind of knew and got to confirm
 - You can practically do everything with Javascript today and people are serious about this.
-- I didn't know much about the browsers internals (e.g. event loop), but after this conference and this post
-at least I'm aware of that now :D.
+- I didn't know much about the browsers internals (e.g. event loop task queues), but after this conference at least I'm aware of how much I don't know about it :D.
 
 ## Our team (group photo)
