@@ -39,6 +39,9 @@ Some conclusions here were:
 
 Other ideas that the speaker brought to discussion envolved <a href="https://users.ece.cmu.edu/~koopman/des_s99/sw_fault_tolerance/" target="_blank" title="cmu recovery blocks">recovery blocks</a> and <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/algeff-tr-2016-v2.pdf" target="_blank" title="microsoft technical report algebraic effects for functional programming">algebraic effects</a>.
 
+<hr>
+<br/>
+
 <!--Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018-->
 Next <a href="https://twitter.com/littledan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" title="daniel ehrenberg twitter">Daniel Ehrenberg</a> talks to us about numbers [<span id="d1t2">(2)</span>](#day-1). So the problem is that number representation in Javascript are limited to 2^35, as in:
 
@@ -88,8 +91,13 @@ You can check the progress of the proposal at the github repository
 
 In my opinion may solve huge corner cases as the one exposed previously, still I think it will make arithmetic operations less error prune since we can eventually now run into *TypeErrors* for mixing numbers with big ints. If big int is not explicit enough to developers we can start to fall into messy errors, but maybe I'm over reacting here.
 
+<hr>
+<br/>
+
 <!--Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018-->
-[<span id="d1t3">(3)</span>](#day-1) You most certainly have seen the Philip Roberts' talk on the event loop <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=4s" target="_blank" title="Philip Roberts: What the heck is the event loop anyway? | JSConf EU">*What the heck is the event loop anyway? | JSConf EU*</a>.  If not, please stop reading this and watch that, it's way more important and cool as well. In this next talk we dive into the event loop to learn that the event loop is a bit more complex that what you saw in Philip Roberts' talk. To start we can think of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank" title="javascript mdn event loop">event loop</a> as the main function of the browser, something like:
+[<span id="d1t3">(3)</span>](#day-1) You most certainly have seen the Philip Roberts' talk on the event loop <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=4s" target="_blank" title="Philip Roberts: What the heck is the event loop anyway? | JSConf EU">*What the heck is the event loop anyway? | JSConf EU*</a>.  If not, please stop reading this and watch that, it's way more important. In this next talk we dive into the event loop to learn that the event loop is a bit more complex that what you saw in Philip Roberts' talk.
+
+To start we can think of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank" title="javascript mdn event loop">event loop</a> as the main function of the browser, something like:
 
 ```javascript
 while (queue.waitForMessage()) {
@@ -170,6 +178,9 @@ Regarding <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" targ
 
 If you are interested in more of this you can check this very complete post <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" title="tasks, microtasks, queues and schedules">*Tasks, micro tasks, queues and schedules*</a>, it contains interesting animated demonstrations.
 
+<hr>
+<br/>
+
 <!--Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018-->
 [<span id="d1t4">(4)</span>](#day-1) More than a year has passed since the release of <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts" target="_blank" title="">WebAssembly (WASM)</a>, it is still in its first steps towards what could be a game changer in web development (some say). In the next talk that I will mention WASM itself was introduced. So first of all WASM:
 - It's not very web, it's only pure computation.
@@ -220,6 +231,9 @@ I think a very strong point was a little to much implicit during this talk, perf
 
 If you want to look more into the benefits or what actually could be achieved with WASM I highly recommend the two following talks <a href="https://www.youtube.com/watch?v=PpuAqLCraAQ" target="_blank" title="real world webassembly chrome dev summit 2017">Real World WebAssembly (Chrome Dev Summit 2017)</a> and <a href="https://www.youtube.com/watch?v=bac0dGQbUto" target="_blank" title="dan callahan: practical webassembly jsconf budapest 2017">Dan Callahan: Practical WebAssembly | JSConf Budapest 2017</a>.
 
+<hr>
+<br/>
+
 <!--10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018-->
 I couldn't have imagined a better talk to end day 1 [<span id="d1t5">(5)</span>](#day-1). On stage we had <a href="https://en.wikipedia.org/wiki/Ryan_Dahl" target="_blank" title="ryan dahl wiki page">Ryan Dahl</a> inventor of Node.js.
 First Ryan gives us a bit of context on the talk, like how we wanted to build better servers with event driven non blocking I/O, and why
@@ -251,12 +265,13 @@ And then a plot twist. At the end of complaining about Node.js Ryan presented a 
 <!--------->
 ### Day 2
 
-- (1) To push, or not to push?! - The future of HTTP/2 server push ???????????????https://www.youtube.com/watch?v=cznVISavm-k&t=671s???
+- [(1) To push, or not to push?! - The future of HTTP/2 server push - Patrick Hamann - JSConf EU 2018](#d2t1) [<a href="https://www.youtube.com/watch?v=cznVISavm-k" target="_blank" title="To push, or not to push?! - The future of HTTP/2 server push - Patrick Hamann - JSConf EU 2018">talk video</a>]
 - [(2) TC39 Panel - JSConf EU 2018](#d2t2) [<a href="https://www.youtube.com/watch?v=Hj5q8uyqGYc" target="_blank" title="TC39 Panel - JSConf EU 2018">talk video</a>]
 - [(3) JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018](#d2t3) [<a href="https://www.youtube.com/watch?v=5nmpokoRaZI" target="_blank" title="JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018">talk video</a>]
 - [(4) Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018](#d2t4) [<a href="https://www.youtube.com/watch?v=rJ_WvfF3FN8" target="_blank" title="Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018">talk video</a>]
 - [(5) Deep Learning in JS - Ashi Krishnan - JSConf EU 2018](#d2t5) [<a href="https://www.youtube.com/watch?v=SV-cgdobtTA" target="_blank" title="Deep Learning in JS - Ashi Krishnan - JSConf EU 2018">talk video</a>]
 
+<!--To push, or not to push?! - The future of HTTP/2 server push - Patrick Hamann - JSConf EU 2018-->
 [<span id="d2t1">(1)</span>](#day-2) First talk we'll see on day two is strictly related with JS it's a more broader theme in regards of performance and how can we improve resource loading, let's get to know a few of this technique and show that <a href="https://http2.github.io/" target="_blank" title="This is the home page for HTTP/2, a major revision of the Web's protocol">HTTP/2</a> solo will not solve all your performance problems.
 
 > HTTP/2 will solve this.
@@ -422,21 +437,10 @@ Allow us to decorate our HTML in ways that we are able to prioritize resources e
 - 🚀 Decorate HTML with priority hints
 - 🚀 Use Early Hints when available
 
+<hr>
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--TC39 Panel - JSConf EU 2018-->
 [<span id="d2t2">(2)</span>](#day-2) A very enlightening moment was the conversation and *Q&A* session with the <a href="https://github.com/orgs/tc39/people" target="_blank" title="TC39 github">TC39 panel</a>. Not only I got an insider perspective on how things work within the ones behind for the mediation of ECMAScript specification but got to ear some of the upcoming new exciting features for Javascript. I'll leave below a resumed transcription of the most relevant discussed topics during the *Q&A* session.
 
 #### (Q) How does TC39 works?
@@ -501,7 +505,7 @@ Good idea, but very complex. 😎
 - <a href="https://github.com/Microsoft/ChakraCore" target="_blank" title="ChakraCore is the core part of the Chakra Javascript engine that powers Microsoft Edge
 ">Chakra</a> for Microsoft Edge.
 - <a href="https://developer.apple.com/documentation/javascriptcore" target="_blank" title="JavaScriptCore
-">**J**ava**S**cript**C**ore (JSC)</a> powers Safari and also react native applications.
+">**J**ava**S**cript**C**ore (JSC)</a> powers Safari and also React Native applications.
 
 (Aside note, if you want to run Javascript directly in several engines you can install <a href="https://github.com/GoogleChromeLabs/jsvu" target="_blank" title="JavaScript (engine) Version Updater">jsvu</a>.)
 
@@ -517,7 +521,7 @@ Regarding the important part (yellow square in the middle with interpreter and o
 
 So we can already see the that the base architectural components for a Javascript engines are: **parser**, **interpreter** and **compiler pipeline**.
 
-Now, the most interesting part is around Objects and how they are represented within engines. So objects are basically dictionaries like in the following image.
+Now, the most interesting part is around Objects and how they are represented within engines. So Objects are basically dictionaries like in the following image.
 
 ![simple shape illustration](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-1.png "simple shape illustration")
 
@@ -529,7 +533,7 @@ So an object has this string attributes that map to the value and metainformatio
 
 You can access this them in Javascript with `Object.getOwnPropertyDescriptors(someObject)`.
 
-So another interesting fact around objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called **Shape** (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is *hidden class*).
+So another interesting fact around Objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called **Shape** (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is *hidden class*).
 
 Know let's check how object declaration and property access are optimized in engines. Basically they build a doubled linked tree like structure that defines all possible shapes and each new added property only stores metainformation regarding itself. The `Offset` just tells you where you will find the property within the JSON object.
 
@@ -547,47 +551,15 @@ At the end two important notes:
 - **Always initialize objects in the same way** so that engines can maximize the reuse of shapes.
 - **Don't mess with the property attributes of array elements** so that they can be stored and operated upon efficiently.
 
-(**Note**: I skipped arrays in the above talk as they are handled in similar ways and with similar mechanisms compared to objects)
+(**Note**: I skipped arrays in the above talk as they are handled in similar ways and with similar mechanisms compared to objects.)
+
+<hr>
+<br/>
 
 On this second day I would also like to mention two more talks, *A Web Without Servers* [<span id="d2t4">(4)</span>](#day-2) because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also *Deep Learning in JS* [<span id="d2t5">(5)</span>](#day-2) because machine learning is a pretty hot topic and we should stand out the fact that is <a href="https://js.tensorflow.org/" target="_blank" title="A JavaScript library for training and deploying ML models in the browser and on Node.js">TensorFlow.js</a> already available this makes Javascript even more broad in terms of its applications.
 
-## Berlin
-You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
-
-## The venue
-So, the event toke place at the Berlin Arena, an old building/factory kind of *hipster* place, very cool and very hot by that time of the year! Good thing water was free of charge and could be reached by a few steps from almost any place inside the arena. So yeah despite the cool space and stage set up, there where always free soft drinks (and frozen yogurt!) around to make sure one's never dehydrate. Talking about stage, aside the unbearable heat, the space was pretty cozy with round tables so that people could have laptops and other stuff on the table while assisting to the talks.
-
-![stage](/assets/img/about-js-conf-eu-berlin-2018/stage.jpeg "js conf eu 2018 berlin stage")
-
-Throughout the venue there were exhibition stands of the sponsor companies, aside the *goodies* you could see products demonstration, talk to people about the company or even get a job interview.
-
-Breakfast, lunch and dinner where included in the ticket, so me and my colleagues agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...
-
-| []() | []() |
-![vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/food-sample.jpeg "js conf eu 2018 berlin vegan food sample")  |  ![another vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/another-food-sample.jpeg "js conf eu 2018 berlin another vegan food sample")
-
-(*Above, clear proof of laziness, using tables to display images side by side so that I don't need to leave the markdown file. Shame on me.*)
-
-At the end of the talks, we just grabbed a bear near the river and enjoy the remaining sunshine (no, we could not use the pool).
-
-<br/>
-
-![js conf eu 2018 berlin venue outside view](/assets/img/about-js-conf-eu-berlin-2018/venue-view-outside.jpeg "js conf eu 2018 berlin venue outside view")
-
-## Next awesome features for JS (chat with TC39 panel)
-- ?? optional chaining and coalescing operator
-- pipe |>
-- ... and more ...
-
-Mention this talk HERE!!!!!!!!!!!!! - Back to the future JS: next amazing proposals*
-  - :: bind operator
-  - |> pipe operator
-  - await (not understood this one..)
-  - partial application (spread operator is referenced here)
-(tc39 is referenced here)
-
-
-<h2>New things I learned (about JS but not only)<br/>⚠️ randomly presented</h2>
+<!--Things I learned-->
+<h2>Things I learned (⚠️ randomly presented)</h2>
 - There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
 - If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar way
 if you reject a promise passing in a throw statement the catch will not evaluate as in:
@@ -612,23 +584,41 @@ fetchSomeRainbows().catch((rainbowError) => console.log('unable to fetch rainbow
 ```
 
 - Facebook has built an ultra fast javascript bundler for React Native, if you are into this stuff you have
-probably heard about <a href="https://facebook.github.io/metro" target="_blank" title="metro The JavaScript bundler for React Native">metro</a>
-
+probably heard about <a href="https://facebook.github.io/metro" target="_blank" title="metro The JavaScript bundler for React Native">metro</a>.
 - When using <a href="" target="_blank" title=""><main></a> you will want to set a `role="main"` attribute
 if you want to support IE11.
-
 - One should add `role="banner"` on your main header not to be confused with other headers that you might
 have.
-
 - Do you develop your features for accessibility? I mean can a disable person you only uses the keyboard use your web site/app? This question made me think.
-
-- An off-by-one error (OBOE), also commonly known as an OBOB (off-by-one bug), or OB1 error is a logic error involving the discrete equivalent of a boundary condition. It often occurs in computer programming when an iterative loop iterates one time too many or too few.
-
-- *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*)
-
-## Things that I kind of knew and got to confirm
+- *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*).
 - You can practically do everything with Javascript today and people are serious about this.
 - I didn't know much about the browsers internals (e.g. event loop task queues), but after this conference at least I'm aware of how much I don't know about it :D.
 
-## Our team (group photo)
+## The venue
+So, the event toke place at the Berlin Arena, an old building/factory kind of *hipster* place, very cool and very hot by that time of the year! Good thing water was free of charge and could be reached by a few steps from almost any place inside the arena. So yeah despite the cool space and stage set up, there where always free soft drinks (and frozen yogurt!) around to make sure one's never dehydrate. Talking about stage, aside the unbearable heat, the space was pretty cozy with round tables so that people could have laptops and other stuff on the table while assisting to the talks.
 
+![stage](/assets/img/about-js-conf-eu-berlin-2018/stage.jpeg "js conf eu 2018 berlin stage")
+
+Throughout the venue there were exhibition stands of the sponsor companies, aside the *goodies* you could see products demonstration, talk to people about the company or even get a job interview.
+
+Breakfast, lunch and dinner where included in the ticket, so me and my colleagues agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...
+
+| []() | []() |
+![vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/food-sample.jpeg "js conf eu 2018 berlin vegan food sample")  |  ![another vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/another-food-sample.jpeg "js conf eu 2018 berlin another vegan food sample")
+
+(*Above, clear proof of laziness, using tables to display images side by side so that I don't need to leave the markdown file. Shame on me.*)
+
+At the end of the talks, we just grabbed a bear near the river and enjoy the remaining sunshine (no, we could not use the pool).
+
+<br/>
+
+![js conf eu 2018 berlin venue outside view](/assets/img/about-js-conf-eu-berlin-2018/venue-view-outside.jpeg "js conf eu 2018 berlin venue outside view")
+
+<br>
+
+## Berlin
+You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
+
+And this is me (left) and my colleagues on our last day in Berlin.
+
+![berliner dom group photo](/assets/img/about-js-conf-eu-berlin-2018/group-photo.jpeg "berliner dom group photo")
