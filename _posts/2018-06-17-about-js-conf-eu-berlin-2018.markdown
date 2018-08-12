@@ -13,8 +13,11 @@ As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/up
 ## Talks
 As you're probably expecting the talks weren't exclusively technical (of course we got to see a few *hands on* kind of presentation) topics ranged from ethics, productivity, history all the way to the more technical realm with performance, user experience, machine learning, IoT and of course the Javascript language itself (<a href="https://2018.jsconf.eu/schedule/" target="_blank" title="jsconf eu 2018 berlin schedule">check out the conference full schedule</a>). Also worth mentioning, there were a few electronic music live performances by <a href="https://twitter.com/nested_loops?lang=en" target="_blank" title="nested_loops twitter">nested_loops</a> and <a href="http://livejs.network/" target="_blank" title="live:js official website">live:js</a>, the sound and the visual effects played nicely producing <a href="https://www.youtube.com/watch?v=dPWRaN2PXZw" target="_blank" title="live:js opening performance youtube">a great show</a>.
 
-Now I'll just highlight a few interesting talks that I had the change to see on each day, I'll focus on the talks and content that were more meaningful in my opinion.
+Now I'll focus on a few interesting talks that I had the change to see on each day, I'll give an overview on the content that was more meaningful (in my opinion of course). I'll also break the talks into <a href="#day-1" title="Day 1 talks">Day 1</a> and <a href="#day-2" title="Day 2 talks">Day 2</a>.
 
+<!--------->
+<!--Day 1-->
+<!--------->
 ### Day 1
 <!--Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018-->
 The opening talk was about errors [<span id="d1t1">(1)</span>](#mentioned-talks-for-day-1), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modeling process and architecture of our applications? Well that's another story.
@@ -238,25 +241,16 @@ And then a plot twist. At the end of complaining about Node.js Ryan presented a 
 <a href="https://github.com/denoland/deno" target="_blank" title="A secure TypeScript runtime on V8">Deno</a> it's a a secure TypeScript runtime on V8. The main goals of deno are security, simplicity of the module system and support typescript out of the box.
 
 #### Mentioned talks for day 1
-- [(1)](#d1t1) <a href="https://www.youtube.com/watch?v=tteIQBPPxqc" target="_blank" title="kablooie: a history of errors & a future of solutions - sarah groff hennigh palermo - jsconf eu 2018">Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018</a> [[go back](#d1t1)].
-- [(2)](#d1t2) <a href="https://www.youtube.com/watch?v=RiU5OzMZ7z8" target="_blank" title="native bigints in javascript: a case study in tc39 - daniel ehrenberg - jsconf eu 2018">Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018</a> [[go back](#d1t2)].
-- [(3)](#d1t3) <a href="https://www.youtube.com/watch?v=u1kqx6AenYw" target="_blank" title="further adventures of the event loop - erin zimmer - jsconf eu 2018">Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018</a> [[go back](#d1t3)].
-- [(4)](#d1t4) <a href="https://www.youtube.com/watch?v=CfdmzVos1Fs" target="_blank" title="hand-crafting webassembly - emil bay - jsconf eu 2018">Hand-crafting WebAssembly - Emil Bay - JSConf EU 2018</a> [[go back](#d1t4)].
+- [(1)](#d1t1) <a href="https://www.youtube.com/watch?v=tteIQBPPxqc" target="_blank" title="kablooie: a history of errors & a future of solu2ions - sarah groff hennigh palermo - jsconf eu 2018">Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018</a> [[go back](#d1t1)].
+- [(3)](#d1t2) <a href="https://www.youtube.com/watch?v=RiU5OzMZ7z8" target="_blank" title="native bigints in javascript: a case study in tc39 - daniel ehrenberg - jsconf eu 2018">Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018</a> [[go back](#d1t2)].
+- [(4)](#d1t3) <a href="https://www.youtube.com/watch?v=u1kqx6AenYw" target="_blank" title="further adventures of the event loop - erin zimmer - jsconf eu 2018">Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018</a> [[go back](#d1t3)].
 - [(5)](#d1t5) <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" title="10 things i regret about node.js - ryan dahl - jsconf eu 2018">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018</a> [[go back](#d1t5)] [<a href="http://tinyclouds.org/jsconf2018.pdf" target="_blank" title="design mistakes in node slides">slides</a>].
 
+<!--------->
+<!--Day 2-->
+<!--------->
 ### Day 2
-
-
-- Deep learning
-- to push or not to push
-- tc39 panel
-
-
-<!--TC39 Panel - JSConf EU 2018-->
-Q: Date.parse who did it wrong v8 or chrome?
-Try out Date.parse("1octopos2018") in chrome dev console. Well when no date format is not matched it's up to the implementation to handle it
-that is why you would be getting different results in different browsers you will get `NaN` in Firefox and a numeric value in Chrome for instance.
-
+[<span id="d2t2">(2)</span>](#mentioned-talks-for-day-2)
 Q: How tc39 works?
 TC39 is a committee of delegates how are repsenting members in ECMA internation, they get togheter every 2 months for 3 days to discuss what proposals are up discuss what changes were in made. They operate on consensus wich means that we all have to agree for something to move forward wich is pretty unique in programming standards.
 
@@ -302,7 +296,7 @@ Q: What's the medium turn around for a proposal to become reality?
 Some of them take years, but at least a year to 18 months it's a more realistic duration.
 
 <!--JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018-->
-A vital part of the Javascript runtimes are engines. V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
+A vital part of the Javascript runtimes are engines [<span id="d2t3">(3)</span>](#mentioned-talks-for-day-2). V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
 - SpiderMonkey powers Firefox and there is a Node.js fork that uses SpiderMonkey (SpiderNode https://github.com/mozilla/spidernode)
 - Chakra for Microsoft Edge also has a Node.js fork. (https://github.com/nodejs/node-chakracore)
 
@@ -357,9 +351,14 @@ At the end two important notes:
 
 (**Note**: I skipped arrays in the above talk as they are handled in similar ways and with similar mechanisms compared to objects)
 
+On this second day I would also like to mention two more talks, *A Web Without Servers* [<span id="d2t4">(4)</span>](#mentioned-talks-for-day-2) because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also *Deep Learning in JS* [<span id="d2t5">(5)</span>](#mentioned-talks-for-day-2) because machine learning is a pretty hot topic and we should stand out the fact that is <a href="https://js.tensorflow.org/" target="_blank" title="A JavaScript library for training and deploying ML models in the browser and on Node.js">TensorFlow.js</a> already available this makes Javascript even more broad.
 
-
-<hr>
+#### Mentioned talks for day 2
+- (1) To push, or not to push?! - The future of HTTP/2 server push ???????????????https://www.youtube.com/watch?v=cznVISavm-k&t=671s???
+- [(2)](#d2t2) <a href="https://www.youtube.com/watch?v=Hj5q8uyqGYc" target="_blank" title="TC39 Panel - JSConf EU 2018">TC39 Panel - JSConf EU 2018</a> [[go back](#d2t2)].
+- [(3)](#d2t3) <a href="https://www.youtube.com/watch?v=5nmpokoRaZI" target="_blank" title="JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018">JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018</a> [[go back](#d2t3)].
+- [(4)](#d2t4) <a href="https://www.youtube.com/watch?v=rJ_WvfF3FN8" target="_blank" title="Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018">Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018</a> [[go back](#d2t4)].
+- [(5)](#d2t5) <a href="https://www.youtube.com/watch?v=SV-cgdobtTA" target="_blank" title="Deep Learning in JS - Ashi Krishnan - JSConf EU 2018">Deep Learning in JS - Ashi Krishnan - JSConf EU 2018</a> [[go back](#d2t5)].
 
 ## Berlin
 You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
