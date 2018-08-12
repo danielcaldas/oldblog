@@ -11,7 +11,7 @@ categories: jekyll update
 As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/update/2018/06/17/about-css-conf-eu-berlin-2018.html) I will now talk a bit about the JSConf EU 2018 that preceded the CSSConf in the Berlin Arena (June 2nd and 3rd).
 
 #### What will you find here
-- [Talks (in depth coverage of selected talks)](#talks)
+- [Talks (in-depth coverage of selected talks)](#talks)
   - [Day 1](#day-1)
   - [Day 2](#day-2)
 - [Things I learned](#things-i-learned)
@@ -35,10 +35,10 @@ Now I'll focus on a few interesting talks that I had the change to see on each d
 - [(5) 10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018](#d1t5) [<a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" title="10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018">talk video</a>] [<a href="http://tinyclouds.org/jsconf2018.pdf" target="_blank" title="design mistakes in node slides">slides</a>].
 
 <!--Kablooie: A History of Errors & a Future of Solutions - Sarah Groff Hennigh Palermo - JSConf EU 2018-->
-The opening talk was about errors [<span id="d1t1">(1)</span>](#day-1), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modeling process and architecture of our applications? Well that's another story.
-Questioning type systems and discussing errors from a human prespective a pretty valid statement was pointed out
+The opening talk was about errors [<span id="d1t1">(1)</span>](#day-1), yes errors. I've highlighted this topic because error handling is often forgotten or skipped but shouldn't this be part of the modelling process and architecture of our applications? Well that's another story.
+Questioning type systems and discussing errors from a human perspective a pretty valid statement was pointed out
 on Javascript error handling mechanism, **it is practically the same since it came out in <a href="https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c" target="_blank" title="JavaScript — WTF is ES6, ES8, ES 2017, ECMAScript… ?">ES3</a>**. Of course the language evolved in ways that try
-to mitigate predictable runtime errors with static analysis, the ES5 brought along the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" title="Strict mode">strict mode</a>, strict mode is basically (talk quote) *"disallow bad code that otherwise would be allowed according to the language grammar"*. Next a list of how tipically errors are handled and here handled in the past was shown, from the classic *just crash* classic to exceptions, signals, options/maybes... .
+to mitigate predictable runtime errors with static analysis, the ES5 brought along the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" title="Strict mode">strict mode</a>, strict mode is basically (talk quote) *"disallow bad code that otherwise would be allowed according to the language grammar"*. Next a list of how typically errors are handled and here handled in the past was shown, from the classic *just crash* classic to exceptions, signals, options/maybes....
 Some conclusions here were:
  - We need more robust way to deal with nullity (<a href="https://github.com/tc39/proposal-optional-chaining" target="_blank" title="tc39 optional chaining proposal">optional chaining tc39 proposal</a>)
 - Expand ways to work with errors (e.g. *onError* event listeners).
@@ -74,7 +74,7 @@ Adding **1** we get:
 
 > 0 10000110100 00000000000000000000000000000000000000000000000000**1**
 
-that is 900719925474099**4**. So... Ok we get it, with a 64 bit representation it's impossible to represent all the numbers since you have the limitation of a 64 bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.
+that is 900719925474099**4**. So... Ok we get it, with a 64-bit representation it's impossible to represent all the numbers since you have the limitation of a 64-bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.
 
 But wait, is this a real use case? Yes, <a href="https://developer.twitter.com/en/docs/basics/twitter-ids.html" target="_blank" title="twitter developers twitter ids (snowflake)">checkout Twitter IDs (snowflake) issue</a> that made them add an `id_string` field so that when Javascript parses the id it keeps this unchanged id in the string format.
 The proposed solution is <a href="https://github.com/tc39/proposal-bigint" target="_blank" title="tc39/proposal-bigint">*BigInt*</a>. Not some library such as <a href="https://github.com/indutny/bn.js/" target="_blank" title="BigNum in pure javascript">bn.js</a>, instead a native Javascript supported BigInt type.
@@ -97,13 +97,13 @@ y = x + 1
 You can check the progress of the proposal at the github repository
 <a href="https://github.com/tc39/proposal-bigint" target="_blank" title="arbitrary precision integers in javascript">tc39/proposal-bigint</a>, it is at the time of this writing in stage 3.
 
-In my opinion may solve huge corner cases as the one exposed previously, still I think it will make arithmetic operations less error prune since we can eventually now run into *TypeErrors* for mixing numbers with big ints. If big int is not explicit enough to developers we can start to fall into messy errors, but maybe I'm over reacting here.
+In my opinion may solve huge corner cases as the one exposed previously, still I think it will make arithmetic operations less error prune since we can eventually now run into *TypeErrors* for mixing numbers with BigInts. If BigInt is not explicit enough to developers we can start to fall into messy errors, but maybe I'm overreacting here.
 
 <hr>
 <br/>
 
 <!--Further Adventures of the Event Loop - Erin Zimmer - JSConf EU 2018-->
-[<span id="d1t3">(3)</span>](#day-1) You most certainly have seen the Philip Roberts' talk on the event loop <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=4s" target="_blank" title="Philip Roberts: What the heck is the event loop anyway? | JSConf EU">*What the heck is the event loop anyway? | JSConf EU*</a>.  If not, please stop reading this and watch that, it's way more important. In this next talk we dive into the event loop to learn that the event loop is a bit more complex that what you saw in Philip Roberts' talk.
+[<span id="d1t3">(3)</span>](#day-1) You most certainly have seen the Philip Roberts' talk on the event loop <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=4s" target="_blank" title="Philip Roberts: What the heck is the event loop anyway? | JSConf EU">*What the heck is the event loop anyway? | JSConf EU*</a>.  If not, please stop reading this and watch that, it's way more important. In this next talk we dive into the event loop to learn that the event loop is a bit more complex than what you saw in Philip Roberts' talk.
 
 To start we can think of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank" title="javascript mdn event loop">event loop</a> as the main function of the browser, something like:
 
@@ -113,9 +113,9 @@ while (queue.waitForMessage()) {
 }
 ```
 
-A quick look into how task queues work on web browsers. So first *tasks* are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slowdown at this point.
+A quick look into how task queues work on web browsers. So first *tasks* are small unities of work to be executed from start to finish. Rendering pipeline in browsers is responsible for painting things in the browser. This pipeline can run when a task finishes, but the rendering pipeline has a separate time cycle and sometimes waiting is inevitable between the time a tasks finished and the time render pipeline runs again. Also if you have a task that takes really a long time to run the rendering pipeline has to wait, potentially your page will start to slow down at this point.
 <br/>
-There are this things called micro tasks (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" title="guide using promises mdn">promises' callbacks are handled as micro tasks</a>). Micro tasks are handled differently than regular tasks, micro tasks are queued in a micro task queue, this queue runs after each tasks and while the queue is emptying other micro tasks might be added and executed in the same event loop tick.
+There are this things called micro-tasks (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" title="guide using promises mdn">promises' callbacks are handled as micro-tasks</a>). Micro-tasks are handled differently than regular tasks, micro-tasks are queued in a micro task queue, this queue runs after each task and while the queue is emptying other micro-tasks might be added and executed in the same event loop tick.
 
 ![buzz and woody](/assets/img/about-js-conf-eu-berlin-2018/task-queue-meme.jpg "buzz and woody meme")
 
@@ -146,7 +146,7 @@ while(true) {
 }
 ```
 
-And that should be it. **Now a quick peak into Node.js**. Node should be more simpler since:
+And that should be it. **Now a quick peek into Node.js**. Node should be more simpler since:
 - There are no scripting parsing events.
 - There are no user interactions.
 - There are no animation frame callbacks.
@@ -230,7 +230,7 @@ fetch('square.wasm').then(response =>
 
 Of course you probably won't be using many native WAT modules, you will compile your C, C++, Rust or whatever into WASM, using it the same way we did above.
 
-I think a very strong point was a little to much implicit during this talk, performance was mentioned still, with WASM we will be able to obtain a **more robust and coherent performance cross platform/browser** and **portability across operating systems and different CPU architectures**.
+I think a very strong point was a little too much implicit during this talk, performance was mentioned still, with WASM we will be able to obtain a **more robust and coherent performance cross platform/browser** and **portability across operating systems and different CPU architectures**.
 
 <figure>
   <img src="/assets/img/about-js-conf-eu-berlin-2018/wasm-diagram.png" alt="wasm diagram comparing to cpu architectures"/>
@@ -244,8 +244,7 @@ If you want to look more into the benefits or what actually could be achieved wi
 
 <!--10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018-->
 I couldn't have imagined a better talk to end day 1 [<span id="d1t5">(5)</span>](#day-1). On stage we had <a href="https://en.wikipedia.org/wiki/Ryan_Dahl" target="_blank" title="ryan dahl wiki page">Ryan Dahl</a> inventor of Node.js.
-First Ryan gives us a bit of context on the talk, like how we wanted to build better servers with event driven non blocking I/O, and why
-dynamic languages are great (for certain kind of tasks), being Javascript the best dynamic language.
+First Ryan gives us a bit of context on the talk, like how we wanted to build better servers with event-driven non-blocking I/O, and why dynamic languages are great (for certain kind of tasks), being Javascript the best dynamic language.
 
 The talk had the following introduction:
 
@@ -261,9 +260,9 @@ So let's take look at the mentioned regrets:
 - **package.json** - allowing `require()` in Node semantics to look into `package.json` and look through files, this made `package.json` necessary to node applications, so we ended up with a centralized repository for modules. Ultimately NPM was included in the Node distribution.
 - **node_modules** - if you have multiple projects it tends to have multiple `node_modules` folders... It gets big.
 ![node_modules heaviest object in the universe](/assets/img/about-js-conf-eu-berlin-2018/node-modules-meme.jpg "node_modules heaviest object in the universe")
-- **require("module") without the extension .js** - at some point someone thought that requiring files without the extension would be cleaner, so you just end up trying to lookup the extension in the filesystem, it is `.js`? `.jsx`? `.ts`? Well in this one I agree with Ryan just write down the f****** extension!
+- **require("module") without the extension .js** - at some point someone thought that requiring files without the extension would be cleaner, so you just end up trying to look up the extension in the filesystem, it is `.js`? `.jsx`? `.ts`? Well in this one I agree with Ryan just write down the f****** extension!
 - **index.js** - Ryan thought it was cute. There was `index.html` and in the same wave of thinking it should be cute to have an `index.js` why note? Well it ends up that this raised complexity of the module loading system unnecessarily.
-- **How user code is managed by the module system** - As Ryan was developing Node he focuses mainly on evented I/O leaving some things behind, one of them was the module system and how it manages user code.
+- **How user code is managed by the module system** - As Ryan was developing Node he focuses mainly on *evented* I/O leaving some things behind, one of them was the module system and how it manages user code.
 
 And then a plot twist. At the end of complaining about Node.js Ryan presented a possible alternative to Node.js and how it could be better.
 <a href="https://github.com/denoland/deno" target="_blank" title="A secure TypeScript runtime on V8">deno</a> it's a a secure TypeScript runtime on V8. The main goals of deno are **security**, **simplicity of the module system** and **support typescript out of the box**.
@@ -551,7 +550,7 @@ But! This isn't always the case it turns out that for cases where you have alrea
 
 ![shape extended exception](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-3.png "shape extended exception")
 
-Then the main motivation for engines to have shapes is <a href="https://github.com/v8/v8/wiki/Design-Elements#fast-property-access" target="_blank" title="v8 design elements fast property access">inline cache (IC)</a>. This mechanism stores information about where to find properties within an object so that we can optimize the property lookup. Basically for a given retrieved property it stores the offset where the property was found inside the shape, that way you can skip the fetch of the property metainformation to get the offset, you just access it right away!
+Then the main motivation for engines to have shapes is <a href="https://github.com/v8/v8/wiki/Design-Elements#fast-property-access" target="_blank" title="v8 design elements fast property access">inline cache (IC)</a>. This mechanism stores information about where to find properties within an object so that we can optimize the property look up. Basically for a given retrieved property it stores the offset where the property was found inside the shape, that way you can skip the fetch of the property metainformation to get the offset, you just access it right away!
 
 ![inline cache illustration](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-4.png "inline cache illustration")
 
@@ -614,7 +613,7 @@ So, the event toke place at the Berlin Arena, an old building/factory kind of *h
 
 Throughout the venue there were exhibition stands of the sponsor companies, aside the *goodies* you could see products demonstration, talk to people about the company or even get a job interview.
 
-Breakfast, lunch and dinner where included in the ticket, so me and my colleagues agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...
+Breakfast, lunch and dinner where included in the ticket, so we (me and my colleagues) agreed that it would be worth and try and so we venture into the vegan world (for me practically unknown at the time). The food was nice I mean, I had the opportunity to try a few dishes such as vegan hamburger, vegan gnocchi, vegan pasta, you get it...
 
 | *gnocchi pesto* | *vegan risotto* |
 ![vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/food-sample.jpeg "js conf eu 2018 berlin vegan food sample")  |  ![another vegan food sample](/assets/img/about-js-conf-eu-berlin-2018/another-food-sample.jpeg "js conf eu 2018 berlin another vegan food sample")
@@ -626,7 +625,7 @@ At the end of the day, we just grabbed a bear near the river and enjoy the remai
 <br>
 
 ## Berlin
-You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
+You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in Europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
 
 And this is me (left) and my colleagues on our last day in Berlin.
 
