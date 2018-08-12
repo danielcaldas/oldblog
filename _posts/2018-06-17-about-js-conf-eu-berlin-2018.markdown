@@ -255,55 +255,68 @@ And then a plot twist. At the end of complaining about Node.js Ryan presented a 
 - [(2) TC39 Panel - JSConf EU 2018](#d2t2) [<a href="https://www.youtube.com/watch?v=Hj5q8uyqGYc" target="_blank" title="TC39 Panel - JSConf EU 2018">talk video</a>]
 - [(3) JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018](#d2t3) [<a href="https://www.youtube.com/watch?v=5nmpokoRaZI" target="_blank" title="JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018">talk video</a>]
 - [(4) Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018](#d2t4) [<a href="https://www.youtube.com/watch?v=rJ_WvfF3FN8" target="_blank" title="Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018">talk video</a>]
-- [(5) Deep Learning in JS - Ashi Krishnan - JSConf EU 2018](#d2t5) [<a href="https://www.youtube.com/watch?v=SV-cgdobtTA" target="_blank" title="Deep Learning in JS - Ashi Krishnan - JSConf EU 2018">Deep Learning in JS - Ashi Krishnan - JSConf EU 2018</a>]
+- [(5) Deep Learning in JS - Ashi Krishnan - JSConf EU 2018](#d2t5) [<a href="https://www.youtube.com/watch?v=SV-cgdobtTA" target="_blank" title="Deep Learning in JS - Ashi Krishnan - JSConf EU 2018">talk video</a>]
 
-[<span id="d2t2">(2)</span>](#day-2)
-Q: How tc39 works?
-TC39 is a committee of delegates how are repsenting members in ECMA internation, they get togheter every 2 months for 3 days to discuss what proposals are up discuss what changes were in made. They operate on consensus wich means that we all have to agree for something to move forward wich is pretty unique in programming standards.
+[<span id="d2t2">(2)</span>](#day-2) A very enlightening moment was the conversation and *Q&A* session with the <a href="https://github.com/orgs/tc39/people" target="_blank" title="TC39 github">TC39 panel</a>. Not only I got an insider perspective on how things work within the ones behind for the mediation of ECMAScript specification but got to ear some of the upcoming new exciting features for Javascript. I'll leave below a resumed transcription of the most relevant discussed topics during the *Q&A* session.
 
-Proposal process
-Stage 0 - pseudo stage, an idea, the proposal exists.
-Stage 1 - the committee has considered that the proposal is something worth to move forward and find a solution for it.
-Stage 2 - there is a draft, specification that identies what the behavior should be.
-Stage 3 - some browsers and other engines should already have implemented this feature
-Stage 4 - it's ready, and it should have already at least to shipping implementation in browsers.
+#### (Q) How does TC39 works?
+TC39 is a committee of delegates how are representing members in ECMA international, they get together every 2 months for 3 days to discuss what proposals are up discuss what changes were in made. They operate on consensus which means that we all have to agree for something to move forward which is pretty unique in programming standards.
+Then there's the proposal process, that works like this:
+- **Stage 0** is a pseudo stage, an idea, the proposal exists.
+- **Stage 1** is where the committee has considered that the proposal is something worth to move forward and find a solution for it.
+- **Stage 2** is where there is a draft, a specification that identifies what the behavior should be.
+- In **Stage 3** some browsers and other engines should already have implemented this feature.
+- At **Stage 4** it's ready, and it should have already at least two shipping implementation in major browsers.
 
-Q: Other languages use the `private` keyword for private members. How did we end up with the `#` for private methods and property access?
-https://github.com/tc39/proposal-private-methods
+#### (Q) Other languages use the `private` keyword for private members. How did we end up with the `#` for private methods and property access?
 
-private declaration vs private access
+There is two different things here. Private declaration and private access. Since javascript is not statically typed you cannot at runtime tell whether or not some given property is private or public. Then we ended with the `#` to declare and access private properties, you can think of the `#` as part of the name of the property like for instance:
 
-#prop this.#prop
+```javascript
+class SomeClass {
+  constructor(prop) {
+    this.#prop = prop;
+  }
 
-Since javascript is not statically typed you cannot at runtime tell  I DON'T UNDERSTAND THIS !!!!!!!!!!!!
+  getProp() {
+    return this.#prop;
+  }
+}
+```
 
+These is a class feature that is part of a series of related separated proposals (that could possible merge into each other in the future or even break into more specific ones):
 
-Q: What is javascript identity? Are we moving towards other non strongly typed programming languages with object oriented programming (e.g. eith the introduction of es6 classes)? Or more functional? What are we aiming for?
+- <a id="proposal-private-fields" href="https://github.com/tc39/proposal-private-fields" target="_blank" title="A Private Fields Proposal for ECMAScript">tc39/proposal-private-fields</a>
+- <a href="https://github.com/tc39/proposal-class-fields" target="_blank" title="Orthogonally-informed combination of public and private fields proposals">tc39/proposal-class-fields</a>
+- <a href="https://github.com/tc39/proposal-private-methods" target="_blank" title="Private methods and getter/setters for ES6 classes ">tc39/proposal-private-methods</a>
+
+#### (Q) What is javascript identity? Are we moving towards other non strongly typed programming languages with object oriented programming (e.g. with the introduction of es6 classes)? Or more functional? What are we aiming for?
 
 The idea it's to get the best of both worlds. Other languages such as Rust or Swift are largely influenced by both object oriented and functional paradigms.
 
-Q: What's the relationship between Javascript WASM as compile targets?
-Javascript and WASM are complementary as compile targets, so for some of the features that don't make sense in Javascript you can actually use WASM as the home for that feature where it could make more sense.
+#### (Q) What's the relationship between Javascript WASM as compile targets?
+**Javascript and WASM are complementary** as compile targets, so for some of the features that don't make sense in Javascript you can actually use WASM as the home for that feature where it could make more sense.
 
+#### (Q) Can you show yours perspective on the flatten vs smoosh debate?
+There was a proposal to add `flatten` and `flatMap` to the Array prototype. Is was implemented and shipped by Mozilla, but soon they realize tha this was breaking certain web pages. Basically some web pages were relying on certain implementations not being there, this if of course the worst that can happen to a proposal, we don't want to break the web. So we rollback and we knew that we needed to change the proposal in some way. In this case because the name itself was a problem (`flatten`) we had to rename it somehow... The proposal author decided to send a <a href="https://github.com/tc39/proposal-flatMap/pull/56" target="_blank" title="tc39/proposal-flatMap rename flatten to smoosh">*joke pull request*</a> with a rename to `smoosh` and `smooshMap`, but it was not clear that this was a joke so... everybody freaked out.
 
-Q: Can you show yours prespective on the flatten vs smoosh debate?
-There was a proposal to add `flatten` and `flatMap` to the Array prototype. Is was implemented and shipped by mozila, but soon they realize tha this was breaking certain web pages. Basically some web pages were relying on certain implementations not being there, this if of course the worst that can happen to a proposal, we don't want to break the web. So we rollback and we knew that we needed to change the proposal in some way. In this case because the name itself was a problem (`flatten`) we had to rename it somehow... The proposal author decided to send a <a href="https://github.com/tc39/proposal-flatMap/pull/56" target="_blank" title="tc39/proposal-flatMap rename flatten to smoosh">*joke pull request*</a> with a rename to `smoosh` and `smooshMap`, but it was not clear that this was a joke so... everybody freaked out.
+#### (Q) What are some of the awesome features coming up next?
+- <a href="https://github.com/tc39/proposal-optional-chaining" target="_blank" title="tc39/proposal-optional-chaining">Optional chaining</a>
+- <a href="https://github.com/tc39/proposal-pattern-matching" target="_blank" title="tc39/proposal-pattern-matching">Pattern matching</a>
+- <a href="#proposal-private-fields" target="_blank" title="Class features">Class features (private and public class fields)</a>
+- <a href="#d1t2" target="_blank" title="Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018">BigInts</a>
 
+#### (Q) What about a native method for deep object cloning?
+Good idea, but very complex. 😎
 
-Q: What are some of the awesome features comming next?
-- optional chaining
-- pattern matching
-- class features (private and public class fields)
-- big ints
+#### (Q) What's the medium turn around for a proposal to become reality?
+**Some** of them **take years**, but **at least a year to 18 months** it's a more realistic estimation.
 
-Q: What about a native method for deep object cloning?
-Good idea, but very complex.
-
-Q: What's the medium turn around for a proposal to become reality?
-Some of them take years, but at least a year to 18 months it's a more realistic duration.
+<hr>
+<br/>
 
 <!--JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018-->
-A vital part of the Javascript runtimes are engines [<span id="d2t3">(3)</span>](#day-2). V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
+[<span id="d2t3">(3)</span>](#day-2) A vital part of the Javascript runtimes are engines. V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
 - SpiderMonkey powers Firefox and there is a Node.js fork that uses SpiderMonkey (SpiderNode https://github.com/mozilla/spidernode)
 - Chakra for Microsoft Edge also has a Node.js fork. (https://github.com/nodejs/node-chakracore)
 
