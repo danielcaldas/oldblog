@@ -4,6 +4,12 @@ title:  "JSconf EU 2018"
 date:   2018-08-12 21:00 +0200
 categories: jekyll update
 ---
+<script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 42,
+  backgroundColor: "#000",
+  textColor: "#fff"
+})</script>
 ![js conf eu 2018 berlin logo](/assets/img/about-js-conf-eu-berlin-2018/jsconf-logo-full.svg "js conf eu 2018 logo")
 <br>
 <br>
