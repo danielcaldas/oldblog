@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JSconf EU 2018"
-date:   2018-07-07 16:00 +0100
+date:   2018-08-12 21:00 +0200
 categories: jekyll update
 ---
 ![js conf eu 2018 berlin logo](/assets/img/about-js-conf-eu-berlin-2018/jsconf-logo-full.svg "js conf eu 2018 logo")
