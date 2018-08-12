@@ -316,18 +316,16 @@ Good idea, but very complex. 😎
 <br/>
 
 <!--JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018-->
-[<span id="d2t3">(3)</span>](#day-2) A vital part of the Javascript runtimes are engines. V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
-- SpiderMonkey powers Firefox and there is a Node.js fork that uses SpiderMonkey (SpiderNode https://github.com/mozilla/spidernode)
-- Chakra for Microsoft Edge also has a Node.js fork. (https://github.com/nodejs/node-chakracore)
+[<span id="d2t3">(3)</span>](#day-2) A vital part of the Javascript runtimes are engines. <a href="https://github.com/v8/v8" target="_blank" title="The official mirror of the V8 Git repository">V8</a> is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to V8 and all other major Javascript engines:
+- <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey" target="_blank" title="SpiderMonkey">SpiderMonkey</a> powers Firefox.
+- <a href="https://github.com/Microsoft/ChakraCore" target="_blank" title="ChakraCore is the core part of the Chakra Javascript engine that powers Microsoft Edge
+">Chakra</a> for Microsoft Edge.
+- <a href="https://developer.apple.com/documentation/javascriptcore" target="_blank" title="JavaScriptCore
+">**J**ava**S**cript**C**ore (JSC)</a> powers Safari and also react native applications.
 
-https://github.com/nodejs/node-chakracore
+(Aside note, if you want to run Javascript directly in several engines you can install <a href="https://github.com/GoogleChromeLabs/jsvu" target="_blank" title="JavaScript (engine) Version Updater">jsvu</a>.)
 
-- **J**ava**S**cript**C**ore (JSC) powers Safari and also react native applications.
-
-
-Aside note, if you want to run Javascript directly in engines you can install <a href="https://github.com/GoogleChromeLabs/jsvu" target="_blank" title="JavaScript (engine) Version Updater">jsvu</a>.
-
-All engines have this similar base architecture
+All engines have this similar base architecture.
 
 ![engines common abstract pipeline](/assets/img/about-js-conf-eu-berlin-2018/engines-pipeline.png "engines common abstract pipeline")
 
