@@ -4,13 +4,7 @@ title:  "CSSconf EU 2018"
 date:   2018-06-17 16:33:00 +0100
 categories: jekyll update
 ---
-<script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script>
-<script>addBackToTop({
-  diameter: 42,
-  backgroundColor: "#000",
-  textColor: "#fff"
-})</script>
-<script src="{{ base.url | prepend: site.url }}/assets/js/scroll-top-on-load.js"></script>
+<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 ![css conf eu 2018 berlin logo](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 <br>
 <br>
