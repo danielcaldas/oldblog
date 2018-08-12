@@ -10,6 +10,14 @@ categories: jekyll update
 ## For starters
 As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/update/2018/06/17/about-css-conf-eu-berlin-2018.html) I will now talk a bit about the JSConf EU 2018 that preceded the CSSConf in the Berlin Arena (June 2nd and 3rd).
 
+#### What will you find here
+- [Talks (in depth coverage of selected talks)](#talks)
+  - [Day 1](#day-1)
+  - [Day 2](#day-2)
+- [Things I learned](#things-i-learned)
+- [The venue](#the-venue)
+- [Berlin](#berlin)
+
 ## Talks
 As you're probably expecting the talks weren't exclusively technical (of course we got to see a few *hands on* kind of presentation) topics ranged from ethics, productivity, history all the way to the more technical realm with performance, user experience, machine learning, IoT and of course the Javascript language itself <a href="https://2018.jsconf.eu/schedule/" target="_blank" title="jsconf eu 2018 berlin schedule">check out the conference full schedule</a>.
 
@@ -559,7 +567,7 @@ At the end two important notes:
 On this second day I would also like to mention two more talks, *A Web Without Servers* [<span id="d2t4">(4)</span>](#day-2) because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also *Deep Learning in JS* [<span id="d2t5">(5)</span>](#day-2) because machine learning is a pretty hot topic and we should stand out the fact that is <a href="https://js.tensorflow.org/" target="_blank" title="A JavaScript library for training and deploying ML models in the browser and on Node.js">TensorFlow.js</a> already available this makes Javascript even more broad in terms of its applications.
 
 <!--Things I learned-->
-<h2>Things I learned (⚠️ randomly presented)</h2>
+<h2 id="things-i-learned">Things I learned (⚠️ randomly presented)</h2>
 - There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
 - If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar way
 if you reject a promise passing in a throw statement the catch will not evaluate as in:
