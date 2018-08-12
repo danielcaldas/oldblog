@@ -8,7 +8,7 @@ categories: jekyll update
 ![css conf eu 2018 berlin logo](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 <br>
 <br>
-Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in another blog post on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
+Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
 
 ## For starters
 
@@ -133,4 +133,4 @@ Here the list of the talks with links to videos (at this point the majority of t
 11. __Claudina Sarahe__ <sub><sup>twitter:<a href="https://twitter.com/itsmisscs" target="_blank" title="itsmisscs twitter">@itsmisscs</a></sup></sub> - *Design Systems as Facilitators.*
 
 ## And then...
-I will also write a blog post about the JSConf that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
+I will also write <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
