@@ -10,7 +10,7 @@ categories: jekyll update
 ## For starters
 As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/update/2018/06/17/about-css-conf-eu-berlin-2018.html) I will now talk a bit about the JSConf EU 2018 that preceded the CSSConf in the Berlin Arena (June 2nd and 3rd).
 
-## The talks (highlights)
+## Talks
 As you're probably expecting the talks weren't exclusively technical (of course we got to see a few *hands on* kind of presentation) topics ranged from ethics, productivity, history all the way to the more technical realm with performance, user experience, machine learning, IoT and of course the Javascript language itself (<a href="https://2018.jsconf.eu/schedule/" target="_blank" title="jsconf eu 2018 berlin schedule">check out the conference full schedule</a>). Also worth mentioning, there were a few electronic music live performances by <a href="https://twitter.com/nested_loops?lang=en" target="_blank" title="nested_loops twitter">nested_loops</a> and <a href="http://livejs.network/" target="_blank" title="live:js official website">live:js</a>, the sound and the visual effects played nicely producing <a href="https://www.youtube.com/watch?v=dPWRaN2PXZw" target="_blank" title="live:js opening performance youtube">a great show</a>.
 
 Now I'll just highlight a few interesting talks that I had the change to see on each day, I'll focus on the talks and content that were more meaningful in my opinion.
@@ -302,14 +302,62 @@ Q: What's the medium turn around for a proposal to become reality?
 Some of them take years, but at least a year to 18 months it's a more realistic duration.
 
 <!--JavaScript Engines: The Good Parts™ - Mathias Bynens & Benedikt Meurer - JSConf EU 2018-->
+A vital part of the Javascript runtimes are engines. V8 is the Javascript engine for Chrome, Electron and Node.js. In the next talk we'll look into fundamental parts that are common to all major the Javascript engines:
+- SpiderMonkey powers Firefox and there is a Node.js fork that uses SpiderMonkey (SpiderNode https://github.com/mozilla/spidernode)
+- Chakra for Microsoft Edge also has a Node.js fork. (https://github.com/nodejs/node-chakracore)
+
+https://github.com/nodejs/node-chakracore
+
+- **J**ava**S**cript**C**ore (JSC) powers Safari and also react native applications.
 
 
+Aside note, if you want to run Javascript directly in engines you can install <a href="https://github.com/GoogleChromeLabs/jsvu" target="_blank" title="JavaScript (engine) Version Updater">jsvu</a>.
+
+All engines have this similar base architecture
+
+![engines common abstract pipeline](/assets/img/about-js-conf-eu-berlin-2018/engines-pipeline.png "engines common abstract pipeline")
+
+Regarding the important part (yellow square in the middle with interpreter and optimizing compiler) below are the main differences pointed for every Javascript engine:
+- V8 is represented in the above diagram with one optimizer compiler.
+- SpiderMonkey has 2 optimizer compilers, so this is like a 2 staged optimization.
+- ChakraCore it's somehow similar to SpiderMonkey with 2 optimizer compilers.
+- JSC has 3 optimized compilers taking the number of optimization layers to the space.
+
+So we can already see the that the base architectural components for a Javascript engines are: **parser**, **interpreter** and **compiler pipeline**.
+
+Now, the most interesting part is around Objects and how they are represented within engines. So objects are basically dictionaries like in the following image.
+
+![simple shape illustration](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-1.png "simple shape illustration")
+
+So an object has this string attributes that map to the value and metainformation of that property the **property attributes** according to the ECMAScript language specification. What do they mean this property attributes:
+- **Value** of the property, nothing much to say here.
+- **Writable** determines whether if the property can be reassigned to.
+- **Enumerable** means that the property can appear in `for in` loops.
+- **Configurable** means that is a *deletable* property.
+
+You can access this them in Javascript with `Object.getOwnPropertyDescriptors(someObject)`.
+
+So another interesting fact around objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called **Shape** (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is *hidden class*).
+
+Know let's check how object declaration and property access are optimized in engines. Basically they build a doubled linked tree like structure that defines all possible shapes and each new added property only stores metainformation regarding itself. The `Offset` just tells you where you will find the property within the JSON object.
+
+![shape extended](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-2.png "shape extended")
+
+But! This isn't always the case it turns out that for cases where you have already a shape that derives from a base object, but then you go and initialize some object in a different way (e.g. with some properties already), the engine will create a new shape as it is more efficient for engines to keep the shape's structures the smallest as possible. As you can see in the next picture a new shape will be created despite property `x` being already in the first shape chain.
+
+![shape extended exception](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-3.png "shape extended exception")
+
+Then the main motivation for engines to have shapes is <a href="https://github.com/v8/v8/wiki/Design-Elements#fast-property-access" target="_blank" title="v8 design elements fast property access">inline cache (IC)</a>. This mechanism stores information about where to find properties within an object so that we can optimize the property lookup. Basically for a given retrieved property it stores the offset where the property was found inside the shape, that way you can skip the fetch of the property metainformation to get the offset, you just access it right away!
+
+![inline cache illustration](/assets/img/about-js-conf-eu-berlin-2018/engines-shapes-4.png "inline cache illustration")
+
+At the end two important notes:
+- **Always initialize objects in the same way** so that engines can maximize the reuse of shapes.
+- **Don't mess with the property attributes of array elements** so that they can be stored and operated upon efficiently.
+
+(**Note**: I skipped arrays in the above talk as they are handled in similar ways and with similar mechanisms compared to objects)
 
 
-- quick mentions:
-- look mum no hands
-- imagine a web without servers
-- ........
 
 <hr>
 
@@ -367,7 +415,7 @@ function fetchSomeRainbows(nRainbows) {
   return Promise.resolve('here u go');
 }
 
-fetchSomeRainbows().catch((rainbowError) => console.log('cannot rainbows'));
+fetchSomeRainbows().catch((rainbowError) => console.log('unable to fetch rainbows'));
 
 // this will output: "Error: some error message"
 // instead of "unable to fetch rainbows"
@@ -393,3 +441,4 @@ have.
 - I didn't know much about the browsers internals (e.g. event loop task queues), but after this conference at least I'm aware of how much I don't know about it :D.
 
 ## Our team (group photo)
+
