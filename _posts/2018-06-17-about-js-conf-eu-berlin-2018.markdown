@@ -68,11 +68,11 @@ According to this presentation *long/ulong* types where proposed back there (199
 ![binary floating point number representation](/assets/img/about-js-conf-eu-berlin-2018/binary-number-representation.png "binary floating point number representation")
 
 So the 2^53 maximum number (900719925474099**2**) looks like this when in the binary floating point representation:
-> 0 10000110100 000000000000000000000000000000000000000000000000000
+> 0 10000110100 0...(x52)
 
 Adding **1** we get:
 
-> 0 10000110100 00000000000000000000000000000000000000000000000000**1**
+> 0 10000110100 0...(x51)... **1**
 
 that is 900719925474099**4**. So... Ok we get it, with a 64-bit representation it's impossible to represent all the numbers since you have the limitation of a 64-bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.
 
@@ -494,7 +494,7 @@ There was a proposal to add `flatten` and `flatMap` to the Array prototype. Is w
 #### (Q) What are some of the awesome features coming up next?
 - <a href="https://github.com/tc39/proposal-optional-chaining" target="_blank" title="tc39/proposal-optional-chaining">Optional chaining</a>
 - <a href="https://github.com/tc39/proposal-pattern-matching" target="_blank" title="tc39/proposal-pattern-matching">Pattern matching</a>
-- <a href="#proposal-private-fields" target="_blank" title="Class features">Class features (private and public class fields)</a>
+- <a href="#proposal-private-fields" title="Class features">Class features (private and public class fields)</a>
 - <a href="#d1t2" title="Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018">BigInts</a>
 
 #### (Q) What about a native method for deep object cloning?
@@ -566,10 +566,11 @@ At the end two important notes:
 On this second day I would also like to mention two more talks, *A Web Without Servers* [<span id="d2t4">(4)</span>](#day-2) because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also *Deep Learning in JS* [<span id="d2t5">(5)</span>](#day-2) because machine learning is a pretty hot topic and we should stand out the fact that is <a href="https://js.tensorflow.org/" target="_blank" title="A JavaScript library for training and deploying ML models in the browser and on Node.js">TensorFlow.js</a> already available this makes Javascript even more broad in terms of its applications.
 
 <!--Things I learned-->
-<h2 id="things-i-learned">Things I learned (⚠️ randomly presented)</h2>
+<h2 id="things-i-learned">Things I learned</h2>
+<h4>(⚠️ randomly presented)</h4>
+
 - There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
-- If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar way
-if you reject a promise passing in a throw statement the catch will not evaluate as in:
+- If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar fashion if you reject a promise passing in a throw statement the catch will not evaluate as in:
 
 ```javascript
 function justThrowAnErr() {
@@ -627,6 +628,10 @@ At the end of the day, we just grabbed a bear near the river and enjoy the remai
 ## Berlin
 You know Berlin right? The capital and largest city in Germany, also one of the largest and multicultural cities in Europe. Despite the conference busy schedule I took sometime (mainly my last day) to visit a few of the high rated places in Berlin such as the museum island, the Berlin Cathedral, the Brandenburg Gate, Checkpoint Charlie and a few other spots. It is really worth visiting, besides the obvious places that you would wanna check as the ones mentioned previously Berlin has a great urban structure with organized and large street blocks composed by beautiful buildings, huge and various green spaces and of course an endless nightlife cater for all tastes.
 
-And this is me (left) and my colleagues on our last day in Berlin.
+And this is me (*left*) and my colleagues on our last day in Berlin.
 
 ![berliner dom group photo](/assets/img/about-js-conf-eu-berlin-2018/group-photo.jpeg "berliner dom group photo")
+
+<br/>
+
+See you soon.
