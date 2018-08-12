@@ -257,6 +257,186 @@ And then a plot twist. At the end of complaining about Node.js Ryan presented a 
 - [(4) Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018](#d2t4) [<a href="https://www.youtube.com/watch?v=rJ_WvfF3FN8" target="_blank" title="Imagine This: A Web Without Servers - Tara Vancil - JSConf EU 2018">talk video</a>]
 - [(5) Deep Learning in JS - Ashi Krishnan - JSConf EU 2018](#d2t5) [<a href="https://www.youtube.com/watch?v=SV-cgdobtTA" target="_blank" title="Deep Learning in JS - Ashi Krishnan - JSConf EU 2018">talk video</a>]
 
+[<span id="d2t1">(1)</span>](#day-2) First talk we'll see on day two is strictly related with JS it's a more broader theme in regards of performance and how can we improve resource loading, let's get to know a few of this technique and show that <a href="https://http2.github.io/" target="_blank" title="This is the home page for HTTP/2, a major revision of the Web's protocol">HTTP/2</a> solo will not solve all your performance problems.
+
+> HTTP/2 will solve this.
+
+HTTP/2 will certainly bring speed to the web, but the thing is that **resource loading in the browser is hard**. Performance is tighly coupled to latency, speed of light will not get any faster, TCP handshakes will not go away as well as TCP congestion mechanisms that penalizes us at the beginning of every connection.
+The way that browsers and servers interact does not allows us to take the best performance on resource loading.
+
+> What are critical resources?
+
+> A critical request is one that contains an asset that is essential to the content within the users' viewport.
+
+A good loading strategy:
+- Prioritizes above-the-fold rendering.
+- Prioritizes interactivity..
+- It's easy to use.
+- It's measurable.
+
+So let's look into some techniques...
+
+#### Preload
+
+What if we could tell the browser upfront what are the resources that we want to load?
+Resources as fonts are know are **critical hidden sub-resources** since we only know of their existent after the browser executes a few steps:
+
+![push loading pipeline](/assets/img/about-js-conf-eu-berlin-2018/push-loading-pipeline-1.png "push loading pipeline")
+
+- 1 - Get request homepage (browser will start to construct the DOM under the hood)
+- 2 - Stysheets and script tags referenced in the page are found. CSS is render blocking thus we need to wait for all the bytes to come down
+- 3 - CSS gets downloaded and then CCS Object Model and the DOM are combibed to form the render tree
+- 4 - We have a render tree. Browser will dispatch font requests here.
+
+What if we could:
+
+> Provide a declarative fetch primitive that initializes an early fetch and separates fetching from resource execution.
+
+So you can, preload with HTTP header:
+
+```bash
+Link: <some-font.woff>; rel=preload; as=font; crossorigin
+```
+
+Or with markup:
+
+```html
+<link rel="preload" href="/styles.css" as="style">
+```
+
+> Shopify switch to preloading fonts saw 50% (1.2 sec) improvement in time-to-text-paint.
+
+#### Server push
+
+Imagine the following scenario:
+
+The connection will be left for a while (red area) while the server is thinking, this will specially be the case if you have a server-side rendered application.
+
+![resource loading illustration](/assets/img/about-js-conf-eu-berlin-2018/push-server-1.png "resource loading illustration")
+
+But, what if the server could predict that the next required asset from the browser will be the `main.css` file?
+Image the browser could send this at soon as it receives the first request.
+
+```bash
+Link: <font.woff2>; rel=preload; as=font; crossorigin # indicate push via preload Link header
+Link: <main.css>; rel=preload; as=style; nopush # use no push to disable push semantics and only use preload
+Link: <application.js>; rel=preload; as=style; x-http2-push-only # disable preload semantics with x-http2-push-only
+```
+![resource loading with push illustration](/assets/img/about-js-conf-eu-berlin-2018/push-server-2.png "resource loading with push illustration")
+
+If you're server is HTTP/2 enable, it will read the above configs and initiate the pushes for you.
+Benifits? In Europe saving this 1 round trip time in a 3G connection could save us as much as 800ms.
+
+![saving 1 RTT](/assets/img/about-js-conf-eu-berlin-2018/push-server-3.png "saving 1 RTT")
+
+But notice we still have an idle time at the beginning of the connection in `index.html`. This idle time happens because **only when we fully send the index.html, only then we initialize the push**.
+
+#### Async push
+
+The goal here is to decouple the pushing behavior from our application HTML response starting the push right at the beginning of the connection flow.
+
+![async push illustration](/assets/img/about-js-conf-eu-berlin-2018/push-server-4.png "async push illustration")
+
+Notice that we don't need to wait for the server to receive send out the `index.html`, simply by knowing that the `index.html` was requested we can start to push resources! Below simple snippet on how to achieve this with Node.js.
+
+```javascript
+const http2 = require('http2');
+
+function handler(request, response) {
+  if (request.url === "index.html") {
+    const push = response.push('/critical.css');
+    push.writeHead(200);
+    fs.createReadStream('/critical.css').pipe(push);
+  }
+
+  /**
+   * Generate index response:
+   * - Fetch data from DB
+   * - Render some template
+   * etc.
+   */
+
+  response.end(data);
+}
+
+const server = http2.createServer(opts, handler);
+server.listen(80);
+```
+
+Again, benefits?
+
+![async push benefits illustration](/assets/img/about-js-conf-eu-berlin-2018/push-server-5.png "async push benefits illustration")
+
+#### But why is nobody adopting it?
+
+**Cache**. The browser has the ability to say *"Please don't send me that `main.css` already got it in my cache."*, but with HTTP/2 push what happens is that by the time the browser is saying this we have already sent the `main.css`, so we have a race condition here!
+
+![async push benefits illustration](/assets/img/about-js-conf-eu-berlin-2018/push-server-6.png "async push benefits illustration")
+
+Yet another blog post by Jake Archibald is mentioned in this talk, if you want to go with HTTP/2 into production checkout <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/" target="_blank" title="HTTP/2 push is tougher than I thought">HTTP/2 push is tougher than I thought</a>.
+
+Also, the lack of adoption of push has made some vendors think in removing push from the HTTP/2 specification.
+
+#### When should I push?
+- You have long RTTs or server processing
+- You can use async push
+- You have client-rendered app shell (<a href="https://developers.google.com/web/fundamentals/performance/prpl-pattern/" target="_blank" title="PRPL pattern">**PRPL** - **P**ush, **R**ender, **P**re-cache and **L**azy-load</a>)
+- You control the client (native, Electron etc.)
+
+#### The Future
+
+**Cache digest (CACHE_DIGEST)**
+
+Fix the racing condition between push and browser cache. The browser sends information about what content has in cache so that server can decided what to push! You can check the *CACHE_DIGEST* specification <a href="http://httpwg.org/http-extensions/cache-digest.html" target="_blank" title="Cache Digests for HTTP/2
+">here</a>.
+
+**103 Early Hints**
+
+All this seems very complex, we need to maintain state. But HTTP is special and known for being stateless. The proposal of the new code <a href="https://evertpot.com/http/103-early-hints" target="_blank" title="103 Early Hints">*103 Early Hints*</a> is kind of a inversion of control compared to the *CACHE_DIGEST* this time the server will tell the browser upfront what resources are available for download, this is a small reply only containing headers and it happens of course before or within the *server think time*.
+
+```bash
+HTTP/1.1 103 Early Hints
+Link: </main.css>; rel=preload; as=style;
+Link: </main.js>; rel=preload; as=script;
+Link: </application-data.json>; rel=preload; as=fetch
+```
+
+In the speakers' opinion this is a lot more powerful than push since we're moving the decision process back to the browser.
+
+**Priority Hints**
+
+Allow us to decorate our HTML in ways that we are able to prioritize resources explicitly with <a href="https://github.com/WICG/priority-hints" target="_blank" title="WICG/priority-hints">priority hints</a>:
+
+```HTML
+<img src="some-image.jpg" important="low">
+<img src="very-important-image.jpg" important="high">
+```
+
+#### Resource priorities checklist
+
+- ✔️ Identify critical resources
+- ✔️ Preload hidden sub-resources
+- ✔️ Preconnect critical third-parties
+- ❌ Avoid pushing with preload
+- ⚠️ Use async push with care
+- 🚀 Decorate HTML with priority hints
+- 🚀 Use Early Hints when available
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [<span id="d2t2">(2)</span>](#day-2) A very enlightening moment was the conversation and *Q&A* session with the <a href="https://github.com/orgs/tc39/people" target="_blank" title="TC39 github">TC39 panel</a>. Not only I got an insider perspective on how things work within the ones behind for the mediation of ECMAScript specification but got to ear some of the upcoming new exciting features for Javascript. I'll leave below a resumed transcription of the most relevant discussed topics during the *Q&A* session.
 
 #### (Q) How does TC39 works?
