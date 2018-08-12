@@ -4,17 +4,11 @@ title:  "CSSconf EU 2018"
 date:   2018-06-17 16:33:00 +0100
 categories: jekyll update
 ---
-<script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script>
-<script>addBackToTop({
-  diameter: 42,
-  backgroundColor: "#000",
-  textColor: "#fff"
-})</script>
-<script src="{{ base.url | prepend: site.url }}/assets/js/scroll-top-on-load.js"></script>
+<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 ![css conf eu 2018 berlin logo](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
 <br>
 <br>
-Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in another blog post on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
+Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on about <a href="https://2018.jsconf.eu" target="_blank" title="jsconf.eu official web page">JSConf EU</a> that had a similar organization.
 
 ## For starters
 
@@ -75,9 +69,8 @@ Next, we jump into CSS Custom Properties (*aka* CSS variables)! In this talk [(7
 that you might be using with some CSS preprocessor is that those variables are static, using CSS custom properties they can be dynamic
 and updated via javascript or for instance within a media query. Another nice detail about custom properties is that they can be scoped, so you can have local (by default they are locally scoped) or global CSS custom properties.
 
-Here a small example to get you started, let's use CSS custom properties to dynamically change the color of shapes.
-<iframe id="codepen-iframe" style="margin-left: -18%;" width="980" height="540" src="https://codepen.io/anon/pen/vrewpa" frameborder="0" allowfullscreen></iframe>
-<br>
+<a href="https://codepen.io/anon/pen/vrewpa" target="_blank" title="CSS custom properties!">Here</a> a small example to get you started, let's use CSS custom properties to dynamically change the color of shapes, just open <a href="https://codepen.io/anon/pen/vrewpa" target="_blank" title="CSS custom properties!">this codepen</a>.
+
 Mike shared his experience with custom properties and gave us some **lessons to use them efficiently**, here they are:
 1. __All global variables should be static__.
 2. __Don't be too cleaver__.
@@ -139,4 +132,4 @@ Here the list of the talks with links to videos (at this point the majority of t
 11. __Claudina Sarahe__ <sub><sup>twitter:<a href="https://twitter.com/itsmisscs" target="_blank" title="itsmisscs twitter">@itsmisscs</a></sup></sub> - *Design Systems as Facilitators.*
 
 ## And then...
-I will also write a blog post about the JSConf that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
+I will also write <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
