@@ -69,7 +69,7 @@ Adding **1** we get:
 that is 900719925474099**4**. So... Ok we get it, with a 64 bit representation it's impossible to represent all the numbers since you have the limitation of a 64 bit combination pattern to form numbers, at some point we need to round it, go up to infinity or throw an error.
 
 But wait, is this a real use case? Yes, <a href="https://developer.twitter.com/en/docs/basics/twitter-ids.html" target="_blank" title="twitter developers twitter ids (snowflake)">checkout Twitter IDs (snowflake) issue</a> that made them add an `id_string` field so that when Javascript parses the id it keeps this unchanged id in the string format.
-The proposed solution are *BigInts*. Not some library such as <a href="https://github.com/indutny/bn.js/" target="_blank" title="BigNum in pure javascript">bn.js</a>, instead a native Javascript supported BigInt type.
+The proposed solution is <a href="https://github.com/tc39/proposal-bigint" target="_blank" title="tc39/proposal-bigint">*BigInt*</a>. Not some library such as <a href="https://github.com/indutny/bn.js/" target="_blank" title="BigNum in pure javascript">bn.js</a>, instead a native Javascript supported BigInt type.
 
 ```javascript
 x = 2n ** 53n
@@ -488,7 +488,7 @@ There was a proposal to add `flatten` and `flatMap` to the Array prototype. Is w
 - <a href="https://github.com/tc39/proposal-optional-chaining" target="_blank" title="tc39/proposal-optional-chaining">Optional chaining</a>
 - <a href="https://github.com/tc39/proposal-pattern-matching" target="_blank" title="tc39/proposal-pattern-matching">Pattern matching</a>
 - <a href="#proposal-private-fields" target="_blank" title="Class features">Class features (private and public class fields)</a>
-- <a href="#d1t2" target="_blank" title="Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018">BigInts</a>
+- <a href="#d1t2" title="Native BigInts in JavaScript: A Case Study in TC39 - Daniel Ehrenberg - JSConf EU 2018">BigInts</a>
 
 #### (Q) What about a native method for deep object cloning?
 Good idea, but very complex. 😎
