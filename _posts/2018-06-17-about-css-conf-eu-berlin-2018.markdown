@@ -69,9 +69,8 @@ Next, we jump into CSS Custom Properties (*aka* CSS variables)! In this talk [(7
 that you might be using with some CSS preprocessor is that those variables are static, using CSS custom properties they can be dynamic
 and updated via javascript or for instance within a media query. Another nice detail about custom properties is that they can be scoped, so you can have local (by default they are locally scoped) or global CSS custom properties.
 
-Here a small example to get you started, let's use CSS custom properties to dynamically change the color of shapes.
-<iframe id="codepen-iframe" style="margin-left: -18%;" width="980" height="540" src="https://codepen.io/anon/pen/vrewpa" frameborder="0" allowfullscreen></iframe>
-<br>
+<a href="https://codepen.io/anon/pen/vrewpa" target="_blank" title="CSS custom properties!">Here</a> a small example to get you started, let's use CSS custom properties to dynamically change the color of shapes, just open <a href="https://codepen.io/anon/pen/vrewpa" target="_blank" title="CSS custom properties!">this codepen</a>.
+
 Mike shared his experience with custom properties and gave us some **lessons to use them efficiently**, here they are:
 1. __All global variables should be static__.
 2. __Don't be too cleaver__.
