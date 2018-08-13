@@ -14,7 +14,7 @@ Hello all!! I decided to write this blog post to share with you the new things I
 
 If you were there as I was, you were probably wondering whether you were at the right conference, since at the beginning you would ask yourself **where is the CSS**?
 
-<img style="margin-left: 20%;" src="/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/2.gif" alt="john travolta lost gif"/>
+![john travolta lost](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/2.gif "john travolta lost gif")
 
 But don't give up already! It started poorly on the CSS field, but it evolved throughout the day with some top-notch talks, some of them include Razvan Caliman on *We have DevTools. What about DesignTools?* and Mike Riethmuller with *Strategy Guide for CSS Custom Properties*.
 
@@ -23,7 +23,7 @@ But don't give up already! It started poorly on the CSS field, but it evolved th
 <!--It’s Dangerous To Go Alone! Take This Team-->
 As I mentioned earlier the first talk wasn't so much into CSS, what Trent [(1)](#list-of-talks-speakers-and-other-resources) gave to us was more of a carrier advice on how we should behave as individuals so that we are seen as part of a team, for Trent going solo in some project should never even be considered, we should always ask for feedback if we want to achieve accurate and quality results. Trent shared some personal techniques that help him grow as a developer in a controlled way avoiding things such as *burnout*. The term *mindfulness* came along somewhere in the talk as Trent was trying to explain the audience how he's able to keep a balanced mental health. Next we had Jackie Balzer [(2)](#list-of-talks-speakers-and-other-resources) who told us a bit of the history behind <a title="Behance is a network of sites and services specializing in self-promotion" href="https://www.behance.net/" target="_blank">Behance’s</a> codebase, how major redesigns left *Jurassic* footprints in the codebase, some of them in the form of very descriptive "*TODOs*", that today would probably require a herculean effort to remove. At the end Jackie just commented on how she was able to achieve peace with the reality of a fragmented codebase.
 
-<img width="60%" height="20%" style="margin-left: 20%;" src="/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/5.png" alt="this is fine dog on fire"/>
+![this is fine dog on fire](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/5.png "this is fine dog on fire meme")
 
 <br>
 <!--The Web Is Not Just Left-to-Right -->
@@ -111,7 +111,7 @@ The last talk [(11)](#list-of-talks-speakers-and-other-resources) was about desi
 - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports" target="_blank" title="feature queries mdn">Feature queries (@supports)</a>
 - <a href="https://wicg.github.io/container-queries/" target="_blank" title="container queries specification">Container queries</a>
 
-<img width="60%" height="20%" style="margin-left: 20%;" src="/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/44.jpeg" alt="so hot right now CSS custom properties"/>
+![so hot right now](/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/44.jpeg "so hot right now meme")
 
 <br>
 
