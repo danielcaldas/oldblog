@@ -15,7 +15,7 @@ As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/up
 - [Talks (in-depth coverage of selected talks)](#talks)
   - [Day 1](#day-1)
   - [Day 2](#day-2)
-- [Things I learned](#things-i-learned)
+- [Other things I've learned](#things-i-learned)
 - [The venue](#the-venue)
 - [Berlin](#berlin)
 
@@ -539,7 +539,11 @@ So an object has this string attributes that map to the value and metainformatio
 - **Enumerable** means that the property can appear in `for in` loops.
 - **Configurable** means that is a *deletable* property.
 
-You can access this them in Javascript with `Object.getOwnPropertyDescriptors(someObject)`.
+You can access this them in Javascript with:
+
+```javascript
+Object.getOwnPropertyDescriptors(someObject);
+```
 
 So another interesting fact around Objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called **Shape** (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is *hidden class*).
 
@@ -566,9 +570,11 @@ At the end two important notes:
 
 On this second day I would also like to mention two more talks, *A Web Without Servers* [<span id="d2t4">(4)</span>](#day-2) because Beaker browser a peer-to-peer browser was presented here with a decentralized web in mind. Also *Deep Learning in JS* [<span id="d2t5">(5)</span>](#day-2) because machine learning is a pretty hot topic and we should stand out the fact that is <a href="https://js.tensorflow.org/" target="_blank" title="A JavaScript library for training and deploying ML models in the browser and on Node.js">TensorFlow.js</a> already available this makes Javascript even more broad in terms of its applications.
 
-<!--Things I learned-->
-<h2 id="things-i-learned">Things I learned</h2>
+<!--Other things I've learned-->
+<h2 id="things-i-learned">Other things I've learned</h2>
 <h4>(⚠️ randomly presented)</h4>
+
+> *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*)
 
 - There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
 - If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar fashion if you reject a promise passing in a throw statement the catch will not evaluate as in:
@@ -599,7 +605,6 @@ if you want to support IE11.
 - One should add `role="banner"` on your main header not to be confused with other headers that you might
 have.
 - Do you develop your features for accessibility? I mean can a disable person you only uses the keyboard use your web site/app? This question made me think.
-- *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*).
 - You can practically do everything with Javascript today and people are serious about this.
 - I didn't know much about the browsers internals (e.g. event loop task queues), but after this conference at least I'm aware of how much I don't know about it :D.
 
