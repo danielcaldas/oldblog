@@ -60,7 +60,7 @@ When we hear “low vision” what do we think about? Well, Shwetank explained t
 
 <figure style="margin-left: 20%;">
   <img width="60%" height="20%" src="/assets/img/2018-06-17-about-css-conf-eu-berlin-2018/6.png" alt="lowvisiontool color blindness"/>
-  <figcaption>Some guy with a black shirt and a red stripes</figcaption>
+  <figcaption>Some guy with a black shirt and red stripes</figcaption>
 </figure>
 
 <br>
