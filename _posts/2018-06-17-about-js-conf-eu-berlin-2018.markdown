@@ -539,7 +539,11 @@ So an object has this string attributes that map to the value and metainformatio
 - **Enumerable** means that the property can appear in `for in` loops.
 - **Configurable** means that is a *deletable* property.
 
-You can access this them in Javascript with `Object.getOwnPropertyDescriptors(someObject)`.
+You can access this them in Javascript with:
+
+```javascript
+Object.getOwnPropertyDescriptors(someObject);
+```
 
 So another interesting fact around Objects is that they store they metainformation on a separate data structure so that the actual object only contains the values and a pointer to that data structure. The data structure that contains all the metainformation is called **Shape** (in SpiderMonkey, other engines have other names but hey are misleading. The computer science term for this is *hidden class*).
 
