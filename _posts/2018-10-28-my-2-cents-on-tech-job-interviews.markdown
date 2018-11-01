@@ -48,9 +48,17 @@ A few interviews passed and it seemed that all companies would fall into this sa
 Below a list of the most frequent questions:
 
 * Why are you applying for this job?
-* Why are you applying for this company and not some other?
+* Why are you applying for this company and not some other company?
 * Tell me something about your current job that you don't like (and one that you like).
-*
+* Tell me about yourself and your career so far.
+* Do you have experience with the technologies A or B?
+* How does your ideal work environment look like?
+* What do you value in you current job that you would also like to have in a some new job?
+* What are your salary expectations?
+* Is salary your main criteria for the new position you're looking for?
+* What are you looking for in your new job?
+* Are you currently employed? If yes, what is your notice period?
+* ...
 
 ### The question that I always asked
 
@@ -89,6 +97,8 @@ talk about whats bad in steps 1 to 4. in previous section...
 * Please do not approach someone with an offer if the person in question had just started a new job in that same week.
 * Please do not let candidates hanging, even if the response not positive please communicate, even if it is an auto generated email saying that the candidate was excluded from the selection process.
 * Please do not ...
+* Please do not ask to the candidate if it's possible to deliver a task that supposedly takes 1 week to complete two or three days after you send the task to the candidate? Wait is the candidate working for you already?
+* Schedule calls and interviews with care, don't forget details such as the fact that the candidate might live in some country with a different timezone.
 
 ### Final note
 
