@@ -47,8 +47,10 @@ A few interviews passed and it seemed that all companies would fall into this sa
 
 Below a list of the most frequent questions:
 
+#### Introduction/Background check/Soft skills questions
+* To start, tell me a little bit about yourself, your experience, your background and current job.
 * Why are you applying for this job?
-* Why are you applying for this company and not some other company?
+* Describe your previous role.
 * Tell me something about your current job that you don't like (and one that you like).
 * Tell me about yourself and your career so far.
 * Do you have experience with the technologies A or B?
@@ -58,17 +60,54 @@ Below a list of the most frequent questions:
 * Is salary your main criteria for the new position you're looking for?
 * What are you looking for in your new job?
 * Are you currently employed? If yes, what is your notice period?
-* ...
+* What are your plans for the rest of the day?
+* Tell about about one project/task where you were involved and that it went wrong. Who fault it
+was that it went wrong? <b style="color: red">REPHRASE</b>
+* What was the last thing that you red/learned about front end? <small>(in my case front end, but I imagine this could go along with any other expertise as well)</small>
+* In this paper there is code from a pull request. Please describe how you would go about
+doing the code review. Write comments on the paper but explain yourself along the way.
+* There are three boxes, one contains only apples, one  contains only oranges, and one contains both apples and oranges. The boxes have been incorrectly labeled such that no label identifies the actual contents of the box it labels. Opening just one box, and without looking in the box, you take out one piece of fruit. How many pieces of fruit do you need to take from the boxes in order to be able to correctly label the boxes?
 
-### The question that I always asked
+<br/>
+![job interview meme](/assets/img/my-2-cents-on-tech-job-interviews/tell-me-aboit-yourself-job-interview-meme.jpg "job interview meme")
+<br/>
+<br/>
 
-__What's the worst thing of working in X?__
+#### Technical questions
+* What's the difference between an array and a linked list in terms of complexity?
+* What's the difference between a set and a hashmap? Can you give concrete examples where you would use
+one over the other?
+* Write a function that given a string it returns a boolean that indicates whether that string is a <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank" title="wikipedia palindrome">palindrome</a>.
+* You have 1 hour. Pick your framework of choice and let's build a currency exchange calculator in a pair
+programming session.
+* Have you used async/await? If yes please explain a little how this improve the way we do IO comparing
+to an approach using promises.
+* Build a function that given a list of elements which can be of any type, returns the sum of the elements in the list that are numbers (please consider that numbers can appear as strings or in the middle of strings as well e.g. "include the number 11 on the count").
+* What's the difference between a inner join and a outer join?
+* Write the function *atoi* (alpha to integer) (without casting the string to a number).
+* Write the function *itoa* (integer to alpha) (without casting the number into a string).
+* Write the function reverse that given a string returns the reversed version of it (**important**: you cannot use an auxiliary array to implement the algorithm).
+* Implement <a href="https://gist.github.com/jaysonrowe/1592432" target="_blank" title="gist for fizz buzz">fizz buzz</a>.
+* What's a balanced tree?
+* How could you represent a tree using data structures?
+* Implement <a href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank" title="wikipedia breadth-first search">Breadth-first search (BFS)</a> algorithm.
+* Implement <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank" title="wikipedia Depth-first search">Depth-first search (DFS)</a> algorithm.
+* What data structure better suites a autocomplete search field? (<a href="https://en.wikipedia.org/wiki/Trie" target="_blank" title="wikipedia trie">checkout trie</a>)
 
-I gotta tell you...
+### That question that I always ask
+<center>
+<big><i><b>What's the worst thing of working in X?</b></i></big>
+</center>
+<br/>
+Cool thing is, you get to ask question as well! I gotta tell you...
 If they replied right away with something specific enough I could immediately tell the following about the company:
 * They have a reasonably good transparency with employees, since issues can straight away be identified and explained.
 * It simply may happen that this bad thing is something that you don't tolerate at all thus it will make you consider moving onto the next interviews.
 * ...
+
+### "Homework" assignments
+... well.. what a nice weekend...
+* You have two APIs that provide you positions and information of vehicles, please build an app that fetches and displays this information in an uniform and useful way.
 
 ### What's wrong with the pattern
 
