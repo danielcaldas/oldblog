@@ -26,11 +26,13 @@ I started out really slow throwing around some CVs just to see what would happen
 4. 5 years exp and becomes CTO
 5. TRANSCENDENT ME! - 1 year of experience applying to senior -->
 
-Entering 2018 I thought to myself: *"Woah, easy there, let's put both feet on the ground and really shoot for more realistic opportunities and not just not apply jobs randomly and expect it to work!"*.
+Entering 2018 I thought to myself: *"Woah, easy there, let's put both feet on the ground and really aim to more realistic opportunities and not just not apply jobs randomly and expect it to work!"*.
 And it was in deed a good decision I started to spend more time on analyzing the companies and the opportunities where I could indeed be a good candidate.
 Soon positive emails start to fill in my inbox with requests to schedule interviews for the upcoming weeks/months.
 
 ### The pattern
+
+<!-- TODO: remove this ugly image, replace or put nothing. -->
 
 ![pattern](/assets/img/my-2-cents-on-tech-job-interviews/pattern.jpg "pattern colorful")
 
@@ -96,7 +98,7 @@ to an approach using promises.
 
 ### That question that I always ask
 <center>
-<big><i><b>What's the worst thing of working in X?</b></i></big>
+<big><i><b>What's the worst part of working at company X?</b></i></big>
 </center>
 <br/>
 Cool thing is, you get to ask question as well! I gotta tell you...
@@ -106,6 +108,7 @@ If they replied right away with something specific enough I could immediately te
 * ...
 
 ### "Homework" assignments
+<!-- TODO: Use meme here, "is this a weekend" butterfly eheh -->
 ... well.. what a nice weekend...
 * You have two APIs that provide you positions and information of vehicles, please build an app that fetches and displays this information in an uniform and useful way.
 
