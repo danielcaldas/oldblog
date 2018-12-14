@@ -101,16 +101,37 @@ to an approach using promises.
 <big><i><b>What's the worst part of working at company X?</b></i></big>
 </center>
 <br/>
-Cool thing is, you get to ask question as well! I gotta tell you...
-If they replied right away with something specific enough I could immediately tell the following about the company:
-* They have a reasonably good transparency with employees, since issues can straight away be identified and explained.
+Cool thing is, you get to ask question as well! I particularly found ver helpful to ask this question to my
+interviewers: *"What's the worst part of working at your company?"*. You can get a few things out of this question.
+If they replied right away with something specific enough I can immediately tell the following about the company:
+* They have a reasonably good transparency with employees, since main issues can straight away be identified and explained.
 * It simply may happen that this bad thing is something that you don't tolerate at all thus it will make you consider moving onto the next interviews.
-* ...
+If during the answer you get the fell that the people interviewing you try to go around the question (which it's not a very smart thing to do let's be honest) maybe you'll get the felling that they are trying to hide something from you and there's a good change that you're feelings are right.
 
 ### "Homework" assignments
-<!-- TODO: Use meme here, "is this a weekend" butterfly eheh -->
-... well.. what a nice weekend...
-* You have two APIs that provide you positions and information of vehicles, please build an app that fetches and displays this information in an uniform and useful way.
+
+![butterfly man meme](/assets/img/my-2-cents-on-tech-job-interviews/is-this-weekend.jpg "butterfly man meme is this weekend")
+
+Yes, if you have a full time job what would you expect? Of course you need to give up a few of those lovely weekends, but please just make it worth, even if you're not confident that you're test case will succeed at least try and learn something from it, otherwise it's just a waste of nice weekends (been there, done that).
+
+I've no really solid position on this topic, I agree that companies need somehow to access your skill, but I think this should not be some automated score that excludes you. Test cases should be taken seriously from both sides and they should be an indication that the candidate taking the test has already some real changes to actually get the job.
+
+I'm just impressed how simply people start to accept the fact that you need to work for free during a not that small amount of time to be considered for some job position.
+
+Below are a list of a few assignments that companies request me to do, just so that you have an idea of the kind challenges you could face out there:
+* You have two APIs that provide you positions and information of taxi vehicles, please build an app that fetches and displays this information in an uniform and useful way.
+* Build an interface that performs currency exchange conversion using some currency conversion rates API (something similar to what you see when you convert currencies on google except for the line chart part)
+* Build a shopping cart with a list of items that you can dynamically add/edit/remove from the shopping cart (discounts and that kind of shit an be applied...)
+* You have an API that retrieves products from a supermarket, for each product you have the detail, price and image. Use this information to display the information in a convenient way to consult it also needs to be responsive. Special requirement is that on mobile  instead of show the detail of the product you just show the name and when the product is clicked it opens a different page with the product information.
+* Build a a number to word list converter as a Node backend and React/Redux fronted. For this challenge the whole commit history can be checked in this public repository <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="el-conversor github repository">danielcaldas/el-conversor</a> and you can also play around with a live version of the converter in <a href="https://el-conversor.herokuapp.com/" target="_blank" title="el-conversor heroku live version">https://el-conversor.herokuapp.com/</a>.
+* Build a classic *todo list* using javascript only. After that try and use a JS framework instead to implement the exact same app, then some smaller and more detailed tasks followed as optional work, stuff like:
+  * Try and change the layout of the todo list via a query parameter;
+  * Try to improve tolling, add hot reload for css files (using webpack).
+
+
+
+
+
 
 ### What's wrong with the pattern
 
@@ -138,9 +159,11 @@ talk about whats bad in steps 1 to 4. in previous section...
 
 * Please do not approach someone with an offer if the person in question had just started a new job in that same week.
 * Please do not let candidates hanging, even if the response not positive please communicate, even if it is an auto generated email saying that the candidate was excluded from the selection process.
-* Please do not ...
-* Please do not ask to the candidate if it's possible to deliver a task that supposedly takes 1 week to complete two or three days after you send the task to the candidate? Wait is the candidate working for you already?
+* Please do not ask to the candidate if it's possible to deliver a task that supposedly takes 1 week to complete two or three days after you send the task to the candidate? Wait, is the candidate working for your company already?
 * Schedule calls and interviews with care, don't forget details such as the fact that the candidate might live in some country with a different timezone.
+* Please do not ask candidates to do long homework assignments to exclude them due to something minor like the "style" of the code or too much over engineering (this things can be detected with a 10min coding interview by solving a simple problem that demonstrates how the candidate approaches problems).
+
+* Please do not ...
 
 ### Final note
 
