@@ -44,7 +44,7 @@ Below a list of the most frequent questions:
 * Describe your previous role.
 * Tell me something about your current job that you don't like (and one that you like).
 * Tell me about yourself and your career so far.
-* Do you have experience with the technologies A or B?
+* Do you have experience with the technologies *A* or *B*?
 * How does your ideal work environment look like?
 * What do you value in you current job that you would also like to have in a some new job?
 * What are your salary expectations?
@@ -52,8 +52,8 @@ Below a list of the most frequent questions:
 * What are you looking for in your new job?
 * Are you currently employed? If yes, what is your notice period?
 * What are your plans for the rest of the day?
-* Tell about about one project/task where you were involved and that it went wrong. Who fault it
-was that it went wrong? <b style="color: red">REPHRASE</b>
+* Tell me about one project/task where you were actively and that for some reason did not went very well. Why
+did it went wrong and whose fault it was.
 * What was the last thing that you red/learned about front end? <small>(in my case front end, but I imagine this could go along with any other expertise as well)</small>
 * In this paper there is code from a pull request. Please describe how you would go about
 doing the code review. Write comments on the paper but explain yourself along the way.
@@ -85,11 +85,14 @@ to an approach using promises.
 * Implement <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank" title="wikipedia Depth-first search">Depth-first search (DFS)</a> algorithm.
 * What data structure better suites a autocomplete search field? (<a href="https://en.wikipedia.org/wiki/Trie" target="_blank" title="wikipedia trie">checkout trie</a>)
 
-### That question that I always ask
-<center>
-<big><i><b>What's the worst part of working at company X?</b></i></big>
-</center>
+### That question I always ask
+
+![its a trap](/assets/img/my-2-cents-on-tech-job-interviews/its-a-trap.gif "its a trap meme")
+
 <br/>
+<big><i><b>What's the worst part of working at company X?</b></i></big>
+<br/>
+
 Cool thing is, you get to ask question as well! I particularly found ver helpful to ask this question to my
 interviewers: *"What's the worst part of working at your company?"*. You can get a few things out of this question.
 If they replied right away with something specific enough I can immediately tell the following about the company:
@@ -99,38 +102,39 @@ If during the answer you get the fell that the people interviewing you try to go
 
 ### "Homework" assignments
 
-![butterfly man meme](/assets/img/my-2-cents-on-tech-job-interviews/is-this-weekend.jpg "butterfly man meme is this weekend")
-
 Yes, if you have a full time job what would you expect? Of course you need to give up a few of those lovely weekends, but please just make it worth, even if you're not confident that you're test case will succeed at least try and learn something from it, otherwise it's just a waste of nice weekends (been there, done that).
+
+![butterfly man meme](/assets/img/my-2-cents-on-tech-job-interviews/is-this-weekend.jpg "butterfly man meme is this weekend")
 
 I've no really solid position on this topic, I agree that companies need somehow to access your skill, but I think this should not be some automated score that excludes you. Test cases should be taken seriously from both sides and they should be an indication that the candidate taking the test has already some real changes to actually get the job.
 
 I'm just impressed how simply people start to accept the fact that you need to work for free during a not that small amount of time to be considered for some job position.
 
 Below are a list of a few assignments that companies request me to do, just so that you have an idea of the kind challenges you could face out there:
-* You have two APIs that provide you positions and information of taxi vehicles, please build an app that fetches and displays this information in an uniform and useful way.
+* You have two APIs that provide you positions and information of taxi vehicles, please build an app that fetches and displays this information in an uniform and useful way. If possible display the vehicles information within a map (e.g. using google maps API).
 * Build an interface that performs currency exchange conversion using some currency conversion rates API (something similar to what you see when you convert currencies on google except for the line chart part)
-* Build a shopping cart with a list of items that you can dynamically add/edit/remove from the shopping cart (discounts and that kind of shit an be applied...)
+* Build a shopping cart with a list of items that you can dynamically add/edit/remove from the shopping cart (discounts and that kind of shit can be applied...). In this particular challenge the company sent me a layout that I was supposed to implement like "*pixel perfect*". Although they provided all the graphical assets and SASS stylesheets
+with color palettes and some elements already ready to use. I just found this challenge to involve way too much effort.
 * You have an API that retrieves products from a supermarket, for each product you have the detail, price and image. Use this information to display the information in a convenient way to consult it also needs to be responsive. Special requirement is that on mobile  instead of show the detail of the product you just show the name and when the product is clicked it opens a different page with the product information.
-* Build a a number to word list converter as a Node backend and React/Redux fronted. For this challenge the whole commit history can be checked in this public repository <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="el-conversor github repository">danielcaldas/el-conversor</a> and you can also play around with a live version of the converter in <a href="https://el-conversor.herokuapp.com/" target="_blank" title="el-conversor heroku live version">https://el-conversor.herokuapp.com/</a>.
+* Build a <a href="https://en.wikipedia.org/wiki/T9_(predictive_text)" target="_blank" title="t9 predictive text wiki page">t9 (predictive text)</a> number to word list converter as a Node backend and React/Redux fronted. For this challenge the whole commit history can be checked in this public repository <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="el-conversor github repository">danielcaldas/el-conversor</a> and you can also play around with a live version of the converter in <a href="https://el-conversor.herokuapp.com/" target="_blank" title="el-conversor heroku live version">https://el-conversor.herokuapp.com/</a>.
 * Build a classic *todo list* using javascript only. After that try and use a JS framework instead to implement the exact same app, then some smaller and more detailed tasks followed as optional work, stuff like:
   * Try and change the layout of the todo list via a query parameter;
   * Try to improve tolling, add hot reload for css files (using webpack).
 
-### What's wrong with the pattern
-
-talk about whats bad in steps 1 to 4. in previous section...
-
 ### Takeaways <small>(a.k.a the things I wish I knew before)</small>
 
 * __Ask questions, the soon the better__ - it's your new job that we are talking about here, just don't hold back any questions that you may have, sometimes the answer to a simple question may reveal something that changes or greatly reinforces your opinion on the company and your will to move forward with the process.
-* __"Salary is not relevant" is bullshit__ - at the end everything is about money
+* __"Salary is not relevant" is bullshit__ - at the end everything is about money.
 * __Be aware of the benefits and counterbalance them with salary__ - quite obvious right...
-* __Syao__ - Yes, study your ass off.. drop some links here to algorithms and stuff.. practice, practice, practice
-* __Lean about the company (and not only the "culture")__ - learn as much as you can... office location, employees reviews, are people leaving or coming, how is the company performing financially, what technologies do they use, what projects are they working on stuff like that check out <a href="https://www.glassdoor.com/" target="_blank" title="glassdoor is a website where employees and former employees anonymously review companies and their management">*www.glassdoor.com*</a>.
-
-
-* __It's ok to be nervous__
+* __Syao__ - Yes, study your ass off.. Practice and read a lot. Here a few goog resources to get you started (some of them are very JS and front-end oriented sorry for that):
+    * <a href="https://github.com/trekhleb/javascript-algorithms" target="_blank" title="algorithms and data structures implemented in javascript with explanations and links to further readings">trekhleb/javascript-algorithms</a> - Algorithms and data structures implemented in JavaScript with explanations and links to further readings.
+    * <a href="https://github.com/leonardomso/33-js-concepts" target="_blank" title="33 concepts every javascript developer should know">leonardomso/33-js-concepts</a> - 33 concepts every JavaScript developer should know.
+    * <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank" title="a list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore">h5bp/Front-end-Developer-Interview-Questions</a> - A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.
+    * <a href="https://github.com/yangshun/tech-interview-handbook" target="_blank" title="algorithms study materials, behavioral content and tips for rocking your coding interview">yangshun/tech-interview-handbook</a> - Algorithms study materials, behavioral content and tips for rocking your coding interview.
+    * <a href="https://github.com/yangshun/front-end-interview-handbook" target="_blank" title="almost complete answers to 'front-end job interview questions' which you can use to interview potential candidates, test yourself or completely ignore">yangshun/front-end-interview-handbook</a> - Almost complete answers to "Front-end Job Interview Questions" which you can use to interview potential candidates, test yourself or completely ignore.
+    * <a href="https://github.com/kdn251/interviews" target="_blank" title="everything you need to know to get the job">kdn251/interviews</a> - Everything you need to know to get the job.
+* __Lean about the company (and not only the "culture")__ - learn as much as you can... office location, employees reviews, are people leaving or coming, how is the company performing financially, what technologies do they use, what projects are they working on stuff like that check out <a href="https://www.glassdoor.com/" target="_blank" title="glassdoor is a website where employees and former employees anonymously review companies and their management">*www.glassdoor.com*</a>, it's also nice to check the companies' <a href="https://github.com/" target="_blank" title="github inc. is a web-based hosting service for version control using git">*github.com*</a> profile to check if their are actively engaged with the open source community.
+* __It's ok to be nervous__ - yes.
 * __Fail__ - *“Don't bury your failures. Let them inspire you.”* - it's not an original quote, but it fits just great here and kind of sums up what I wanted to say.
 * __Be honest__ - I remember one of this technical interviews, this guy telling me: *"Ok, now let's do some SQL questions to see how you doing..."*. My first thought was *"That's it, I'm fucked!"*, but then I didn't lose my time or theirs, I was straightforward and told him that I have very limited knowledge of SQL, never done it in a real job only had this university class that gave me some basics on database design and little bit of SQL and that's it, the guy said that it was ok and he appreciated my honesty, still I passed to the next interviews round.
 * __Don't ever drop performance on your current job__ - You're still employed? Then make sure that this *parallel life* of yours does not interferes with your current job, they are the ones paying you're salary not the companies you are interviewing.
@@ -145,14 +149,11 @@ hand remember that you getting each time more experiment and more comfortable ar
 ### Dear companies and recruiters please do not...
 
 * Please do not approach someone with an offer if the person in question had just started a new job in that same week.
-* Please do not let candidates hanging, even if the response not positive please communicate, even if it is an auto generated email saying that the candidate was excluded from the selection process.
+* Please do not let candidates *hanging*, even if the response not positive please communicate, even if it is an auto generated email saying that the candidate was excluded from the selection process.
 * Please do not ask to the candidate if it's possible to deliver a task that supposedly takes 1 week to complete two or three days after you send the task to the candidate? Wait, is the candidate working for your company already?
-* Schedule calls and interviews with care, don't forget details such as the fact that the candidate might live in some country with a different timezone.
-* Please do not ask candidates to do long homework assignments to exclude them due to something minor like the "style" of the code or too much over engineering (this things can be detected with a 10min coding interview by solving a simple problem that demonstrates how the candidate approaches problems).
-
-* Please do not ...
+* Schedule calls and interviews with care, don't forget relevant details such as the fact that the candidate might live in some country with a different timezone.
+* Please do not ask candidates to do long homework assignments to exclude them due to something minor like the "style" of the code or too much over engineering, this things can be detected with a 10 minutes coding interview by solving a simple challenge that demonstrates how the candidate approaches problems, both abstractly and implementation wise.
 
 ### Final note
 
-Again this is just my opinion...
-I hope you find useful some sections of this post even tough you don't work on the tech industry...
+Again much of the written above is just my opinion. I hope you find useful some sections of this post even if you don't work on the tech industry.
