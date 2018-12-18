@@ -262,7 +262,7 @@ So let's take look at the mentioned regrets:
 - **node_modules** - if you have multiple projects it tends to have multiple `node_modules` folders... It gets big.
 ![node_modules heaviest object in the universe](/assets/img/about-js-conf-eu-berlin-2018/node-modules-meme.jpg "node_modules heaviest object in the universe")
 - **require("module") without the extension .js** - at some point someone thought that requiring files without the extension would be cleaner, so you just end up trying to look up the extension in the filesystem, it is `.js`? `.jsx`? `.ts`? Well in this one I agree with Ryan just write down the f****** extension!
-- **index.js** - Ryan thought it was cute. There was `index.html` and in the same wave of thinking it should be cute to have an `index.js` why note? Well it ends up that this raised complexity of the module loading system unnecessarily.
+- **index.js** - Ryan thought it was cute. There was `index.html` and in the same wave of thinking it should be cute to have an `index.js` why not? Well it ends up that this raised complexity of the module loading system unnecessarily.
 - **How user code is managed by the module system** - As Ryan was developing Node he focuses mainly on *evented* I/O leaving some things behind, one of them was the module system and how it manages user code.
 
 And then a plot twist. At the end of complaining about Node.js Ryan presented a possible alternative to Node.js and how it could be better.
