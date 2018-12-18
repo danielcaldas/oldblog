@@ -10,31 +10,20 @@ Well... A few months have passed since I published my first blog posts and since
 
 ![one does not simply](/assets/img/my-2-cents-on-tech-job-interviews/one-does-not-simply.jpg "one does not simply find a job from meme generator")
 
-Roughly 3 months have passed since I left my first job at
-<a href="https://blip.pt/jobs/" target="_blank" title="blip find a job">blip</a> to join <a href="https://company.trivago.com/careers/open-positions/" target="_blank" title="trivago opened positions">trivago</a>, but I don't want to talk about my new job here, instead I want to go all the way back to November 2017 and share my experience where I faced several job interviews for different companies (will not share the companies' names for obvious reasons).
+Roughly 4 months have passed since I left my first job at
+<a href="https://blip.pt/jobs/" target="_blank" title="blip find a job">blip</a> to join <a href="https://company.trivago.com/careers/open-positions/" target="_blank" title="trivago opened positions">trivago</a>, but I don't want to talk about my new job here, instead I want to go all the way back to November 2017 and share my experience where I faced several job interviews for different companies (unfortunately can't share the companies' names).
 
 For a few years I had this aspiration of living in a different country in order to get to know new cultures, travel and also because I deeply believed (not past tense, I'll still do believe) that it would do great good for my personal and professional development.
 
-I started out really slow throwing around some CVs just to see what would happened.. Well not much happened. You see I was in my first job (roughly 1 year of experience) as software engineer and had just finished my master's and I was already aiming for international jobs at companies such as Google, Facebook and Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...
+I started out really slow throwing around some CVs just to see what would happened.. Well not much happened. You see I was in my first job (1 year of experience) as software engineer and had just finished my master's and I was already aiming for international jobs at companies such as Google, Facebook and Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...
 
 ![woah easy there cowboy](/assets/img/my-2-cents-on-tech-job-interviews/woah-easy-there-cowboy.jpg "woah easy there cowboy from meme generator")
-
-1. 10 years exp applying for normal position
-...
-2. ...
-3. ...
-4. 5 years exp and becomes CTO
-5. TRANSCENDENT ME! - 1 year of experience applying to senior -->
 
 Entering 2018 I thought to myself: *"Woah, easy there, let's put both feet on the ground and really aim to more realistic opportunities and not just not apply jobs randomly and expect it to work!"*.
 And it was in deed a good decision I started to spend more time on analyzing the companies and the opportunities where I could indeed be a good candidate.
 Soon positive emails start to fill in my inbox with requests to schedule interviews for the upcoming weeks/months.
 
 ### The pattern
-
-<!-- TODO: remove this ugly image, replace or put nothing. -->
-
-![pattern](/assets/img/my-2-cents-on-tech-job-interviews/pattern.jpg "pattern colorful")
 
 A few interviews passed and it seemed that all companies would fall into this same pattern/journey to hire new personnel:
 
@@ -128,11 +117,6 @@ Below are a list of a few assignments that companies request me to do, just so t
   * Try and change the layout of the todo list via a query parameter;
   * Try to improve tolling, add hot reload for css files (using webpack).
 
-
-
-
-
-
 ### What's wrong with the pattern
 
 talk about whats bad in steps 1 to 4. in previous section...
@@ -143,7 +127,9 @@ talk about whats bad in steps 1 to 4. in previous section...
 * __"Salary is not relevant" is bullshit__ - at the end everything is about money
 * __Be aware of the benefits and counterbalance them with salary__ - quite obvious right...
 * __Syao__ - Yes, study your ass off.. drop some links here to algorithms and stuff.. practice, practice, practice
-* __Lean about the company (and not only the "culture")__ - learn as much as you can... office location, employess reviews, are people leaving or coming, how is the company performing financially, what technologies do they use, what projects are they working on stuff like that check out glassdoor
+* __Lean about the company (and not only the "culture")__ - learn as much as you can... office location, employees reviews, are people leaving or coming, how is the company performing financially, what technologies do they use, what projects are they working on stuff like that check out <a href="https://www.glassdoor.com/" target="_blank" title="glassdoor is a website where employees and former employees anonymously review companies and their management">*www.glassdoor.com*</a>.
+
+
 * __It's ok to be nervous__
 * __Fail__ - *“Don't bury your failures. Let them inspire you.”* - it's not an original quote, but it fits just great here and kind of sums up what I wanted to say.
 * __Be honest__ - I remember one of this technical interviews, this guy telling me: *"Ok, now let's do some SQL questions to see how you doing..."*. My first thought was *"That's it, I'm fucked!"*, but then I didn't lose my time or theirs, I was straightforward and told him that I have very limited knowledge of SQL, never done it in a real job only had this university class that gave me some basics on database design and little bit of SQL and that's it, the guy said that it was ok and he appreciated my honesty, still I passed to the next interviews round.
@@ -151,9 +137,10 @@ talk about whats bad in steps 1 to 4. in previous section...
 * __Leaving your current job? Don't forget to keep connections with your old colleagues keeping the doors open__ - specially if you enjoyed your previous company (as I did) make sure...
 * __Make sure to not waist to much time on the technical tasks__ - ....
 * __Take the technical tasks seriously and face them as an opportunity to lear__ - ...
-* __Take notes, learn from your mistakes__ - ...
-* __Be patient__ - ...
-* __Be persistent__ - ...
+* __Take notes, learn from your mistakes__ - It's important that you take notes and where's why. On my first few sets of interviews I thought I could just be super concentrated and memorize important details or simply wrote them down after the interview. Well I couldn't, it happens
+* __Be patient__ - These days recruitment processes may take ages (can take up to several months!) so just don't be actively waiting around for the next reply otherwise it just drives you mad, just keep going with your life normally without letting this affect your stress levels too much.
+* __Be persistent__ - It may happen that you do 10 interviews and you don't succeed, on one hand this can be a huge source of frustration and disappointment, but on the other
+hand remember that you getting each time more experiment and more comfortable around this interviewing stuff and that experience it's powerful! You're just increasing your odds to succeed on the next interview at each failed one.
 
 ### Dear companies and recruiters please do not...
 
