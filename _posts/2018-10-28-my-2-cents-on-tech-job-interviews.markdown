@@ -6,33 +6,33 @@ categories: jekyll update
 ---
 <script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
-Well... A few months have passed since I published my first blog posts and since then I stacked up quite a few topics that I wanted talk about, and job interviews is on of them. In this post I'll tell what I think it's wrong with the current approach that companies are using to recruit in the software industry, but I'll start to give you some context by telling my first (first worth sharing) personal experience on searching a job as a software engineer, a search that led me to my current job.
+Well... A few months have passed since I published my first blog posts and since then I stacked up quite a few topics that I wanted talk about, and job interviews is one of them. In this post I'll tell you about the current process that companies within the tech industry use to recruit these days. To give you some context I'll write about my first (first worth sharing) personal experience on searching a job as a software engineer, a search that led me to my current job.
 
 <img width="70%" height="40%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/one-does-not-simply.jpg" alt="one does not simply find a job from meme generator"/>
 
 Roughly 4 months have passed since I left my first job at
-<a href="https://blip.pt/jobs/" target="_blank" title="blip find a job">blip</a> to join <a href="https://company.trivago.com/careers/open-positions/" target="_blank" title="trivago opened positions">trivago</a>, but I don't want to talk about my new job here, instead I want to go all the way back to November 2017 and share my experience where I faced several job interviews for different companies (unfortunately can't share the companies' names).
+<a href="https://blip.pt/jobs/" target="_blank" title="blip find a job">blip</a> to join <a href="https://company.trivago.com/careers/open-positions/" target="_blank" title="trivago opened positions">trivago</a>, but I don't want to talk about my new job, instead I want to go all the way back to November 2017 and share my experience about facing several job interviews for different companies (unfortunately can't share the companies' names).
 
 For a few years I had this aspiration of living in a different country in order to get to know new cultures, travel and also because I deeply believed (not past tense, I'll still do believe) that it would do great good for my personal and professional development.
 
-I started out really slow throwing around some CVs just to see what would happened.. Well not much happened. You see I was in my first job (1 year of experience) as software engineer and had just finished my master's and I was already aiming for international jobs at companies such as Google, Facebook and Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...
+I started out really slow throwing around some CVs just to see what would happened.. Well not much happened. You see I was in my first job (1 year of experience) as software engineer and had just finished my master's... I was already aiming for international jobs at companies such as Google, Facebook or Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...
 
 <img width="70%" height="40%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/woah-easy-there-cowboy.jpg" alt="woah easy there cowboy from meme generator"/>
 
-Entering 2018 I thought to myself: *"Woah, easy there, let's put both feet on the ground and really aim to more realistic opportunities and not just not apply jobs randomly and expect it to work!"*.
+Entering 2018 I thought to myself: *"Woah, easy there, let's think with both feet on the ground and really aim to more realistic opportunities and not just apply to jobs randomly and expect it to work!"*.
 And it was in deed a good decision I started to spend more time on analyzing the companies and the opportunities where I could indeed be a good candidate.
 Soon positive emails start to fill in my inbox with requests to schedule interviews for the upcoming weeks/months.
 
 ### The pattern
 
-A few interviews passed and it seemed that all companies would fall into this same pattern/journey to hire new personnel:
+A few interviews passed and it seemed that all companies would fall into this same pattern/journey to hire new personnel (of course I'm referring to the software engineer role or similar):
 
-1. **HR call** just to do some background check, knowing candidate expectations, also a good point to get to know the company before deciding on moving forward, duration ranging from 20 to 40 minutes.
-2. **Technical challenge** task more focused on the field where the candidate applies, duration ranging from tasks that can be finished in hours to 1 week (insane right! 1 week!).
-3. **Video call interview** with some senior engineer probably someone with a role close to what the candidate applies to. Here normally two things can happen (not mutually exclusive):
-  * You will do a **walk through on the technical task of step 2.** and explain you're decisions while answering technical questions that might be or not related with the task at all but it always has the task has the baseline to conduct the interview
+1. **HR call** - just to do some background check, knowing candidate expectations, also a good point to get to know the company before deciding on moving forward, duration ranging from 20 to 40 minutes.
+2. **Technical challenge** - task more focused on the field where the candidate applies, tasks' duration ranging from hours to 1 week (insane right! 1 week!).
+3. **Video call interview** - with some engineer probably someone with a role close to what the candidate applies to. Here normally two things can happen (not mutually exclusive):
+  * You will do a **walk through on the technical task of step 2.** and explain you're decisions while answering technical questions that might be or not related with the task at all but it always has the task has the baseline to conduct the interview.
   * The task is not mentioned at all which means that it was more of a filter to exclude candidates that do not match the expertise/skill required for the position. Here various things happened to me, since answering **more generic computer science questions** to **discussing the trends on a certain technological field** (in my case Javascript).
-4. **Final on sight interview (or another video call)**. Here questions and challenges might not belong only on the technical realm, you will face behavioral questions, process questions, good practices and so on...
+4. **Final on sight interview (or another video call)** - here questions and challenges might not belong only on the technical realm, you will face behavioral questions, process questions, good practices and so on...
 
 ### Typical questions
 
@@ -130,7 +130,7 @@ with color palettes and some elements already ready to use. I just found this ch
 * __Ask questions, the soon the better__ - it's your new job that we are talking about here, just don't hold back any questions that you may have, sometimes the answer to a simple question may reveal something that changes or greatly reinforces your opinion on the company and your will to move forward with the process.
 * __"Salary is not relevant" is bullshit__ - at the end everything is about money.
 * __Be aware of the benefits and counterbalance them with salary__ - quite obvious right...
-* __Syao__ - Yes, study your ass off.. Practice and read a lot. Here a few goog resources to get you started (some of them are very JS and front-end oriented sorry for that):
+* __Syao__ - Yes, study your ass off.. Practice and read a lot. Here a few good resources to get you started (some of them are very JS and front-end oriented sorry for that):
     * <a href="https://github.com/trekhleb/javascript-algorithms" target="_blank" title="algorithms and data structures implemented in javascript with explanations and links to further readings">trekhleb/javascript-algorithms</a> - Algorithms and data structures implemented in JavaScript with explanations and links to further readings.
     * <a href="https://github.com/leonardomso/33-js-concepts" target="_blank" title="33 concepts every javascript developer should know">leonardomso/33-js-concepts</a> - 33 concepts every JavaScript developer should know.
     * <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank" title="a list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore">h5bp/Front-end-Developer-Interview-Questions</a> - A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.
