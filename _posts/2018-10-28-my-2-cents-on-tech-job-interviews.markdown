@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My 2 cents on (tech) job interviews"
-date:   2018-10-28 00:00:00 +0100
+date:   2018-12-18 22:20:00 +0100
 categories: jekyll update
 ---
 <script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
@@ -150,7 +150,7 @@ with color palettes and some elements already ready to use. I just found this ch
 * __Be persistent__ - It may happen that you do 10 interviews and you don't succeed, on one hand this can be a huge source of frustration and disappointment, but on the other
 hand remember that you getting each time more experiment and more comfortable around this interviewing stuff and that experience it's powerful! You're just increasing your odds to succeed on the next interview at each failed one.
 
-### Dear companies and recruiters please do not...
+### Dear recruiters please do not...
 
 * Please do not approach someone with an offer if the person in question had just started a new job in that same week.
 * Please do not let candidates *hanging*, even if the response not positive please communicate, even if it is an auto generated email saying that the candidate was excluded from the selection process.
