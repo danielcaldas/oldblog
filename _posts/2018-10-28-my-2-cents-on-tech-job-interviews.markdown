@@ -8,7 +8,7 @@ categories: jekyll update
 
 Well... A few months have passed since I published my first blog posts and since then I stacked up quite a few topics that I wanted talk about, and job interviews is on of them. In this post I'll tell what I think it's wrong with the current approach that companies are using to recruit in the software industry, but I'll start to give you some context by telling my first (first worth sharing) personal experience on searching a job as a software engineer, a search that led me to my current job.
 
-![one does not simply](/assets/img/my-2-cents-on-tech-job-interviews/one-does-not-simply.jpg "one does not simply find a job from meme generator")
+<img width="70%" height="40%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/one-does-not-simply.jpg" alt="one does not simply find a job from meme generator"/>
 
 Roughly 4 months have passed since I left my first job at
 <a href="https://blip.pt/jobs/" target="_blank" title="blip find a job">blip</a> to join <a href="https://company.trivago.com/careers/open-positions/" target="_blank" title="trivago opened positions">trivago</a>, but I don't want to talk about my new job here, instead I want to go all the way back to November 2017 and share my experience where I faced several job interviews for different companies (unfortunately can't share the companies' names).
@@ -17,7 +17,7 @@ For a few years I had this aspiration of living in a different country in order 
 
 I started out really slow throwing around some CVs just to see what would happened.. Well not much happened. You see I was in my first job (1 year of experience) as software engineer and had just finished my master's and I was already aiming for international jobs at companies such as Google, Facebook and Spotify, of course I did not even get an opportunity to interview at those companies my CV would be filtered out automatically I guess...
 
-![woah easy there cowboy](/assets/img/my-2-cents-on-tech-job-interviews/woah-easy-there-cowboy.jpg "woah easy there cowboy from meme generator")
+<img width="70%" height="40%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/woah-easy-there-cowboy.jpg" alt="woah easy there cowboy from meme generator"/>
 
 Entering 2018 I thought to myself: *"Woah, easy there, let's put both feet on the ground and really aim to more realistic opportunities and not just not apply jobs randomly and expect it to work!"*.
 And it was in deed a good decision I started to spend more time on analyzing the companies and the opportunities where I could indeed be a good candidate.
@@ -60,7 +60,7 @@ doing the code review. Write comments on the paper but explain yourself along th
 * There are three boxes, one contains only apples, one  contains only oranges, and one contains both apples and oranges. The boxes have been incorrectly labeled such that no label identifies the actual contents of the box it labels. Opening just one box, and without looking in the box, you take out one piece of fruit. How many pieces of fruit do you need to take from the boxes in order to be able to correctly label the boxes?
 
 <br/>
-![job interview meme](/assets/img/my-2-cents-on-tech-job-interviews/tell-me-aboit-yourself-job-interview-meme.jpg "job interview meme")
+<img width="70%" height="40%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/tell-me-aboit-yourself-job-interview-meme.jpg" alt="job interview meme"/>
 <br/>
 <br/>
 
@@ -87,10 +87,12 @@ to an approach using promises.
 
 ### That question I always ask
 
-![its a trap](/assets/img/my-2-cents-on-tech-job-interviews/its-a-trap.gif "its a trap meme")
+<img width="60%" height="50%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/its-a-trap.gif" alt="its a trap meme"/>
 
 <br/>
+<center>
 <big><i><b>What's the worst part of working at company X?</b></i></big>
+</center>
 <br/>
 
 Cool thing is, you get to ask question as well! I particularly found ver helpful to ask this question to my
@@ -104,7 +106,7 @@ If during the answer you get the fell that the people interviewing you try to go
 
 Yes, if you have a full time job what would you expect? Of course you need to give up a few of those lovely weekends, but please just make it worth, even if you're not confident that you're test case will succeed at least try and learn something from it, otherwise it's just a waste of nice weekends (been there, done that).
 
-![butterfly man meme](/assets/img/my-2-cents-on-tech-job-interviews/is-this-weekend.jpg "butterfly man meme is this weekend")
+<img width="60%" height="50%" style="margin: 0 auto; display: block;" src="/assets/img/my-2-cents-on-tech-job-interviews/is-this-weekend.jpg" alt="butterfly man meme is this weekend"/>
 
 I've no really solid position on this topic, I agree that companies need somehow to access your skill, but I think this should not be some automated score that excludes you. Test cases should be taken seriously from both sides and they should be an indication that the candidate taking the test has already some real changes to actually get the job.
 
@@ -122,6 +124,8 @@ with color palettes and some elements already ready to use. I just found this ch
   * Try to improve tolling, add hot reload for css files (using webpack).
 
 ### Takeaways <small>(a.k.a the things I wish I knew before)</small>
+
+<img width="70%" height="30%" style="margin: 0 auto; display: block;"  src="/assets/img/my-2-cents-on-tech-job-interviews/knowledge.jpg" alt="taio lopez knowledge meme"/>
 
 * __Ask questions, the soon the better__ - it's your new job that we are talking about here, just don't hold back any questions that you may have, sometimes the answer to a simple question may reveal something that changes or greatly reinforces your opinion on the company and your will to move forward with the process.
 * __"Salary is not relevant" is bullshit__ - at the end everything is about money.
@@ -156,4 +160,4 @@ hand remember that you getting each time more experiment and more comfortable ar
 
 ### Final note
 
-Again much of the written above is just my opinion. I hope you find useful some sections of this post even if you don't work on the tech industry.
+Again much of the written above is just my opinion. I hope you find useful some of the sections of this post even if you don't work on the tech industry.
