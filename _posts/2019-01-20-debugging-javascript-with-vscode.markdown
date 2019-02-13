@@ -105,7 +105,7 @@ To bring all this convenience into your favorite IDE, you need to perform the fo
 9. Go back to the Redux DevTools and click the connect button.
 10. And you're good to go, if everything went as expected you should have a similar setup to the following one:
 
-![vscode debugger](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-2.png "vscode debugger javascript redux")
+[ ![](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-2.png) ](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-2.png)
 
 ## Conclusions
 
