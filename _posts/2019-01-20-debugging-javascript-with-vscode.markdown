@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 <script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
-### GIF dev session demo
+![vscode debugging animation](/assets/img/debugging-javascript-with-vscode/debug-animation-1.gif "vscode debugging animation")
 
 Prepare to set up some rocket science debugging toolkit in <a href="https://code.visualstudio.com/" target="_blank" title="visual studio code is a lightweight but powerful source code editor which runs on your desktop">VS Code</a> for Javascript. After this, you can start kicking ass and showing off your debugging skills to your peers.
 
@@ -109,7 +109,7 @@ To bring all this convenience into your favorite IDE, you need to perform the fo
 
 ## Conclusions
 
-### GIF checking actions and state in the redux devtools and debugging
+![vscode debugging animation redux](/assets/img/debugging-javascript-with-vscode/debug-animation-2.gif "vscode debugging animation redux")
 
 I might have spend one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful specially if it saves you one day of trouble trying to figure out the right configs.
 
