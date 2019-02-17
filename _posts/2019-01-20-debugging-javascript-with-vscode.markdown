@@ -21,7 +21,7 @@ Next we will dive deep into <a href="https://github.com/danielcaldas/el-converso
 
 ### Javascript debugger
 
-1. Install <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" title="debug your javascript code in the chrome browser, or any other target that supports the chrome debugger protocol">Debugger for Chrome</a>.
+1. Install <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" title="debug your javascript code in the Chrome browser, or any other target that supports the chrome debugger protocol">Debugger for Chrome</a>.
 2. On your root folder create a `.vscode` folder (it may already exist, in that case, jump this step).
 3. Create a `launch.json` file inside the `.vscode` directory with the following configuration or click on the gear icon in the debug tab on vscode:
 ```json
@@ -45,7 +45,7 @@ Next we will dive deep into <a href="https://github.com/danielcaldas/el-converso
 <small>*You can read more about `sourceMapPathOverrides` property in the official <a href="https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#sourcemaps" target="_blank" title="microsoft/vscode-chrome-debug README.md">the README.md of microsoft/vscode-chrome-debug</a>.*</small>
 4. The only thing that you would need to eventually fine tune is the url parameter in order to point to your local dev server.
 
-Now running your development server and simultaneously activating the javascript debugger on vscode you're finally able to debug your code!
+Now running your development server and simultaneously activating the vscode javascript debugger you're finally able to debug your code!
 
 ![vscode debugger](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-1.png "vscode debugger javascript")
 
@@ -53,7 +53,7 @@ Now running your development server and simultaneously activating the javascript
 
 ### Redux DevTools
 
-> ⚠️ Although this setup is very useful it adds a considerable overhead to your development setup. Maybe in the future better integrations (maybe natively integrated with the IDE) will come up, or maybe there's already some better integration that I might not be aware of, please comment this page if that's the case.
+> ⚠️ Although this setup is handy it adds considerable overhead to your development setup. Maybe in the future, better integrations (maybe natively integrated with the IDE) will be available, or maybe there's already some better integration that I might not be aware of, please comment this page if that's the case.
 
 
 If you're using <a href="https://redux.js.org/" target="_blank" title="a predictable state container for javascript apps">Redux</a> there is a strong possibility that you're debugging your application state with <a href="https://marketplace.visualstudio.com/items?itemName=jingkaizhao.vscode-redux-devtools" target="_blank" title="vscode redux devtools wrapper">Redux DevTools</a>. Wouldn't it be nice to run the Redux DevTools on a VS Code tab, along side with your shinny new debugger? 😎
@@ -103,14 +103,16 @@ To bring all this convenience into your favorite IDE, you need to perform the fo
     ```
 8. Launch the VS Code debugger.
 9. Go back to the Redux DevTools and click the connect button.
-10. And you're good to go, if everything went as expected you should have a similar setup to the following one:
+10. You're good to go! If everything went as expected you should have a similar setup to the following one:
 
 [ ![](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-2.png) ](/assets/img/debugging-javascript-with-vscode/vscode-debugger-part-2.png)
+
+<br/>
 
 ## Conclusions
 
 ![vscode debugging animation redux](/assets/img/debugging-javascript-with-vscode/debug-animation-2.gif "vscode debugging animation redux")
 
-I might have spend one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful specially if it saves you one day of trouble trying to figure out the right configs.
+I might have spent one or two days trying to figure out how to bring all these pieces together, but having done it, believe that it increased my productivity in ways that by far compensate the invested time. I hope you find this article useful especially if it saves you one day of trouble trying to figure out the right configs.
 
 See you around!
