@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Debugging Javascript with VS Code"
-date:   2019-01-20 10:00:00 +0100
+date:   2019-02-17 23:30:00 +0100
 categories: jekyll update
 ---
 <script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
