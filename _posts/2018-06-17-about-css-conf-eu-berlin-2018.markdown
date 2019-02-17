@@ -134,3 +134,5 @@ Here the list of the talks with links to videos (at this point the majority of t
 
 ## And then...
 I will also write <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
+
+<div class="just-comments" data-allowguests="true" data-apikey="ce30a8f0-615e-4123-b660-d2e23742a163"></div>
