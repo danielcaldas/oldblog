@@ -4,7 +4,6 @@ title:  "Debugging Javascript with VS Code"
 date:   2019-02-17 22:30:00 +0100
 categories: jekyll update
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
 ![vscode debugging animation](/assets/img/debugging-javascript-with-vscode/debug-animation-1.gif "vscode debugging animation")
 

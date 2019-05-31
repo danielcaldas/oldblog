@@ -4,7 +4,6 @@ title:  "Deleted my git stash! Please send help!"
 date:   2018-12-09 22:30:00 +0100
 categories: jekyll update
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
 ![please send help](/assets/img/please-send-help-deleted-my-git-stash/please-send-help.jpg "please send help doggo meme")
 

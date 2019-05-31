@@ -4,7 +4,6 @@ title:  "The hidden potential of webpack DefinePlugin"
 date:   2019-05-30 17:00:00 +0100
 categories: jekyll update
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
 The odds are high that you're using <a href="https://webpack.js.org/" target="_blank" title="a bundler for javascript and friends">webpack</a> to bundle your assets. If you're looking into an excellent way to feed environment variables to your applications, <a href="https://webpack.js.org/plugins/define-plugin/#usage" target="_blank" title="the defineplugin allows you to create global constants which can be configured at compile time">DefinePlugin</a> might well be the answer.
 

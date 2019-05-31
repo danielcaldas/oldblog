@@ -5,7 +5,7 @@ date:   2018-08-12 21:00 +0200
 categories: jekyll update
 bigimg: /assets/img/about-js-conf-eu-berlin-2018/jsconf-eu-2018.jpg
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
+
 ## For starters
 As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/update/2018/06/17/about-css-conf-eu-berlin-2018.html) I will now talk a bit about the JSConf EU 2018 that followed the CSSConf in the Berlin Arena (June 2nd and 3rd).
 

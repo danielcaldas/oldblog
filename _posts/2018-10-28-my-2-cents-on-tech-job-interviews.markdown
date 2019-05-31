@@ -4,7 +4,6 @@ title:  "My 2 cents on (tech) job interviews"
 date:   2018-12-18 22:20:00 +0100
 categories: jekyll update
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
 Well... A few months have passed since I published my first blog posts and since then I stacked up quite a few topics that I wanted to talk about, and job interviews are one of them. In this post I'll tell you about the current process that companies within the tech industry use to recruit these days. To give you some context I'll write about my first (first worth sharing) personal experience on searching for a job as a software engineer, a search that led me to my current job.
 
