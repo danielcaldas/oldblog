@@ -16,5 +16,18 @@
     script.src = VANILLA_BACK_TO_TOP;
     script.onload = addButton.bind(this, BTN_STYLE);
 
-    document.body.appendChild(script);
+    var retry = 5;
+
+    const interval = setInterval(function() {
+        try {
+            document.body.appendChild(script);
+            window.clearInterval(interval);
+        } catch (error) {
+            if (retry === 0) {
+                window.clearInterval(interval);
+            }
+
+            retry--;
+        }
+    }, 500);
 })();

@@ -4,7 +4,6 @@ title:  "Presenting babel-plugin-cloudinary"
 date:   2019-04-04 00:00:00 +0100
 categories: jekyll update
 ---
-<script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
 
 During the past two months, I've been developing a side project at work, this started with me doing a simple refactor task. At the time I looked at the solution we had in place, and it was dirty, but it was necessary to skip some considerable performance penalty. Maybe it was something that we just had to learn to live with...
 
