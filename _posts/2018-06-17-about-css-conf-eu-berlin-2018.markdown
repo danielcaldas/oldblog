@@ -3,11 +3,9 @@ layout: post
 title:  "CSSconf EU 2018"
 date:   2018-06-17 16:33:00 +0100
 categories: jekyll update
+bigimg: /assets/img/about-css-conf-eu-berlin-2018/1.jpg
 ---
 <script src="{{ base.url | prepend: site.url }}/assets/js/back-to-top.js"></script>
-![css conf eu 2018 berlin logo](/assets/img/about-css-conf-eu-berlin-2018/1.jpg "CSS Conf.EU 2018 logo")
-<br>
-<br>
 Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">JSConf EU</a> that had a similar organization.
 
 ## For starters
