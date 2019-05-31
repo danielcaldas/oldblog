@@ -5,9 +5,9 @@ date:   2019-02-17 22:30:00 +0100
 categories: jekyll update
 ---
 
-![vscode debugging animation](/assets/img/debugging-javascript-with-vscode/debug-animation-1.gif "vscode debugging animation")
-
 Prepare to set up some rocket science debugging toolkit in <a href="https://code.visualstudio.com/" target="_blank" title="visual studio code is a lightweight but powerful source code editor which runs on your desktop">VS Code</a> for Javascript. After this, you can start kicking ass and showing off your debugging skills to your peers.
+
+![vscode debugging animation](/assets/img/debugging-javascript-with-vscode/debug-animation-1.gif "vscode debugging animation")
 
 To be precise and not only provide generic instructions on how to setup debugging in VS Code I will provide a step by step guide based on a real open source project so that you can checkout the config and how all the pieces come together. Without further ado I present to you
 <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="a number to word list converter as a node backend and react/redux fronted">el-conversor</a>. The project uses <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a>). and the build tool is <a href="https://webpack.js.org/" target="_blank" title="bundle your scripts">webpack</a>, this is important to mention because because if you're using <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a>) you will need proper src maps to map your source. At the end of the [how to guide section](#how-to) you should have this amazing debugging/development setup.

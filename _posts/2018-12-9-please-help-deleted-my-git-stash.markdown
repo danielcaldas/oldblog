@@ -5,16 +5,16 @@ date:   2018-12-09 22:30:00 +0100
 categories: jekyll update
 ---
 
-![please send help](/assets/img/please-send-help-deleted-my-git-stash/please-send-help.jpg "please send help doggo meme")
-
 I have this poor habit you know... Whenever I accumulate a lot of stashes in some repository I just get a little maniac and start cleaning everything. I found it sometimes even funny to open the terminal and play around with some bash to delete the stashes, look:
+
+![please send help](/assets/img/please-send-help-deleted-my-git-stash/please-send-help.jpg "please send help doggo meme")
 
 ```bash
 # if you're just flashing by don't copy and past this line into your terminal
 for i in {1..10}; do git stash drop; done
 ```
 
-Well, it happens that today (a few hours ago actually) I just did this and regretted the moment I did because there was this huge feature that for some reason I had locally stashed and not committed <br/> ¯\\_(ツ)_/¯.
+Well, it happens that today (a few hours ago actually) I just did this and regretted the moment I did because there was this huge feature that for some reason I had locally stashed and not committed <br/> ¯\\\_(ツ)\_/¯.
 
 **Good news!**, the commits are not actually gone until git runs <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)#Reachability_of_an_object" target="_blank" title="wiki page garbage collection">*garbage collection*</a>, so to check the list of commits that might still be rescued just go ahead and type:
 
