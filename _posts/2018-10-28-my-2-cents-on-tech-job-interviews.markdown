@@ -161,5 +161,3 @@ hand remember that you getting each time more experiment and more comfortable ar
 ### Final note
 
 Again much of the written above is just my opinion. I hope you find useful some of the sections of this post even if you don't work on the tech industry.
-
-<div class="just-comments" data-allowguests="true" data-apikey="ce30a8f0-615e-4123-b660-d2e23742a163"></div>

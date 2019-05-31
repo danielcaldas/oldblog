@@ -49,5 +49,3 @@ And that's it, hope this saves you just like it saved me.
 <br/>
 
 Have a nice day.
-
-<div class="just-comments" data-allowguests="true" data-apikey="ce30a8f0-615e-4123-b660-d2e23742a163"></div>

@@ -641,5 +641,3 @@ And this is me (*left*) and my colleagues on our last day in Berlin.
 <br/>
 
 See you soon.
-
-<div class="just-comments" data-allowguests="true" data-apikey="ce30a8f0-615e-4123-b660-d2e23742a163"></div>
