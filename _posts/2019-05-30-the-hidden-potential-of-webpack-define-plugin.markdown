@@ -28,7 +28,11 @@ new webpack.DefinePlugin({
 console.log(`Accessing my env var like a ninja: ${myEnvVar}`);
 ```
 
-![webpack meme](/assets/img/the-hidden-potential-of-webpack-define-plugin/star-wars-webpack.jpg "webpack star wars meme")
+<br/>
+<div style="text-align:center;">
+    <img alt="webpack star wars meme" src="/assets/img/the-hidden-potential-of-webpack-define-plugin/star-wars-webpack.jpg"/>
+</div>
+<br/>
 
 ## The long story
 
