@@ -7,7 +7,7 @@ bigimg: /assets/img/about-js-conf-eu-berlin-2018/jsconf-eu-2018.jpg
 ---
 
 ## For starters
-As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/jekyll/update/2018/06/17/about-css-conf-eu-berlin-2018.html) I will now talk a bit about the JSConf EU 2018 that followed the CSSConf in the Berlin Arena (June 2nd and 3rd).
+As promised in the post on [CSSconf EU 2018](https://goodguydaniel.com/blog/about-css-conf-eu-berlin-2018/) I will now talk a bit about the JSConf EU 2018 that followed the CSSConf in the Berlin Arena (June 2nd and 3rd).
 
 #### What will you find here
 - [Talks (in-depth coverage of selected talks)](#talks)
@@ -179,7 +179,7 @@ while(tasksAreWaiting()) {
 }
 ```
 
-<small>(<a href="https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9" target="_blank" title="medium walking inside the node.js event loop">this nice</a> article explains with more detail the event loop inside Node.js)</small>
+<small>(<a href="https://medium.freecodecamp.org/walking-inside-nodejs-event-loop-85caeca391a9" target="_blank" title="medium walking inside the node.js event loop">this nice</a> article explains with more detail the event loop inside Node.js)</small>
 
 Regarding <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" title="mdn web api worker">web workers</a> the only relevant fact pointed out is that they are simple to understand since each web worker runs it's own event loop on a separate thread and they are not allowed to manipulate DOM so no need to worry about user interactions here.
 
@@ -574,7 +574,7 @@ On this second day I would also like to mention two more talks, *A Web Without S
 
 > *"Whenever you are designing a program, there are things that you think it might be cute to add in... **You always regret those**. If they are unnecessary and simply cute, don't do them!"* (*Ryan Dahl*)
 
-- There is this new thing out there called <a href="https://github.com/denoland/denodeno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
+- There is this new thing out there called <a href="https://github.com/denoland/deno" target="_blank" title="A secure TypeScript runtime on V8">deno</a>.
 - If you throw an error inside a nested throw clause the outside catch will not be executed. In a similar fashion if you reject a promise passing in a throw statement the catch will not evaluate as in:
 
 ```javascript

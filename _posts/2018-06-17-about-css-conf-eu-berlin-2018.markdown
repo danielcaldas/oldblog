@@ -6,7 +6,7 @@ categories: jekyll update
 bigimg: /assets/img/about-css-conf-eu-berlin-2018/1.jpg
 ---
 
-Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">JSConf EU</a> that had a similar organization.
+Hello all!! I decided to write this blog post to share with you the new things I learned attending this year's edition of <a href="https://2018.cssconf.eu" target="_blank" title="cssconf.eu official web page">CSSconf EU</a> in Berlin (Friday, June 1st). In this post I will focus more on the talks, I will cover other venue details in <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">another blog post</a> on <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">JSConf EU</a> that had a similar organization.
 
 ## For starters
 
@@ -79,7 +79,7 @@ Mike shared his experience with custom properties and gave us some **lessons to 
 7. __Capitalize global static properties__.
 8. __Use custom properties now__.
 
-Check out <a href="https://www.youtube.com/watch?v=U9UU_fgpmO8" target="_blank" title="mike riethmuller about css custom properties">Mike's talk</a> if you want to have a close look at the above 8 lessons.
+Check out <a href="https://www.youtube.com/watch?v=pF0pSwbZV9Y" target="_blank" title="mike riethmuller about css custom properties">Mike's talk</a> if you want to have a close look at the above 8 lessons.
 
 Is also relevant to mention that CSS variables are today implemented in all the major browsers (excluding IE of course).
 
@@ -100,7 +100,7 @@ Following with Philip Walton who gave us a look into the future of CSS introduci
 <br>
 <br>
 <!--Design Systems as Facilitators-->
-The last talk [(11)](#list-of-talks-speakers-and-other-resources) was about design systems and how they should make the software development process easier by serving as a mean of communication (yes, a facilitator).  A design system is a collection of components (ideally reusable) that follow the same standards and that by assembling them you can build applications. In this talk, Claudina Sarahe just went around this topic on how advantageous design systems are but if you really are interested in design systems I really recommend you to take a look at this <a href="https://www.invisionapp.com/guide-to-design-systems/" target="_blank" title="invisionapp the guide to design systems">invisionapp blog post instead</a>.
+The last talk [(11)](#list-of-talks-speakers-and-other-resources) was about design systems and how they should make the software development process easier by serving as a mean of communication (yes, a facilitator).  A design system is a collection of components (ideally reusable) that follow the same standards and that by assembling them you can build applications. In this talk, Claudina Sarahe just went around this topic on how advantageous design systems are but if you really are interested in design systems I really recommend you to take a look at this <a href="https://www.invisionapp.com/inside-design/guide-to-design-systems/" target="_blank" title="invisionapp the guide to design systems">invisionapp blog post instead</a>.
 
 ## Hot topics
 
@@ -131,4 +131,4 @@ Here the list of the talks with links to videos (at this point the majority of t
 
 
 ## And then...
-I will also write <a href="https://goodguydaniel.com/jekyll/update/2018/08/12/about-js-conf-eu-berlin-2018.html" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
+I will also write <a href="https://goodguydaniel.com/blog/about-js-conf-eu-berlin-2018/" target="_blank" title="JSconf EU 2018 | Blog">a blog post about the JSConf</a> that happened in the next two days where I'll also talk about Berlin and the venue to give you a real insider perspective on the conference so that you can properly decide whether or not you will attend it next year.
