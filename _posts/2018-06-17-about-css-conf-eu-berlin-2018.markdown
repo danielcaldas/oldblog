@@ -57,7 +57,7 @@ From this talk onwards things start focusing a lot around the **accessibility** 
 When we hear “low vision” what do we think about? Well, Shwetank explained that these days low-vision it's just an umbrella term that aggregates a bunch of eyesight conditions that affect people in many different ways. Shwetank made very clear that not conditioned people don't know the real extent of these problems unless we talk with someone who experiences them every day. Following, Shwetank just drop this one "*What if we could make tools to make people see what people with low vision actually see?*" And that was exactly what he did, with CSS, SVG and <a href="https://webrtc.org/faq/#what-is-webrtc" target="_blank" title="what is webrtc">WebRTC</a> he was able to emulate different low vision conditions that were perceptible through a camera (with AR), this is a really noble thing to do, it certainly will make people more aware and comprehensive of this problems, specially those not affected by these problems, at the same time I guess it makes conditioned people less frustrated because I imagine it can be pretty hard to explain one's condition to another, so why not showing it instead? You can consult a list of low vision tools in <a href="https://lowvisiontools.barrierbreak.com/" target="_blank" title="barrierbreak low vision tools">lowvisiontools.barrierbreak.com</a>.
 
 <figure style="margin-left: 20%;">
-  <img width="60%" height="20%" src="/assets/img/about-css-conf-eu-berlin-2018/6.png" alt="lowvisiontool color blindness"/>
+  <img width="60%" height="20%" src="/assets/img/about-css-conf-eu-berlin-2018/6.png" alt="low vision tool color blindness"/>
   <figcaption>Some guy with a black shirt and red stripes</figcaption>
 </figure>
 
