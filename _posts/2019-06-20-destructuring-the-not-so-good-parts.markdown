@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Destructuring in JavaScript: the not so good parts"
-date:   2019-06-20 17:30:00 +0100
+date:   2019-06-20 15:30:00 +0100
 categories: jekyll update
 ---
 
