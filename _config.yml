@@ -121,7 +121,7 @@ google_analytics: "UA-121685077-1"
 # disqus: ""
 
 # If you want to use JustComments fill with the API Key
-just-comments: "ce30a8f0-615e-4123-b660-d2e23742a163"
+# just-comments:
 
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
