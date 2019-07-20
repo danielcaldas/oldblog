@@ -2,6 +2,7 @@
 layout: post
 title:  "CSSconf EU 2018"
 date:   2018-06-17 16:33:00 +0100
+readTime: 10
 categories: jekyll update
 bigimg: /assets/img/about-css-conf-eu-berlin-2018/1.jpg
 ---

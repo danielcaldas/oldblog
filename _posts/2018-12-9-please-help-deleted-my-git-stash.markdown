@@ -2,6 +2,7 @@
 layout: post
 title:  "Deleted my git stash! Please send help!"
 date:   2018-12-09 22:30:00 +0100
+readTime: 2
 categories: jekyll update
 ---
 

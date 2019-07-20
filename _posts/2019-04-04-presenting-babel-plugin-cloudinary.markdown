@@ -2,6 +2,7 @@
 layout: post
 title:  "Presenting babel-plugin-cloudinary"
 date:   2019-04-04 00:00:00 +0100
+readTime: 2
 categories: jekyll update
 ---
 

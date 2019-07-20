@@ -2,6 +2,7 @@
 layout: post
 title:  "Browser polyfill madness, Mozilla and IE"
 date:   2019-07-20 10:30:00 +0100
+readTime: 3
 categories: jekyll update
 ---
 
