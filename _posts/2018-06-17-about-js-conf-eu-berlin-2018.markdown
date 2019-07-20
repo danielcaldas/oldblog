@@ -2,6 +2,7 @@
 layout: post
 title:  "JSconf EU 2018"
 date:   2018-08-12 21:00 +0200
+readTime: 15
 categories: jekyll update
 bigimg: /assets/img/about-js-conf-eu-berlin-2018/jsconf-eu-2018.jpg
 ---

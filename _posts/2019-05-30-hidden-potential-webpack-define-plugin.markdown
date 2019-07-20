@@ -2,6 +2,7 @@
 layout: post
 title:  "The hidden potential of webpack DefinePlugin"
 date:   2019-05-30 17:00:00 +0100
+readTime: 5
 categories: jekyll update
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "Debugging Javascript with VS Code"
 date:   2019-02-17 22:30:00 +0100
+readTime: 10
 categories: jekyll update
 ---
 
@@ -12,7 +13,10 @@ Prepare to set up some rocket science debugging toolkit in <a href="https://code
 To be precise and not only provide generic instructions on how to setup debugging in VS Code I will provide a step by step guide based on a real open source project so that you can checkout the config and how all the pieces come together. Without further ado I present to you
 <a href="https://github.com/danielcaldas/el-conversor" target="_blank" title="a number to word list converter as a node backend and react/redux fronted">el-conversor</a>. The project uses <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a>). and the build tool is <a href="https://webpack.js.org/" target="_blank" title="bundle your scripts">webpack</a>, this is important to mention because because if you're using <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" title="standard ecma-262">ES6</a>) you will need proper src maps to map your source. At the end of the [how to guide section](#how-to) you should have this amazing debugging/development setup.
 
-![expanding brain](/assets/img/debugging-javascript-with-vscode/expanding-brain.jpg "expanding brain debugger meme")
+<div style="text-align:center;">
+    <img alt="expanding brain debugger meme" src="/assets/img/debugging-javascript-with-vscode/expanding-brain.jpg"/>
+</div>
+<br/>
 
 ## How to
 

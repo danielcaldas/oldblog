@@ -2,6 +2,7 @@
 layout: post
 title:  "My 2 cents on (tech) job interviews"
 date:   2018-12-18 22:20:00 +0100
+readTime: 10
 categories: jekyll update
 ---
 
