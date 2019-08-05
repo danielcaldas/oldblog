@@ -165,7 +165,7 @@ Oh, and there's also <a href="https://jestjs.io/docs/en/tutorial-async#resolves"
 it('get all star wars characters (with resolves)', () => {
   const promise = fetchStarWarsCharacters();
 
-  expect(promise).resolves.toMatchSnapshot();
+  return expect(promise).resolves.toMatchSnapshot();
 });
 ```
 
