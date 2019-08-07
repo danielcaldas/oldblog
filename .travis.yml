@@ -7,7 +7,9 @@ before_script:
 
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
-script: sh $TRAVIS_BUILD_DIR/scripts/cibuild.sh
+script:
+  - sh $TRAVIS_BUILD_DIR/scripts/cibuild.sh
+  - bundle exec htmlproofer ./_site --http-status-ignore "999"
 
 env:
   global:
