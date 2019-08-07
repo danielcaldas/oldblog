@@ -9,7 +9,9 @@ before_script:
 # the `install` step will run `bundle install` by default.
 script:
   - sh $TRAVIS_BUILD_DIR/scripts/cibuild.sh
-  - bundle exec htmlproofer ./_site --http-status-ignore "999"
+  - bundle exec htmlproofer ./_site\
+    --http-status-ignore "999"\
+    --url-ignore "https://codepen.io/anon/pen/vrewpa"
 
 env:
   global:
