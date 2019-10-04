@@ -41,7 +41,9 @@ Let's take a look at the spec file now that within these 2 months, there are a c
 
 Now the function supports an opacity option, and there's a few more test cases, some nesting, and branching in the `describe`/`it` madness of a 400 lines test file. The developer has a tough time to go through the test cases and find the right spot for the scenario he just fixed; it's like it doesn't fit anywhere. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
 
-**GIF ITS TIME TO STOP**
+<div style="text-align:center;">
+    <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/test-fixtures-from-scratch/its-time-to-stop.gif"/>
+</div>
 
 It's time to rethink the structure/architecture of the tests for this project. Let's give a try and use fixtures to architect our new test setup.
 
