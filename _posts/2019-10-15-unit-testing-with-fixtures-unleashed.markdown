@@ -331,10 +331,8 @@ Overhead of useless scenarios - if before having this test architecture, it was 
 
 ## Conclusions
 
-As already mentioned, all the code examples in this post are in a <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">public GitHub repository</a>.
-
-I hope that if you went through the article, you have now one more software pattern on your toolbox that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a self-documented/self-organized fashion.
-
+As already mentioned, all the code examples in this post are in a <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">public GitHub repository</a>.<br/>
+I hope that if you went through the article, you have now one more software pattern on your toolbox that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a self-documented/self-organized fashion.<br/>
 If you want to get a few extra tips more specifically on Jest, you might want to take a look at <a href="https://goodguydaniel.com/blog/tips-jest-unit-testing/" target="_blank" title="Post with tips for unit testing with Jest Unrevealed tips for unit testing with Jest">"Unrevealed tips for unit testing with Jest"</a> blog post.
 
 What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match?
