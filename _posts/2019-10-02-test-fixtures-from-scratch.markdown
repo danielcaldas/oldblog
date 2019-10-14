@@ -14,7 +14,7 @@ Let me begin by telling you how I came in need of fixtures. It was around Januar
 
 ## About the unit tests we write
 
-**On a very high level manipulating the execution flow through inputs and performing assertions on outputs is what happens with all the tests that we write** daily (weekly at least I hope), at different granularity levels. Whether we want to test a small function or a large JavaScript module with multiple entry points, our ultimate goal is to perform a set of assertions that bring us the peace of mind and stability to move forward and build more stuff on top.
+**On a very high level manipulating the execution flow through inputs and performing assertions on outputs is what happens with all the tests that we write** daily (weekly at least I hope), at different levels of granularity. Whether we want to test a small function or a large JavaScript module with multiple entry points, our ultimate goal is to perform a set of assertions that bring us the peace of mind and stability to move forward and build more stuff on top.
 
 It happens that **in specific scenarios**, unit tests as we write them **might become pure overhead**. How come? Because we repeat the same structures, and we write the same boilerplate code again and again, without really thinking about how these particular tests could become more pleasant to maintain and scale. Why should I care about looking for alternatives? Because it can save you time, it can document your codebase through well organized and self-explanatory test fixtures.
 
@@ -22,7 +22,7 @@ Let's take a look at how we can move on from a routine unit test setup to a fixt
 
 ## Test fixtures
 
-Before diving into details, let's take a few seconds to go through this definition of test fixtures that I came across in the <a href="https://github.com/junit-team/junit4/wiki/test-fixtures" target="_blank" title="junit-team/junit4 description of test fixtures">junit-team/junit4 GitHub wiki page</a>.
+Before diving into details, let's take a few seconds to go through this definition of test fixtures that I came across in the <a href="https://github.com/junit-team/junit4/wiki/test-fixtures" target="_blank" title="junit-team/junit4 description of test fixtures">junit-team/junit4 GitHub wiki page</a>, In my opinion is extremely accurate.
 
 <!-- quotation -->
 > A test fixture is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. Examples of fixtures:
@@ -31,13 +31,60 @@ Before diving into details, let's take a few seconds to go through this definiti
 - Copying a specific known set of files creating a test fixture will create a set of objects initialized to certain states.
 <!-- /quotation -->
 
-## ?Details?
+## A case study: slowly moving to a fixtures test setup
 
-**CODE 1 - replacer.js**
+I'll create a small project to illustrate the concepts throughout this article, all the code is available in the repository <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">danielcaldas/test-fixtures-pattern</a>. The project it's not actually something that one would use, but it's a good example to depict and analyze certain scenarios.
 
-So basically, we have a function that performs replacement of `background-color` expressions gives a set of options, this is very minimalistic, but the number of options can quickly scale to a few dozens depending on what kind of replacements one might want to perform in the future. The unit tests for this function might look like the following.
+### 📜 Small & dummy example for our case study
 
-**CODE  2 - replacer.test.js**
+```javascript
+/**
+ * Replaces background color that matches a certain color by another.
+ * @param {string} target a css line
+ * @param {Object} options a set of options for the new color.
+ * @returns {string} the replaced expression or
+ * the same as the input if nothing matches.
+ */
+function backgroundColorReplacer(target, options) {
+    const { fromColor, toColor, opacity } = options;
+    const bgc = `background-color: rgb(${fromColor.join(', ')})`;
+
+    if (target === bgc && toColor && toColor.length) {
+        const color = toColor.join(', ');
+
+        if (opacity) {
+            return `background-color: rgba(${color}, ${opacity})`;
+        }
+
+        return `background-color: rgb(${color})`;
+    }
+
+    return target;
+}
+
+module.exports = backgroundColorReplacer;
+```
+<small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/replacer.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js">[full code here]</a></small>
+
+So basically, we have a function that performs replacement of `background-color` expressions given a set of options, this is very minimalistic, but the number of options can quickly scale to a few dozens depending on what kind of replacements one might want to perform in the future. The unit tests for this function might look like the following.
+
+```javascript
+const backgroundColorReplacer = require('../replacer');
+
+describe('backgroundColorReplacer', () => {
+    it('should replace color if they match', () => {
+        const target = 'background-color: rgb(255, 0, 0)';
+        const fromColor = [255, 0, 0];
+        const toColor = [0, 255, 0];
+        const options = { fromColor, toColor };
+
+        expect(backgroundColorReplacer(target, options)).toMatchSnapshot();
+    });
+});
+```
+<small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/__tests__/replacer.test.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js">[full code here]</a></small>
+
+### 📆 A few weeks down the road
 
 We have a high-level description, and then we might want to start nesting and branching different kinds of scenarios as we scale.
 
@@ -45,15 +92,42 @@ Let's imagine that you and your team have now been using and developing this rep
 
 Let's take a look at the test file now that within these 2 months, there are a couple of other features available.
 
-**CODE  3 - replacer-2-months-later.test.js**
+```javascript
+const backgroundColorReplacer = require('../replacer');
 
-Now the function supports an opacity option, and there's a few more test cases, some nesting, and branching in the `describe/it` *madness* of a 400 lines test file. The developer has a tough time to go through the test cases and find the right spot for the scenario he just fixed; it's like it doesn't fit anywhere. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
+describe('backgroundColorReplacer', () => {
+    it('should replace color if they match', () => {
+        const target = 'background-color: rgb(255, 0, 0)';
+        const fromColor = [255, 0, 0];
+        const toColor = [0, 255, 0];
+        const options = { fromColor, toColor };
 
-<div style="text-align:center;">
+        expect(backgroundColorReplacer(target, options)).toMatchSnapshot();
+    });
+
+    it('should replace color if they match and add opacity when defined', () => {
+        // ...
+    });
+
+    it('should not replace color if they do not match', () => {
+        // ...
+    });
+
+    it('should not replace color there is no new color specified', () => {
+        // ...
+    });
+});
+```
+<small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/__tests__/replacer.test.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js">[full code here]</a></small>
+
+Now the function supports an opacity option, and there are a few more test cases, some nesting, and branching in the `describe`/`it` *madness* of an overwhelmingly large file. The developer has a tough time to go through the test cases and find the right spot for the scenario he just fixed; it's like it doesn't fit anywhere. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
+
+<div style="margin-bottom: 50px;text-align:center;">
     <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/test-fixtures-from-scratch/its-time-to-stop.gif"/>
 </div>
 
-## Rethink the tests architecture
+
+## Rethinking the tests architecture
 
 It's time to rethink the way we structure the tests for this project. Let's give a try and use fixtures to architect our new test setup.
 
@@ -174,6 +248,8 @@ What do you think about having a fixture based testing architecture? Do you have
 *Note: This article refers to the JavaScript language and the <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest JavaScript library</a>, this does not mean that what you find here might not be ported into other programming languages and ecosystems.*
 
 <!-- <a href="" target="_blank" title="">xxx</a> -->
+
+<a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/__tests__/replacer.test.js" target="_blank" title="GitHub danielcaldas test-fixtures-pattern case study project, replacer.test.js">xxx</a>
 
 https://github.com/danielcaldas/test-fixtures-pattern
 
