@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Test fixtures from scratch"
-date:   2019-10-02 09:00:00 +0100
+title:  "Unit testing with fixtures unleashed"
+date:   2019-10-14 09:00:00 +0000
 readTime: 10
 categories: jekyll update
 ---
@@ -28,7 +28,7 @@ Before diving into details, let's take a few seconds to go through this definiti
 <!-- /quotation -->
 
 <div style="margin-bottom: 60px;text-align:center;">
-    <img alt="barack obama, sounds about right, meme" src="/assets/img/test-fixtures-from-scratch/sounds-about-right.jpeg"/>
+    <img alt="barack obama, sounds about right, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/sounds-about-right.jpeg"/>
 </div>
 
 ## A case study: slowly moving to a fixture based test setup
@@ -131,7 +131,7 @@ describe('backgroundColorReplacer', () => {
 Now the function supports an opacity option, and there are a few more test cases, some nesting, and branching in the `describe`/`it` *madness* of an overwhelmingly large file. The developer has a tough time to go through the test cases and find the right spot for the scenario he just fixed; it's like it doesn't fit anywhere. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
 
 <div style="margin-bottom: 60px;text-align:center;">
-    <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/test-fixtures-from-scratch/its-time-to-stop.gif"/>
+    <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/unit-testing-with-fixtures-unleashed/its-time-to-stop.gif"/>
 </div>
 
 ## Rethinking the tests architecture
@@ -272,7 +272,7 @@ describe('backgroundColorReplacer', () => {
 The output or running the above test also looks familiar, is a simple Jest report.
 
 <div style="text-align:center;">
-    <img alt="Jest, final test report" src="/assets/img/test-fixtures-from-scratch/final-test-report.png"/>
+    <img alt="Jest, final test report" src="/assets/img/unit-testing-with-fixtures-unleashed/final-test-report.png"/>
 </div>
 
 My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture;  The pattern you go for it's just a tool for you to organize your thoughts, it doesn't mean that if you don't choose the right architecture your output is a poorly tested codebase, you can still certainly achieve that, it just won't be as easy.
@@ -293,13 +293,13 @@ If you never tried <a href="https://github.com/remy/nodemon" target="_blank" tit
 As you can see from the above snippet, we *glue* and chain everything together; nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`. See the result below.
 
 <div style="text-align:center;">
-    <img alt="GIF running fixtures in watch mode" src="/assets/img/test-fixtures-from-scratch/fixtures-watch-mode.gif"/>
+    <img alt="GIF running fixtures in watch mode" src="/assets/img/unit-testing-with-fixtures-unleashed/fixtures-watch-mode.gif"/>
 </div>
 
 Satisfying right?
 
 <div style="text-align:center;">
-    <img width="40%" height="60%" alt="satisfying face, meme" src="/assets/img/test-fixtures-from-scratch/satisfying.jpg"/>
+    <img width="40%" height="60%" alt="satisfying face, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/satisfying.jpg"/>
 </div>
 
 <br/>
@@ -320,7 +320,7 @@ Not a known project, but the babel plugin where I first implemented such archite
 ## Reasons not to...
 
 <div style="text-align:center;margin-top:30px;">
-    <img width="70%" height="70%" alt="so, what is the catch, meme" src="/assets/img/test-fixtures-from-scratch/whats-the-catch-meme.jpg"/>
+    <img width="70%" height="70%" alt="so, what is the catch, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/whats-the-catch-meme.jpg"/>
 </div>
 
 I can think of two disadvantages that you should consider before exploring this option:
