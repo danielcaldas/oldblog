@@ -110,6 +110,30 @@ You have a single level fixtures directory without having an input file per fixt
 
 My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture;  The pattern you go for it's just a means for you to organize your thoughts, it doesn't mean that if you don't choose the write architecture your output is a poorly tested codebase, you can still certainly achieve that, it just won't be as easy.
 
+### 🎰 Bonus section: development watch mode for fixtures
+
+Another thing that comes in pretty handy when setting up our testing workflow, is to have a way to update the fixtures by tweaking existing test case inputs or adding new ones and automatically re-running the run-fixtures script and the unit tests with <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest</a>, how would that go?
+
+If you never tried <a href="https://github.com/remy/nodemon" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development">nodemon</a>, now it's a good time to check it out. It's a mighty tool to restart some job given that you perform specific changes in your project. Let's use nodemon to set up a watch npm script that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we normally have with <a href="https://jestjs.io/docs/en/cli#watchall" target="_blank" title="Jest cli, watch all option">jest \-\-watchAll</a>, on our fixtures folder. After installing nodemon, we just need to use the <a href="https://github.com/remy/nodemon#monitoring-multiple-directories" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode">\-\-watch</a> option to check for changes in our fixtures.
+
+```json
+"fixtures:run": "node run-fixtures && jest ./fixtures/tests/fixtures.spec.js",
+"fixtures:clean": "...",
+"fixtures:watch": "nodemon --watch ./fixtures/*.js --exec npm run fixtures:run"
+```
+
+As you can see from the above snippet, we glue and chain everything together; nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`. See the result below.
+
+<div style="text-align:center;">
+    <img alt="GIF running fixtures in watch mode" src="/assets/img/test-fixtures-from-scratch/fixtures-watch-mode.gif"/>
+</div>
+
+Isn't this satisfying?
+
+<div style="text-align:center;">
+    <img width="30%" height="50%" alt="satisfying face, meme" src="/assets/img/test-fixtures-from-scratch/satisfying.jpg"/>
+</div>
+
 ## Reasons not to...
 
 <div style="text-align:center;">
@@ -137,14 +161,21 @@ If you red this article, you may now have an idea of how a fixtures based archit
 
 ## Conclusions
 
+All the code examples in this post are in a GitHub repository. Also, the babel plugin where I fire started this idea was in the <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the codebase, you might pretty quickly identify the patterns explored in this article.
+
 I hope that if you went through the article, you have now one more software pattern on your toolbox that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a self-documented/self-organized fashion.
 
 If you want to get a few extra tips more specifically on Jest, you might want to take a look at <a href="https://goodguydaniel.com/blog/tips-jest-unit-testing/" target="_blank" title="Blogpost with tips for unit testing with Jest Unrevealed tips for unit testing with Jest">Unrevealed tips for unit testing with Jest</a> blog post.
 
 What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match? I would love to hear it! Drop a comment below on *disqus*, or on twitter <a href="https://twitter.com/_danielcaldas" target="_blank" title="follow Daniel Caldas on twitter">@_danielcaldas</a>.
 
-All the code examples in this blogpost are in a GitHub repository. Also, the babel plugin where I fire started this idea was in the <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the codebase, you might pretty quickly identify the patterns explored in this article.
-
 *Note: This article refers to the JavaScript language and the <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest JavaScript library</a>, this does not mean that what you find here might not be ported into other programming languages and ecosystems.*
 
 <!-- <a href="" target="_blank" title="">xxx</a> -->
+
+
+
+https://github.com/danielcaldas/test-fixtures-pattern
+
+step 1 PR https://github.com/danielcaldas/test-fixtures-pattern/pull/1
+step 2 PR  https://github.com/danielcaldas/test-fixtures-pattern/pull/2
