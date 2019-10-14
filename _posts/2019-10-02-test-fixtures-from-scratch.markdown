@@ -27,6 +27,10 @@ Before diving into details, let's take a few seconds to go through this definiti
 - Copying a specific known set of files creating a test fixture will create a set of objects initialized to certain states.
 <!-- /quotation -->
 
+<div style="margin-bottom: 60px;text-align:center;">
+    <img alt="barack obama, sounds about right, meme" src="/assets/img/test-fixtures-from-scratch/sounds-about-right.jpeg"/>
+</div>
+
 ## A case study: slowly moving to a fixture based test setup
 
 I'll create a small project to illustrate the concepts throughout this article, all the code is available in the repository <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">danielcaldas/test-fixtures-pattern</a>. The project it's not actually something that one would use, but it's a good example to depict and analyze certain scenarios.
@@ -129,7 +133,6 @@ Now the function supports an opacity option, and there are a few more test cases
 <div style="margin-bottom: 60px;text-align:center;">
     <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/test-fixtures-from-scratch/its-time-to-stop.gif"/>
 </div>
-
 
 ## Rethinking the tests architecture
 
