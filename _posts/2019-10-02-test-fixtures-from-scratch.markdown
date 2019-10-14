@@ -101,7 +101,7 @@ For that, we need to take a look into run-fixtures.js.
 
 ## The results
 
-The above code generates the test file for each one of the test fixtures that you specified within the fixtures directory. Of course, that are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much. The script is the glue between your scenarios and the underlying test runner:
+The above code generates the test file for each one of the test fixtures that you specified within the fixtures directory. Of course, that are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much. The script is the *glue* between your scenarios and the underlying test runner:
 You can execute the tests directly within the run-fixtures file.
 You can generate the boilerplate JavaScript test file and use it as a starting point and then perform some changes in the output file.
 You have a single level fixtures directory without having an input file per fixture and name the file directly according to the scenario.
@@ -122,17 +122,32 @@ If you never tried <a href="https://github.com/remy/nodemon" target="_blank" tit
 "fixtures:watch": "nodemon --watch ./fixtures/*.js --exec npm run fixtures:run"
 ```
 
-As you can see from the above snippet, we glue and chain everything together; nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`. See the result below.
+As you can see from the above snippet, we *glue* and chain everything together; nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`. See the result below.
 
 <div style="text-align:center;">
     <img alt="GIF running fixtures in watch mode" src="/assets/img/test-fixtures-from-scratch/fixtures-watch-mode.gif"/>
 </div>
 
-Isn't this satisfying?
+Satisfying right?
 
 <div style="text-align:center;">
-    <img width="30%" height="50%" alt="satisfying face, meme" src="/assets/img/test-fixtures-from-scratch/satisfying.jpg"/>
+    <img width="40%" height="60%" alt="satisfying face, meme" src="/assets/img/test-fixtures-from-scratch/satisfying.jpg"/>
 </div>
+
+<br/>
+
+## Projects using fixtures?
+
+If you read this article, you may now have an idea of how a fixtures based architecture might look like, but in real life, they appear in many other different colors and formats. Some known projects that use this pattern are:
+
+- <a href="https://github.com/facebook/react" target="_blank" title="A declarative, efficient, and flexible JavaScript library for building user interfaces. https://reactjs.org">facebook/react</a>.
+- <a href="https://github.com/babel/babel" target="_blank" title="Babel is a compiler for writing next generation JavaScript. https://babeljs.io/">babel/babel</a>
+- <a href="https://github.com/pugjs/pug" target="_blank" title="Pug – robust, elegant, feature rich template engine for Node.js https://pugjs.org">pugjs/pug</a>
+- <a href="https://github.com/webpack/webpack" target="_blank" title="A bundler for javascript and friends. Packs many modules into a few bundled assets">webpack/webpack</a>
+
+Not a known project but the babel plugin where I first implemented such architecture is <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the test setup, you might quickly identify the patterns explored in this article.
+
+<small>**tip**: to have a big picture of how these projects run fixtures, go to their GitHub repo and perform a search for "fixtures/" and you'll see *glue* code that I demonstrated in this article; it might be a bit harder to follow due to the dimension of these projects</small>.
 
 ## Reasons not to...
 
@@ -146,34 +161,19 @@ There are a few disadvantages that you should consider before exploring this ide
 - **Setup might be too complex** - depending on the project and the underlying test runner, it might be more os less complex to put in place such a setup. We saw that with Jest is a piece of cake.
 Overhead of useless scenarios - if before having this test architecture, it was hard to modify or extend the existent test, now it becomes the extreme opposite. It's just too easy to go to the project and add a new test case. Keep an eye on each new test case and ask yourself if it is vital or if it's only cute (ask <a href="https://github.com/ry" target="_blank" title="Ryan Dahl, creator of Node.js, GitHub account">Ryan Dahl</a> about adding cute things to your projects).
 
-https://github.com/ry
-
-## Projects using fixtures?
-
-If you red this article, you may now have an idea of how a fixtures based architecture might look like, but in real life, they appear in many other different colors and formats. Some known projects that use this pattern are:
-
-- <a href="https://github.com/facebook/react" target="_blank" title="A declarative, efficient, and flexible JavaScript library for building user interfaces. https://reactjs.org">facebook/react</a>.
-- <a href="https://github.com/babel/babel" target="_blank" title="Babel is a compiler for writing next generation JavaScript. https://babeljs.io/">babel/babel</a>
-- <a href="https://github.com/pugjs/pug" target="_blank" title="Pug – robust, elegant, feature rich template engine for Node.js https://pugjs.org">pugjs/pug</a>
-- <a href="https://github.com/webpack/webpack" target="_blank" title="A bundler for javascript and friends. Packs many modules into a few bundled assets">webpack/webpack</a>
-
-(tip: to have a big picture of how these projects run fixtures, go to their GitHub repo and perform a search for "fixtures/" and you'll see glue code that I demonstrated in this article, but a bit harder to follow due to the dimension of the code base of these projects)
-
 ## Conclusions
 
-All the code examples in this post are in a GitHub repository. Also, the babel plugin where I fire started this idea was in the <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the codebase, you might pretty quickly identify the patterns explored in this article.
+All the code examples in this post are in a GitHub repository.
 
 I hope that if you went through the article, you have now one more software pattern on your toolbox that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a self-documented/self-organized fashion.
 
-If you want to get a few extra tips more specifically on Jest, you might want to take a look at <a href="https://goodguydaniel.com/blog/tips-jest-unit-testing/" target="_blank" title="Blogpost with tips for unit testing with Jest Unrevealed tips for unit testing with Jest">Unrevealed tips for unit testing with Jest</a> blog post.
+If you want to get a few extra tips more specifically on Jest, you might want to take a look at <a href="https://goodguydaniel.com/blog/tips-jest-unit-testing/" target="_blank" title="Post with tips for unit testing with Jest Unrevealed tips for unit testing with Jest">Unrevealed tips for unit testing with Jest</a> blog post.
 
-What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match? I would love to hear it! Drop a comment below on *disqus*, or on twitter <a href="https://twitter.com/_danielcaldas" target="_blank" title="follow Daniel Caldas on twitter">@_danielcaldas</a>.
+What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match?
 
 *Note: This article refers to the JavaScript language and the <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest JavaScript library</a>, this does not mean that what you find here might not be ported into other programming languages and ecosystems.*
 
 <!-- <a href="" target="_blank" title="">xxx</a> -->
-
-
 
 https://github.com/danielcaldas/test-fixtures-pattern
 
