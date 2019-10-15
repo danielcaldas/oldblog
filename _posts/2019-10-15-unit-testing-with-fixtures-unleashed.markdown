@@ -238,7 +238,7 @@ fs.readdir(FIXTURES_BASE_DIR, parseFileTree);
 
 Next, we dive deep into this `run-fixtures.js` script and in its results.
 
-## The results: generating test snippets and executing them with jest
+## The results: generating test snippets and executing them with Jest
 
 The code in `run-fixtures.js` generates a test snippet for each one of the test fixtures that you specified within the `fixtures` directory. Of course, there are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much, it should be: **to *glue* your scenarios and the underlying test runner**.
 
@@ -317,7 +317,7 @@ If you read the article up to this point, you may now have an idea of how a fixt
 
 Not a known project, but the babel plugin where I first implemented such architecture is <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the test setup, you might quickly identify the patterns explored in this article.
 
-Do you see any similarities between all the listed projects? I do! We could, in a way, say that they are all in their ways compilers. **Vast spectrum of inputs with a narrow entry point, often a `compile` function that takes in some code**.
+Do you see any similarities between all the listed projects? I do! We could say that they are all compilers, in their own ways. They often have a **vast spectrum of inputs and narrow APIs, often exposed via a `compile` alike function**.
 
 <small>**tip**: to have a big picture of how these projects run fixtures, go to their repository and perform a search for "fixtures/" and you'll see *glue* code somewhat related to the one demonstrated in this article; it might be a bit harder to follow due to the dimension of these projects</small>.
 
@@ -337,6 +337,6 @@ I can think of two disadvantages that you should consider before exploring this 
 As already mentioned, all the code examples in this blog post are in a <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">public GitHub repository</a>.<br/>
 I hope that if you went through the article, you have now one more testing software pattern on your *toolbelt* that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a in self-documented/self-organized fashion.
 
-What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match?
+What do you think about having a fixture based testing architecture? Do you have any project in mind where you see that this could be the right fit?
 
 <small>*Note: This article refers to the JavaScript language and the <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest</a> JavaScript library, this does not mean that what you find here might not be ported into other JavaScript libraries or into other programming languages and ecosystems.*</small>
