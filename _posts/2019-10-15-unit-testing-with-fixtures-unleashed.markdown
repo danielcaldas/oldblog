@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Unit testing with fixtures unleashed"
-date:   2019-10-14 09:00:00 +0000
+date:   2019-10-15 08:30:00 +0800
 readTime: 10
 categories: jekyll update
 ---
@@ -10,11 +10,15 @@ From project to project, I've seen applications structured in many different way
 
 ## About the unit tests we write
 
-**On a very high level manipulating the execution flow through inputs and performing assertions on outputs is what happens with all the tests that we write** daily (weekly at least I hope), at different levels of granularity. Whether we want to test a small function or a large JavaScript module with multiple entry points, our ultimate goal is to perform a set of assertions that bring us the peace of mind and stability to move forward and build more stuff on top.
+**On a very high level, manipulating the execution flow through inputs, and performing assertions on outputs is what happens with all the tests that we write** daily (weekly at least I hope), at different levels of granularity. Whether we want to test a small function or a large JavaScript module with multiple entry points, our ultimate goal is to perform a set of assertions that bring us the peace of mind and stability to move forward and build more stuff on top.
 
-It happens that **in specific scenarios**, unit tests as we write them **might become pure overhead**. How come? Because we repeat the same structures, and we write the same boilerplate code again and again, without really thinking about how these particular tests could become more pleasant to maintain and scale. Why should I care about looking for alternatives? Because it can save you time, it can document your codebase through well organized and self-explanatory test fixtures.
+It happens that **in specific scenarios**, unit tests as we write them **might become pure overhead**. How come? Because we repeat the same structures, and we write the same boilerplate code again and again, without really thinking about how these particular tests could become more pleasant to maintain and scale. Why should I care about looking for alternatives? Because it can save you time, it **can document your codebase through well organized and self-explanatory test fixtures**.
 
-Let's take a look at how we can move on from a routine unit test setup to a fixture based setup through a dummy case study that I specially designed and implemented step by step to demonstrate how tests can be set up in a way more declarative way.
+Let's take a look at how we can move on from a *routine* unit test setup, to a fixture based setup, through a dummy case study that I specially designed to demonstrate how tests can be set up in a much more declarative way.
+
+<div style="margin-bottom: 60px;text-align:center;">
+    <img alt="bear, funny, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/bear-meme.jpg"/>
+</div>
 
 ## Test fixtures
 
@@ -28,7 +32,7 @@ Before diving into details, let's take a few seconds to go through this definiti
 <!-- /quotation -->
 
 <div style="margin-bottom: 60px;text-align:center;">
-    <img alt="barack obama, sounds about right, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/sounds-about-right.jpeg"/>
+    <img alt="Barack Obama, sounds about right, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/sounds-about-right.jpeg"/>
 </div>
 
 ## A case study: slowly moving to a fixture based test setup
