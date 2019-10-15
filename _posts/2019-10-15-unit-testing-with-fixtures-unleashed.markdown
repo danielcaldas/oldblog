@@ -37,7 +37,7 @@ Before diving into details, let's take a few seconds to go through this definiti
 
 ## A case study: slowly moving to a fixture based test setup
 
-I'll create a small project to illustrate the concepts throughout this article, all the code is available in the repository <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">danielcaldas/test-fixtures-pattern</a>. The project it's not actually something that one would use, but it's a good example to depict and analyze certain scenarios.
+I'll create a small project to illustrate the concepts throughout this article, all the code is available in the repository <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">danielcaldas/test-fixtures-pattern</a>. The project it's not actually something that you would use, but it's a good example to depict and analyze certain scenarios.
 
 ### 📜 Small & dummy example for our case study
 
@@ -98,11 +98,9 @@ describe('backgroundColorReplacer', () => {
 
 ### 📆 A few weeks down the road
 
-We have a high-level description, and then we might want to start nesting and branching different kinds of scenarios as we scale.
+Let's imagine that you and your team have now been using and developing this replacer code for 2 months. It's fantastic, everybody loves it, but there's some edge case that needs attention. The developers are all over it!
 
-Let's imagine that you and your team have now been using and developing this replacer code for 2 months, it's fantastic, everybody loves it, but there's some edge case that needs attention. The developers are all over it!
-
-Let's take a look at the test file now that within these 2 months, there are a couple of other features available.
+Let's take a look at the test file after 2 months, there are a couple of other features available, therefore a few more tests were implemented.
 
 ```javascript
 const backgroundColorReplacer = require('../replacer');
@@ -132,7 +130,7 @@ describe('backgroundColorReplacer', () => {
 ```
 <small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/__tests__/replacer.test.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replacer.test.js">[replacer.test.js]</a></small>
 
-Now the function supports an opacity option, and there are a few more test cases, some nesting, and branching in the `describe`/`it` *madness* of an overwhelmingly large file. The developer has a tough time to go through the test cases and find the right spot for the scenario he just fixed; it's like it doesn't fit anywhere. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
+Now the function supports an `opacity` option, and there are a few more test cases. Eventually some nesting and branching in the `describe`/`it` *madness* starts to stack up on an overwhelmingly large file. The developer has a tough time to go through the test cases and find the right spot for the scenario he/she just fixed. On top of that, any addition to that file seems to break a few other unit tests that aren't in any way related to the new test case he/she is trying to introduce.
 
 <div style="margin-bottom: 60px;text-align:center;">
     <img alt="filthy frank, pink guy it is time to stop meme" src="/assets/img/unit-testing-with-fixtures-unleashed/its-time-to-stop.gif"/>
@@ -144,9 +142,9 @@ It's time to rethink the way we structure the tests for this project. Let's give
 
 First of all, notice that no matter the scenario, we have a single entry point `backgroundColorReplacer` that receives two arguments, a line of some CSS file as a string, and an object with a set of options to manipulate the replacement.
 
-Second let's think of each test case as a unique scenario with its description, no matter how specific it is.
+Second let's think of each test case as a unique scenario with its own description.
 
-Third, let's separate boilerplate code from the actual test code.
+Third, let's separate boilerplate code from the code that it's actually particular to each test case.
 
 ```javascript
 it ('some description', () => {
@@ -156,11 +154,11 @@ it ('some description', () => {
 });
 ```
 
-Above you can see a skeleton structure of what we repeat time after time; you open the test block, and in the end, you perform an assertion on the result of calling the replacer function.
+Above you can see a skeleton structure of what we repeat time after time; you open the test block, your perform a set of assignments and operations on some variables that shape your test case, and in the end, you perform an assertion on the result of calling the replacer function.
 
-Let's separate the scenario setup and the above boilerplate code in ways that you need only to write for each test the scenario. You won't be writing the boilerplate code for the test setup or the assertion step any longer.
+Let's separate the scenario setup and the above boilerplate code, in ways that you need only to ~~write~~ **describe** for each test case its inputs. You won't be writing anymore the boilerplate code for the test setup, or the assertion statement.
 
-Our new file tree now looks like:
+Our new project's file tree now looks like:
 
 ```
 ├── fixtures
@@ -179,7 +177,7 @@ Our new file tree now looks like:
     └── __snapshots__
 ```
 
-So our test consists now on declaring the inputs for the replacer function. Let's take a look at `fixtures/replace-color-when-match.js`
+So our test consists now on declaring the inputs for the replacer function, nothing else. Let's take a look at `fixtures/replace-color-when-match.js`.
 
 ```javascript
 const target = 'background-color: rgb(255, 0, 0)';
@@ -191,7 +189,7 @@ module.exports = { target, options };
 ```
 <small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/fixtures/replace-color-when-match.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replace-color-when-match.js">[fixtures/replace-color-when-match.js]</a></small>
 
-However, how do we run the tests? Also, how exactly it's going to look at the test output in our tests report?
+Some things are still unclear tough. How do we run the tests? How exactly are these fixtures going to be fed to the replacer? Also, how will our test reports look like?
 
 For that, we need to take a look into `run-fixtures.js`.
 
@@ -236,13 +234,15 @@ function parseFileTree(err, files) {
 
 fs.readdir(FIXTURES_BASE_DIR, parseFileTree);
 ```
-<small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/run-fixtures.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, replace-color-when-match.js">[run-fixtures.js]</a></small>
+<small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/run-fixtures.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, run-fixtures.js">[run-fixtures.js]</a></small>
+
+Next, we dive deep into this `run-fixtures.js` script and in its results.
 
 ## The results: generating test snippets and executing them with jest
 
-The above code generates the test file for each one of the test fixtures that you specified within the fixtures directory. Of course, that are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much. **The script is the *glue* between your scenarios and the underlying test runner**.
+The code in `run-fixtures.js` generates a test snippet for each one of the test fixtures that you specified within the `fixtures` directory. Of course, there are a lot of different approaches here. You can implement this script in many different ways, its scope, however, should ideally not change much, it should be: **to *glue* your scenarios and the underlying test runner**.
 
-The output of running the `run-fixtures.js` script is a familiar Jest compliant file:
+The output of running the `run-fixtures.js` script is a familiar *"Jest compliant"* file:
 
 ```javascript
 // WARNING: this file is generated automatically
@@ -273,19 +273,19 @@ describe('backgroundColorReplacer', () => {
 ```
 <small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/fixtures/tests/fixtures.spec.js" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, fixtures.spec.js">[fixtures.spec.js]</a></small>
 
-The output or running the above test also looks familiar, is a simple Jest report.
+The output or running the above test is just a simple Jest report.
 
 <div style="text-align:center;">
     <img alt="Jest, final test report" src="/assets/img/unit-testing-with-fixtures-unleashed/final-test-report.png"/>
 </div>
 
-My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture;  The pattern you go for it's just a tool for you to organize your thoughts, it doesn't mean that if you don't choose the right architecture your output is a poorly tested codebase, you can still certainly achieve that, it just won't be as easy.
+My goal here is to give you the idea that, in some projects, you might be able to drop a lot of boilerplate by wisely choosing your testing architecture; The pattern you go for it's just a tool for you to organize your thoughts, **it doesn't mean that** if you don't choose the right architecture you are doomed to a poorly tested codebase, you can still certainly achieve that, it just won't be as easy.
 
 ### 🎰 Bonus section: development watch mode for fixtures
 
-Another thing that comes in handy when setting up our testing workflow, is to have a way to update the fixtures by tweaking existing test case inputs or adding new ones and automatically re-running the run-fixtures script and the unit tests with <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest</a>, how would that go?
+Another thing that comes in handy when setting up our testing workflow, is to have a way to update the fixtures by tweaking existing test case inputs or adding new ones and automatically re-running the `run-fixtures.js` script and the unit tests with Jest. How would that go?
 
-If you never tried <a href="https://github.com/remy/nodemon" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development">nodemon</a>, now it's a good time to check it out. It's a mighty tool to restart some job given that you perform specific changes in your project. Let's use nodemon to set up a watch npm script that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we normally have with <a href="https://jestjs.io/docs/en/cli#watchall" target="_blank" title="Jest cli, watch all option">jest \-\-watchAll</a>, on our fixtures folder. After installing nodemon, we just need to use the <a href="https://github.com/remy/nodemon#monitoring-multiple-directories" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode">\-\-watch</a> option to check for changes in our fixtures.
+If you never tried <a href="https://github.com/remy/nodemon" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development">nodemon</a>, now it's a good time to check it out. It's a mighty tool to restart some job based on specific changes in your project. Let's use nodemon to set up a <a href="https://docs.npmjs.com/misc/scripts" target="_blank" title="npm cli documentation about scripts field">npm script</a> that seamlessly re-runs our fixtures. The idea is that we achieve the same workflow that we would normally have with <a href="https://jestjs.io/docs/en/cli#watchall" target="_blank" title="Jest cli, watch all option">jest \-\-watchAll</a>, on our fixtures folder. After installing nodemon, we just need to use the <a href="https://github.com/remy/nodemon#monitoring-multiple-directories" target="_blank" title="Monitor for any changes in your node.js application and automatically restart the server - perfect for development, watch mode">\-\-watch</a> option to check for changes in our fixtures.
 
 ```json
 "fixtures:run": "node run-fixtures && jest ./fixtures/tests/fixtures.spec.js",
@@ -294,23 +294,21 @@ If you never tried <a href="https://github.com/remy/nodemon" target="_blank" tit
 ```
 <small><a href="https://github.com/danielcaldas/test-fixtures-pattern/blob/master/package.json" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project, package.json">[package.json]</a></small>
 
-As you can see from the above snippet, we *glue* and chain everything together; nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`. See the result below.
+As you can see from the above snippet, we *glue* and chain everything together in the script `fixtures:watch`. In fact, nodemon does most of the work. Now when we want to perform interactive changes in our fixtures we just need to type `npm run fixtures:watch`, and *voilà*. See the result below.
 
 <div style="text-align:center;">
     <img alt="GIF running fixtures in watch mode" src="/assets/img/unit-testing-with-fixtures-unleashed/fixtures-watch-mode.gif"/>
 </div>
 
-Satisfying right?
-
-<div style="text-align:center;">
-    <img width="40%" height="60%" alt="satisfying face, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/satisfying.jpg"/>
+<div style="text-align:center;margin-top:60px;">
+    <img width="50%" height="70%" alt="satisfying face, meme" src="/assets/img/unit-testing-with-fixtures-unleashed/satisfying.jpg"/>
 </div>
 
 <br/>
 
 ## Projects using fixtures?
 
-If you read this article, you may now have an idea of how a fixture based architecture might look like, but in real life, they appear in many other different colors and formats. Some known projects that use this pattern are:
+If you read the article up to this point, you may now have an idea of how a fixture based architecture might look like. In real life, they appear in many other different colors and formats. Some known projects that use this pattern are:
 
 - <a href="https://github.com/facebook/react" target="_blank" title="A declarative, efficient, and flexible JavaScript library for building user interfaces. https://reactjs.org">facebook/react</a>
 - <a href="https://github.com/babel/babel" target="_blank" title="Babel is a compiler for writing next generation JavaScript. https://babeljs.io/">babel/babel</a>
@@ -319,7 +317,9 @@ If you read this article, you may now have an idea of how a fixture based archit
 
 Not a known project, but the babel plugin where I first implemented such architecture is <a href="https://goodguydaniel.com/blog/presenting-babel-plugin-cloudinary/" target="_blank" title="goodguydaniel.com, blog post, Presenting babel-plugin-cloudinary">babel-plugin-cloudinary</a>, if you check the test setup, you might quickly identify the patterns explored in this article.
 
-<small>**tip**: to have a big picture of how these projects run fixtures, go to their GitHub repo and perform a search for "fixtures/" and you'll see *glue* code that I demonstrated in this article; it might be a bit harder to follow due to the dimension of these projects</small>.
+Do you see any similarities between all the listed projects? I do! We could, in a way, say that they are all in their ways compilers. **Vast spectrum of inputs with a narrow entry point, often a `compile` function that takes in some code**.
+
+<small>**tip**: to have a big picture of how these projects run fixtures, go to their repository and perform a search for "fixtures/" and you'll see *glue* code somewhat related to the one demonstrated in this article; it might be a bit harder to follow due to the dimension of these projects</small>.
 
 ## Reasons not to...
 
@@ -329,16 +329,14 @@ Not a known project, but the babel plugin where I first implemented such archite
 
 I can think of two disadvantages that you should consider before exploring this option:
 
-- **Unintended duplication becomes propitious** - since we have a flat structure, it might come the time where you have many scenarios, and someone introduces one or more repeated scenarios without being aware of it. To avoid duplication, you can put in place, since the very beginning, some proper naming conventions for your test cases, such as prefixing common scenarios with some common keywords that show that those scenarios are somewhat related.
-- **Setup might be too complex** - depending on the project and the underlying test runner, it might be more os less complex to put in place such a setup. We saw that with Jest is a piece of cake.
-Overhead of useless scenarios - if before having this test architecture, it was hard to modify or extend the existent test, now it becomes the extreme opposite. It's just too easy to go to the project and add a new test case. Keep an eye on each new test case and ask yourself if it is vital or if it's only cute (ask <small><a href="https://github.com/ry" target="_blank" title="Ryan Dahl, creator of Node.js, GitHub account">Ryan Dahl</a></small> about adding cute things to your projects).
+- **Unintended duplication becomes propitious** - since we have a flat and easily scalable structure, it might come the time where you have many scenarios, and someone introduces one or more repeated test cases without being aware of it. To avoid duplication, you can put in place, since the very beginning, some proper naming conventions for your test cases, such as prefixing common fixtures with some common keywords that show that those scenarios are somewhat related.
+- **Setup might be too complex** - depending on the project and the underlying test runner, it might be more or less complex to put in place such a setup. We saw that with Jest is a piece of cake <span title="piece of cake">🍰</span>.
 
 ## Conclusions
 
-As already mentioned, all the code examples in this post are in a <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">public GitHub repository</a>.<br/>
-I hope that if you went through the article, you have now one more software pattern on your toolbox that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a self-documented/self-organized fashion.<br/>
-If you want to get a few extra tips more specifically on Jest, you might want to take a look at <a href="https://goodguydaniel.com/blog/tips-jest-unit-testing/" target="_blank" title="Post with tips for unit testing with Jest Unrevealed tips for unit testing with Jest">"Unrevealed tips for unit testing with Jest"</a> blog post.
+As already mentioned, all the code examples in this blog post are in a <a href="https://github.com/danielcaldas/test-fixtures-pattern" target="_blank" title="GitHub, Daniel Caldas, test-fixtures-pattern case study project">public GitHub repository</a>.<br/>
+I hope that if you went through the article, you have now one more testing software pattern on your *toolbelt* that will (for the right use cases) allow you scale the tests in your codebase effortlessly and a in self-documented/self-organized fashion.
 
 What do you think about having a fixture based testing architecture? Do you have any project in mind where you see the right match?
 
-<small>*Note: This article refers to the JavaScript language and the Jest JavaScript library, this does not mean that what you find here might not be ported into other JavaScript libraries or into other programming languages and ecosystems.*</small>
+<small>*Note: This article refers to the JavaScript language and the <a href="https://jestjs.io/en/" target="_blank" title="jest is a delightful javascript testing framework with a focus on simplicity">Jest</a> JavaScript library, this does not mean that what you find here might not be ported into other JavaScript libraries or into other programming languages and ecosystems.*</small>
