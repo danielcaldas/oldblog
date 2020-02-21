@@ -58,3 +58,4 @@ build-iPhoneSimulator/
 _site
 .sass-cache
 .jekyll-metadatas
+.DS_Store
