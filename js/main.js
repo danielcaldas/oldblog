@@ -37,6 +37,29 @@ var main = {
       });
     });
 
+    // Animate scrolling to specific header anchor in any blog post
+    // @danielcaldas
+    var BEAUTIFUL_JEKYLL_HEADER_HEIGHT = 80;
+    $(".h-js-scroll").click(function (e) {
+      e.preventDefault();
+      try {
+        var offset = $(this).offset();
+        $("html, body").animate(
+          { scrollTop: offset.top - BEAUTIFUL_JEKYLL_HEADER_HEIGHT },
+          "fast"
+        );
+      } catch (error) {}
+    });
+    // at page refresh & load
+    try {
+      var hash = window.location.href.split("#").pop();
+      var scrollToMe = $("#"+hash).offset();
+      $("html, body").animate(
+        { scrollTop: scrollToMe.top - BEAUTIFUL_JEKYLL_HEADER_HEIGHT },
+        "fast"
+      );
+    } catch (error) {}
+
     // Ensure nested navbar menus are not longer than the menu header
     var menus = $(".navlinks-container");
     if (menus.length > 0) {
