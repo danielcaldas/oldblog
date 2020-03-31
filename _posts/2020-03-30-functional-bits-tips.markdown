@@ -9,15 +9,15 @@ categories: jekyll update
 
 Here are some of my top favorite personal utilities to make your programming style more functional. They increase the readability of my code and help me transforming those less pretty pieces of logic into something that I'm proud of and that I can confidently change by merely modifying a line of code (or maybe less).
 
-## The bits
+## [<small>\#</small>](#the-bits) The bits {#the-bits}
 
 I list below a series of utilities together with a short background/motivation followed by an example where I demonstrate both the imperative and functional approaches, where the functional approach makes use of the respective utility. You can also find a rough implementation of the utility by the end of its section.
 
-### tap
+### [<small>\#</small>](#the-bits-tap) tap {#the-bits-tap}
 
 Inspired by the <a href="https://rxjs-dev.firebaseapp.com/api/operators/tap" target="_blank" title="RxJS tap operator">RxJS tap operator</a>. With `tap`, you can perform non-intrusive side effects. By non-intrusive, I mean that you can leverage the power of a functional style of coding to perform a task, and simultaneously deliver a side effect (e.g., `console.log`) within your approach. Let's have a look.
 
-#### Imperative
+#### [<small>\#</small>](#the-bits-tap-imperative) Imperative {#the-bits-tap-imperative}
 ```javascript
 let agesSum = 0;
 const totalNumberOfUsers = users.length;
@@ -34,7 +34,7 @@ const meanAge = agesSum / totalNumberOfUsers;
 console.log(`Users are in average ${meanAge} years old.`);
 ```
 
-#### Functional with `tap`
+#### [<small>\#</small>](#the-bits-tap-functional) Functional with `tap`
 ```javascript
 const sum = arr => arr.reduce((s, n) => s + n, 0);
 const mean = arr => sum(arr) / arr.length;
@@ -50,7 +50,7 @@ console.log(`Users are in average ${meanAge} years old.`);
 
 I give you that right now, it's far more understandable how you would log something in between your imperative approach. You can inspect each age individually as the code progresses. But as you can see in the functional approach analyzing the birthdates at a particular stage of your data transformations is also possible! Below the implementation of `tap`. Warning, this approach extends the `Array.prototype`, use at your own risk.
 
-#### Implementing `tap`
+#### [<small>\#</small>](#the-bits-tap-source) Implementing `tap`
 ```javascript
 Object.defineProperty(Array.prototype, 'tap', {
   value: function(fn) {
@@ -62,11 +62,11 @@ Object.defineProperty(Array.prototype, 'tap', {
 ```
 <br>
 
-### and & or
+### [<small>\#</small>](#the-bits-and-or) and & or
 
 Did it ever happen to you ending up with an `if` statement that needs to be broken down into several LOC because it is too long, and the linter starts crying about it? There's an elegant solution for that, and it's pure composition, let me share it with you.
 
-#### Imperative
+#### [<small>\#</small>](#the-bits-and-or-imperative) Imperative
 ```javascript
 const usersEligibleForSurvey = [];
 
@@ -79,7 +79,7 @@ for (const user of users) {
 }
 ```
 
-#### Functional with `and`
+#### [<small>\#</small>](#the-bits-and-or-functional) Functional with `and`
 ```javascript
 const isFemale = user => user.gender === 'female';
 const isBelowAge = age => user => getAgeFromUnixTimestamp(user.birthdate) < age;
@@ -92,7 +92,7 @@ const usersEligibleForSurvey = users.filter(isUserEligibleForSurvey);
 Instead of a single if statement, you now have a reusable function. More than that, you can easily plugin and out any criteria to exclude users from the survey! Let's say you had a very complex function that, given a specific user would check some rules against the postcode to exclude certain areas of the country. Given you have that function, append it into the `and` arguments. That's all! `isUserEligibleForSurvey` is now checking for the postcode as well, you're good to go.<br>
 `and` is an excellent example of why we describe this kind of approach as declarative programming, **you're expressing the logic without describing its control flow**.
 
-#### Implementing `and`
+#### [<small>\#</small>](#the-bits-and-or-source) Implementing `and`
 ```javascript
 function and(...fns) {
   const n = fns.length;
@@ -118,11 +118,11 @@ const and = (...fns) => (...args) => fns.reduce((prev, fn) => prev && fn(...args
 ```
 <br>
 
-### select & drop
+### [<small>\#</small>](#the-bits-select) select & drop
 
 RxJS has <a href="https://rxjs-dev.firebaseapp.com/api/operators/pluck" target="_blank" title="RxJS operators, pluck">pluck</a>, lodash has <a href="https://rxjs-dev.firebaseapp.com/api/operators/pluck" target="_blank" title="Lodash pick">pick</a>. I find `select` a more concise and name. Projecting properties from objects is a prevalent task. The fact that JavaScript has destructuring built-in is a live proof of that. You could use destructuring to project properties; <a href="https://goodguydaniel.com/blog/destructuring-not-so-good-parts/" target="_blank" title="Destructuring in JavaScript: the not so good parts">it's often more tedious, and it's not suitable for every occasion</a> to use within a chain of operations.
 
-#### Imperative
+#### [<small>\#</small>](#the-bits-select-imperative) Imperative
 ```javascript
 let countries = new Set();
 
@@ -133,7 +133,7 @@ for (const user of users) {
 console.log(Array.from(countries).join(', '));
 ```
 
-#### Functional with `select`
+#### [<small>\#</small>](#the-bits-select-functional) Functional with `select`
 
 ```javascript
 const countries = new Set(users.map(select('location.country')));
@@ -145,7 +145,7 @@ In the functional approach, `select` extracts from each user the `country` field
 Again, with the functional approach, we shift towards a more declarative style.
 There's also an "opposite" of `select`, which is `drop`. In short, instead of picking up the properties of an object, you declare which properties you want to drop.
 
-#### Implementing `select`
+#### [<small>\#</small>](#the-bits-select-source) Implementing `select`
 ```javascript
 // something similar to lodash/get
 function get (o, query, defaultValue = undefined) {
@@ -172,7 +172,7 @@ const select = (...keys) => o => keys.length === 1
 ```
 <br>
 
-### pipe
+### [<small>\#</small>](#the-bits-pipe) pipe
 
 `pipe` would be something like <a href="https://lodash.com/docs/4.17.15#flow" target="_blank" title="lodash flow">lodash/flow</a> where you can take *N* functions where each performs a unique task and combine them in chain where data flows from left to right. The output of a function within the pipe is the input to the next one (and so on). It's good to use something like `pipe` when you need to perform a series of data transformations on a given input. Let's look at the following example, where we want to format our `users` data in a way that is friendly to be consumed by the UI, but first, there are some requirements that need to be met in terms of the shape of each user Object individually.<br>
 The goal is to render a table with the name (first name + last name), age, and country (with the first character capitalized) so that the Marketing department of the company *X* can have a look at their users' data nicely formatted.<br>
@@ -198,7 +198,7 @@ function getFirstAndLastName(user) {
 
 Now, let's dive in and translate those requirements into code.
 
-#### Imperative
+#### [<small>\#</small>](#the-bits-pipe-imperative) Imperative
 ```javascript
 const formattedUsers = [];
 
@@ -215,7 +215,7 @@ for (const user of users) {
 console.log(formattedUsers); // data ready for the UI!
 ```
 
-#### Functional with `pipe`
+#### [<small>\#</small>](#the-bits-pipe-functional) Functional with `pipe`
 ```javascript
 const formatUser = pipe(
   user => ({ ...user, name: getFirstAndLastName(user) }),
@@ -233,13 +233,13 @@ The only small *trick* here is that I had to feed the initial <code>user</code> 
 
 As you can see, using `pipe`, you have a clear separation of concerns in terms of what transformations run against your input, again at any point in time, you can plug in or out a new transformation function from the `pipe` with minimal effort.
 
-#### Implementing `pipe`
+#### [<small>\#</small>](#the-bits-pipe-source) Implementing `pipe`
 ```javascript
 const pipe = (...fns) => (...args) => fns.reduce((prev, fn) => fn(prev), ...args);
 ```
 <br>
 
-## Takeaways
+## [<small>\#</small>](#takeaways) Takeaways
 
 Web applications are complex, meaning your code becomes inherently more complicated. Functional constructs do the trick for me when it comes to rearranging my logic into a compact implementation that may read like plain English. But besides a potential big win on **readability** there are other advantageous things in the package:
 
