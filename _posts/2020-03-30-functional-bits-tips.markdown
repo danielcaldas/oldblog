@@ -161,8 +161,17 @@ function get (o, query, defaultValue = undefined) {
   return pointer;
 };
 
-// when there's only a single property in `keys`
-// we return the value directly
+/**
+ * When there's only a single property in `keys` the value is not wrapped in an object e.g.
+ * > const city = select('location.city')(users[0])
+ * > console.log(city)
+ * > 'staphorst'
+ *
+ * Nested paths are flatten at the top level e.g.
+ * > const cityCountry = select('location.city', 'location.country')(users[0])
+ * > console.log(cityCountry)
+ * > { 'location.city': 'staphorst', 'location.country': 'netherlands' }
+ */
 const select = (...keys) => o => keys.length === 1
   ? get(o, keys[0])
   : keys.reduce((acc, k) => {
