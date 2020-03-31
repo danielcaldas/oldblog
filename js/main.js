@@ -40,7 +40,7 @@ var main = {
     // Animate scrolling to specific header anchor in any blog post
     // @danielcaldas
     var BEAUTIFUL_JEKYLL_HEADER_HEIGHT = 80;
-    $(".blog-post > h1, h2, h3, h4, h5").click(function (e) {
+    $(".h-js-scroll").click(function (e) {
       e.preventDefault();
       try {
         var offset = $(this).offset();
