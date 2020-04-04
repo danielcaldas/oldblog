@@ -158,7 +158,7 @@ timezone: "Asia/Singapore"
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:title/
-paginate: 5
+paginate: 10
 
 kramdown:
   input: GFM
