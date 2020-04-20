@@ -2,7 +2,7 @@
 layout: post
 title: "You Can't Call Hooks Inside Conditions? Yes you can"
 subtitle: "Because rules are made to be broken"
-date: 2020-04-20 19:00:00 +0800
+date: 2020-04-19 19:00:00 +0800
 readTime: 4
 categories: jekyll update
 ---
